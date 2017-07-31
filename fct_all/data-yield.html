@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+    <style>
+        input[type="text"],button{
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border:none;
+
+
+        }
+        input[type="text"]{padding: 6px 0;width: 200px;background: #fff; border: 1px solid rgb(200,200,200);text-indent: 5px}
+        button{background: #fff;
+            border: 1px solid rgb(153,153,153);padding: 5px 0;width: 100px;text-align: center;cursor: pointer;outline: none;
+        -ms-border-radius:10px;
+            -webkit-border-radius:10px;
+            -moz-border-radius: 10px;
+        border-radius: 10px;;
+        }
+
+    </style>
+</head>
+<body>
+<div style="padding: 25px">
+    <form class="form form-horizontal" action="index.html" method="post" >
+        <div style="display: inline-block;font-size:14px">每日静态收益率设置:</div>
+        <input type="text" placeholder="每日静态收益率设置" id="yield_val">
+        <button class="btn btn-primary radius" type="button" id="btn"> 修改</button>
+        <div id="tip" style="color: red;padding-top: 5px"></div>
+        <div style="color:rgb(220,50,50);font-weight: bold;font-size: 16px;line-height: 40px">单位:%</div>
+    </form>
+
+
+
+
+    <script>
+        document.getElementById("btn").onclick = function(){
+            var yield_val = document.getElementById("yield_val").value;
+
+            var res = /^(\d{1,2}(\.\d{1,2})?|100)$/;
+            if(!res.test(yield_val)){
+                document.getElementById("tip").innerHTML = "请输入0-100的数字可以包含两位小数";
+                return false;
+            }else{
+                if(confirm("确定删除么？"))
+                {
+                    document.getElementsByTagName("form")[0].submit();
+                }
+                else
+                {
+
+                }
+            }
+
+        }
+    </script>
+</div>
+</body>
+</html>

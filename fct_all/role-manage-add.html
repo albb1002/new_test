@@ -1,0 +1,340 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<link rel="stylesheet" href="css/css.css" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5shiv.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="static/h-ui.admin/css/style.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<!--/meta 作为公共模版分离出去-->
+    <script src="js/vue.min.js"></script>
+    <script src="js/vue-resource.min.js"></script>
+<style>
+
+</style>
+<title>增加角色</title>
+</head>
+<body>
+<article class="page-container rm-updata" id="app">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>设置角色名：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" id="role_name"  name="role_name">
+                
+			</div>
+		</div>
+        <div class="row cl" id="role_messageWrap">
+            <label class="form-label col-xs-4 col-sm-3" style="visibility: hidden"><span class="c-red">*</span>设置用户名：</label>
+            <div class="formControls col-xs-8 col-sm-9 n-user">
+               <span id="role_message"></span>
+
+            </div>
+        </div>
+      
+      
+
+		<div class="row cl power">
+			<label class="form-label col-xs-4 col-sm-3">权限设置：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<dl class="permission-list">
+					<dt>
+						<label>
+
+                            权限管理</label>
+					</dt>
+					<dd>
+                        
+                       
+                       <label v-for="(index,item) in pots" class="right15" v-if="item.parentId===0">
+							<div class="first-nav">
+								
+                           
+                            <input type="checkbox" v-on:click="getId(item._id)">
+                            
+                            {{item.name}}
+                            </div>
+                            <div v-if="index===0 && control" class="sec-nav">
+                            	<span  v-for="secItem in pots" v-if="secItem.parentId===1">
+	                            	 <input type="checkbox" v-on:click="getId(secItem._id)" checked="check" v-if="$index+1===get_power[$index]">
+		                            <input type="checkbox" v-on:click="getId(secItem._id)" v-else>
+		                            
+		                            {{secItem.name}}</label>
+	                            </span>
+                            </div>
+                            <div v-if="index===3 && control2" class="sec-nav">
+                            	<span  v-for="secItem in pots" v-if="secItem.parentId===4">
+	                            	 <input type="checkbox" v-on:click="getId(secItem._id)" checked="check" v-if="$index+1===get_power[$index]">
+		                            <input type="checkbox" v-on:click="getId(secItem._id)" v-else>
+		                            
+		                            {{secItem.name}}</label>
+	                            </span>
+                            </div>
+                            <div v-if="index===10 && control3" class="sec-nav">
+                            	<span  v-for="secItem in pots" v-if="secItem.parentId===11">
+	                            	 <input type="checkbox" v-on:click="getId(secItem._id)" checked="check" v-if="$index+1===get_power[$index]">
+		                            <input type="checkbox" v-on:click="getId(secItem._id)" v-else>
+		                            
+		                            {{secItem.name}}</label>
+	                            </span>
+                            </div>
+                            
+                             <div v-if="index===13 && control4" class="sec-nav">
+                            	<span  v-for="secItem in pots" v-if="secItem.parentId===14">
+	                            	 <input type="checkbox" v-on:click="getId(secItem._id)" checked="check" v-if="$index+1===get_power[$index]">
+		                            <input type="checkbox" v-on:click="getId(secItem._id)" v-else>
+		                            
+		                            {{secItem.name}}</label>
+	                            </span>
+                            </div>
+                            
+                            <div v-if="index===15 && control5" class="sec-nav">
+                            	<span  v-for="secItem in pots" v-if="secItem.parentId===16">
+	                            	 <input type="checkbox" v-on:click="getId(secItem._id)" checked="check" v-if="$index+1===get_power[$index]">
+		                            <input type="checkbox" v-on:click="getId(secItem._id)" v-else>
+		                            
+		                            {{secItem.name}}</label>
+	                            </span>
+                            </div>
+                            
+                           
+                          </label>
+					</dd>
+				</dl>
+	<dl class="permission-list" id="tip_power">
+                		                 
+					
+				</dl>
+			</div>
+		</div>
+		
+		<div class="row cl power">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+				<button type="submit" class="btn btn-success radius" v-on:click="role_save"><i class="icon-ok"></i> 确定</button>
+			</div>
+		</div>
+</article>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="static/h-ui/js/H-ui.min.js"></script> 
+<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript" src="js/tan.js"></script>
+<script>
+    
+window.onload = function(){
+	Vue.http.options.emulateJSON = true;
+    Vue.http.options.headers = {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+    };
+    Vue.http.options.headers = {
+        'authorization': sessionStorage.token_name
+    };
+    
+    new Vue({
+   		el:"#app",
+   		data:{
+   			urls:"http://www.qubitrich.com/pc/jurisdiction/list",
+   			pots:{},
+   			get_power:[],
+   			control:false,
+   			control2:false,
+   			control3:false,
+   			control4:false,
+   			control5:false
+   		}, 
+   		ready:function(){
+   			this.$http.post(this.urls).then(function(res){
+   				this.pots=res.data.result;
+   				console.log(res.data.result)
+   				for(var i=0 ; i<this.pots.length ; i++){
+   					this.get_power.push("0")
+   				} 
+   				
+   			})
+   		},
+   		methods:{
+   			role_save:function(){
+   				var name_text = document.getElementById("role_name").value;
+   				var check_name = /^[\u4e00-\u9fa5]+$/
+   				if(name_text==""){
+   					document.getElementById("role_message").setAttribute("style","color: red;");
+   					document.getElementById("role_message").innerHTML = "请设置角色名";
+   					return false
+   				}
+   				if(!check_name.test(name_text)){
+   					document.getElementById("role_message").setAttribute("style","color: red;");
+   					document.getElementById("role_message").innerHTML = "请输入中文";
+   					return false
+   				}
+   				document.getElementById("role_message").innerHTML = "";
+   				Vue.http.options.emulateJSON = true;
+			    Vue.http.options.headers = {
+			        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+			    };
+			    Vue.http.options.headers = {
+			        'authorization': sessionStorage.token_name
+			    };
+			    var power_len = this.get_power;
+			    var get_power=[];//得到有权限数据的数组
+			    for(var i=0 ; i<power_len.length ; i++){
+			    	if(power_len[i]!=0){
+			    		get_power.push(power_len[i]);
+			    	}
+			    }
+			    console.log(get_power);
+			    var arrs = JSON.stringify({jurisdictionArr:get_power});
+
+			   var prent_iframe = parent.window.frames['iframeId'];   
+			    if(get_power.length>0){
+			    	
+			    	this.$http.post("http://www.qubitrich.com/pc/role/create",JSON.stringify({name:name_text,jurisdictionArr:get_power})).then(function(res){
+		   				sc_show(res.data.result);
+		   				var t = setTimeout(function(){
+		   					parent.location.reload();t=null;
+		   				},1000)
+		   			})
+			    }else{
+			    	document.getElementById("tip_power").innerHTML="至少选择一个权限"
+			    }
+			    
+   			},
+   			getId:function(e){
+   				var that = this;
+// 				1,4,11,14,16
+   				if(this.get_power[e-1]==e){
+   					
+   					var getE = this.get_power[e-1];
+   					if(getE==1){
+   						that.control=false;
+   						this.get_power[1]=0;
+   						this.get_power[2]=0;
+   					}
+   					if(getE==4){
+   						that.control2=false;
+   						this.get_power[4]=0;
+   						this.get_power[5]=0;
+   						this.get_power[6]=0;
+   						this.get_power[7]=0;
+   						this.get_power[8]=0;
+   						this.get_power[9]=0;
+   					}
+   					if(getE==11){
+   						that.control3=false;
+   						this.get_power[11]=0;
+   						this.get_power[12]=0;
+   					}
+   					if(getE==14){
+   						that.control4=false;
+   						this.get_power[14]=0;
+   					}
+   					if(getE==16){
+   						that.control5=false;
+   						this.get_power[16]=0;
+   					}
+   					
+   					
+   					this.get_power[e-1]=0;
+
+   				}else{
+   					this.get_power[e-1]=e;
+   					var getE = this.get_power[e-1];
+   					if(getE==1){
+   						that.control=true;
+   					}
+   					if(getE==4){
+   						that.control2=true;
+   					}
+   					if(getE==11){
+   						that.control3=true;
+   					}
+   					if(getE==14){
+   						that.control4=true;
+   					}
+   					if(getE==16){
+   						that.control5=true;
+   					}
+   									
+   					
+   					
+   				}
+   			}
+   			
+   		}
+   })
+}
+   
+    
+    
+
+   
+
+
+
+</script>
+
+<script type="text/javascript">
+$(function(){
+	$(".permission-list dt input:checkbox").click(function(){
+		$(this).closest("dl").find("dd input:checkbox").prop("checked",$(this).prop("checked"));
+	});
+	$(".permission-list2 dd input:checkbox").click(function(){
+		var l =$(this).parent().parent().find("input:checked").length;
+		var l2=$(this).parents(".permission-list").find(".permission-list2 dd").find("input:checked").length;
+		if($(this).prop("checked")){
+
+			$(this).closest("dl").find("dt input:checkbox").prop("checked",true);
+			$(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked",true);
+		}
+		else{
+			if(l==0){
+				$(this).closest("dl").find("dt input:checkbox").prop("checked",false);
+			}
+			if(l2==0){
+				$(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked",false);
+			}
+		}
+	});
+	
+	$("#form-admin-role-add").validate({
+		rules:{
+			roleName:{
+				required:true,
+			},
+		},
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			$(form).ajaxSubmit();
+			var index = parent.layer.getFrameIndex(window.name);
+			parent.layer.close(index);
+		}
+	});
+});
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

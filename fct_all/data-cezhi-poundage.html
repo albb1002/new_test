@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="lib/Hui-iconfont/1.0.8/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="static/h-ui/css/H-ui.min.css" />
+        <script src="js/vue.min.js" type="text/javascript"></script>
+    <script src="js/vue-resource.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/tan.js" ></script>
+    <style>
+        input[type="text"],button{
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border:none;
+
+
+        }
+        input[type="text"]{padding: 6px 0;width: 200px;background: #fff; border: 1px solid rgb(200,200,200);text-indent: 5px}
+        button{background: #fff;
+            border: 1px solid rgb(153,153,153);padding: 5px 0;width: 100px;text-align: center;cursor: pointer;outline: none;
+            -ms-border-radius:10px;
+            -webkit-border-radius:10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;;
+        }
+
+    </style>
+</head>
+<body>
+<div style="padding: 25px" id="app">
+
+        <div style="display: inline-block;font-size:14px">当前手续费率:</div>
+        <input type="text" placeholder="撤资手续费率" v-model="rote_text">
+        <a class="btn btn-primary radius" v-on:click="updata"> 修改</a>
+        <div id="tip" style="color: red;padding-top: 5px">{{tip}}</div>
+        <div style="color:rgb(220,50,50);font-weight: bold;font-size: 16px;line-height: 40px">单位:%</div>
+</div>
+
+
+<script>
+window.onload = function(){
+	var location_url = window.location.search;
+	if(location_url.length>1){
+		var u = location_url.split("?")[1];//id=2&rote=0.1
+		var idW = u.split("&")[0]//id=2;
+		var roteW = u.split("&")[1]//id=2;
+		var id=idW.split("=")[1];
+		var rote = roteW.split("=")[1];
+
+//		var w = u[1].split("=");
+//		var id = w[1];
+
+Vue.http.options.emulateJSON = true;
+    Vue.http.options.headers = {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+    };
+    Vue.http.options.headers = {
+        'authorization': sessionStorage.token_name
+    };
+		new Vue({
+			el:"#app",
+			data:{
+				urls:"http://www.qubitrich.com/pc/rate/update",
+				rote_text:rote*100,
+				tip:""
+			},
+			methods:{
+				updata:function(){
+       				var check_rate = /^(\d{1,2}(\.\d{1,2})?|100)$/;
+       				if(check_rate.test(this.rote_text)){
+       					this.$http.post(this.urls,JSON.stringify({_id:id,rate:this.rote_text/100})).then(function(res){
+							this.tip="";
+							sc_show(res.data.result);
+			   				var t = setTimeout(function(){
+			   					parent.location.reload();t=null;
+			   				},1000)
+							
+						})
+       				}else{
+       					this.tip = "请输入0-100的数字可以包含两位小数";
+       				}
+       				 
+					
+				}
+			}
+		})
+	}
+	
+}
+	
+	
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* 你自己的样式 */
+.loginBox{background: none;background-color: rgba(19,144,193,0.1);border: 1px solid rgba(224,225,228,0.5);border-radius: 15px;height: auto;padding-bottom: 20px;}
+/*忘记密码*/
+#forget{padding-bottom: 19px;padding-top: 15px;}
+#forget_code{cursor: pointer;}
+#forget_code:hover{color: red;}
+.weui_btn{background-color: #5eb95e;width: 117px;font-size: 14px;padding: 10px;border: none;border-radius: 10px;color: #fff;cursor: pointer;}
+.pas_t{text-align: center;font-size: 24px;height: 38px;line-height: 34px;margin-bottom: 4px;}
+.loginBox .mt0{margin-top: 0;}
