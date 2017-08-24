@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/swiper.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/module.css" />
+	</head>
+	<body>
+		<div class="wrap product-info relative">
+			<div class="head">
+				<span class="left" onclick="window.history.back()"></span>
+				<!--<span class="right" id="nav_btn"></span>-->
+			</div>
+			
+			<!--<div class="hide_nav" id="hide_nav">
+				<div><img src="img/information.png"><a href="#">消息</a></div>
+				<div><img src="img/home1.png"><a href="#">首页</a></div>
+				<div><img src="img/help1.png"><a href="#">帮助</a></div>
+			</div>-->
+			<!--轮播-->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="demoImg/swiper_demo1.png" />
+					</div>
+					<div class="swiper-slide">
+						<img src="demoImg/swiper_demo1.png" />
+					</div>
+					<div class="swiper-slide">
+						<img src="demoImg/swiper_demo1.png" />
+					</div>
+				</div>
+			
+				<div class="swiper-pagination">
+				</div>
+			</div>
+			<!--轮播end-->
+			
+			<!--侧栏滑出-->
+			<div class="public-aside-wrap fixed" id="aside_wrap">
+				<!--快速导航-->
+				<div class="public-aside-top" id="aside_left">
+					<div class="f-left aside-dx" id="aside_left_icon">
+						&lt;&lt;					
+					</div>
+					<div class="title">
+						快速导航
+					</div>
+				</div>
+				<!--快速导航end-->
+				<!--4个导航列表-->
+				<div class="aside-nav">
+					<ul>
+						<li>
+							<img src="img/shouye-icon.png">
+							<span class="d-block">首页</span>
+						</li>
+						<li>
+							<img src="img/sp-icon.png">
+							<span class="d-block">商品</span>
+						</li>
+						<li>
+							<img src="img/my-icon.png">
+							<span class="d-block">我的</span>
+						</li>
+						<li>
+							<img src="img/pro-footer-2.png">
+							<span class="d-block">我的收藏</span>
+						</li>
+					</ul>
+				</div>
+				<!--4个导航列表end-->
+			</div>
+			<!--侧栏滑出end-->
+			
+			<div class="main">
+				<!--产品名字。价格。信息-->
+				<div class="name">
+					芬尚女士香水秘密50ml 香水女士持久淡香清新 专柜正品包邮
+				</div>
+				<div class="price">
+					￥<span class="now">500.00</span>
+					<span class="odd">￥870.00</span>
+				</div>
+				<div class="t-list border-b217">
+					<div class="t-l">
+						快递：10.00
+					</div>
+					<div class="t-l">
+						销售：1000
+					</div>
+					<div class="t-l t-end">
+						厦门
+					</div>
+				</div>
+				<!--产品名字。价格。信息end-->
+				<!--领券-->
+				<div class="coupon pd border-b217" id="coupon_wrap">
+					<span class="cou">领券</span>
+					<div class="cou-c">
+						<div class="cou-l">满50减5</div>
+						<div class="cou-l">满50减5</div>
+						<div class="cou-l">满50减5</div>
+					</div>
+				</div>
+				<!--领券end-->
+				<!--促销-->
+				<div class="coupon pd-lr-5 sales" id="sales">
+					<span class="cou cou-h pd-top-5">促销</span>
+					<div class=" font-size-8 overhidden">
+						<div class="pd-bottom-8 mg-left-5 pd-top-6">
+							<span class="zen ">赠券</span>
+							满200赠送20元抵用券
+						</div>
+						<div class="mg-left-5 pd-bottom-6">
+							<span class="zen ">限制</span>
+							满200赠送20元抵用券
+						</div>
+					</div>
+				</div>
+				<!--促销end-->
+				
+				<div class="floor"></div>
+				<!--选择尺寸-->
+				<div class="coupon pd">
+					<span class="cou  t-rgb-0">选择</span>
+					<div class="cou-c sel-col overhidden pd-left-5" id="show_selected_wrap">
+						<span id="show_selected">尺寸/颜色分类</span>
+					</div>
+				</div>
+				<!--选择尺寸end-->
+				<div class="floor"></div>
+				
+				<!--运费-->
+				<div class="coupon pd border-b217 yunfei">
+					<span class="cou">运费</span>
+					<div class="cou-c sel-col overhidden pd-left-5">
+						免运费
+					</div>
+				</div>
+				<!--运费end-->
+				<!--假一赔十-----七天退货-->
+				<div class="coupon pd" id="compensate">
+					<div class="cou-c fake">
+						<div class="f-left pd-right-5"><img src="img/tick.png">假一赔十</div>
+						<div class="f-left pd-right-5"><img src="img/tick.png">正品保证</div>
+						<div class="f-left pd-right-5"><img src="img/tick.png">七天包退</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<!--假一赔十-----七天退货end-->
+				<div class="floor"></div>
+				
+				<!--评论-->
+				<!--<div class="coupon pd border-b217">
+					<div class="comment font-size-9">
+						<div class="d-inlineBlock"> 
+							评论(66666)
+						</div>
+						<div class="d-inlineBlock f-right mg-right-10">
+							好评度&nbsp;<span class="com-rd">98%</span>
+						</div>
+					</div>
+				</div>-->
+				<!--评论end-->
+				<!--评论列表-->
+				<!--<div class="comment-list pd border-b217 font-size-8">
+					<div class="title">
+						<img src="img/touxiang.png" class="f-left br-50"/>
+						<div class="comment-name font-size-8 pd-tb-5">
+							m******4
+							<span class="level br-2">普通</span>
+							<div class="f-right judge">
+								<img src="img/judge-icon.png" />
+							</div>
+						</div>
+					</div>
+					<div class="pd-tb-5">
+						好用，好评，五星好评
+					</div>
+					<div class="width-100">
+						<img src="img/swiper_demo1.jpg" class="comment-img f-left"/>
+						<img src="img/swiper_demo1.jpg" class="comment-img f-left"/>
+						<img src="img/swiper_demo1.jpg" class="comment-img f-left"/>
+						<img src="img/swiper_demo1.jpg" class="comment-img f-left"/>
+						<div class="clear"></div>
+					</div>
+								
+					<div class="info pd-top-5 t-rgb-153">
+						<div class="f-left">
+							商家家用50ml
+						</div>	
+						<div class="f-right">
+							2017-06-10
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="comment-more t-center pd-tb-8">
+					查看全部评价
+				</div>
+				<div class="floor"></div>-->
+				
+				<!--商品介绍-->
+				<div class="suggest">
+					<div class="pd-tb-8 pd-left-5 border-b217">
+						商品介绍
+					</div>	
+					<div class="suggest-con">
+						<img src="demoImg/demo-love.png"/>
+						1.倡导每个销售开启手机商店,以朋友圈做推广,迅速推动终端裂变式增长,极大促进销售
+						与老客户进行社交圈传播。例如销售员可以在微信朋友圈晒图搭配
+						推荐的商品,方便潜在客户了解情况并购买。
+						1.倡导每个销售开启手机商店,以朋友圈做推广,迅速推动终端裂变式增长,极大促进销售
+						与老客户进行社交圈传播。例如销售员可以在微信朋友圈晒图搭配
+						推荐的商品,方便潜在客户了解情况并购买。
+						1.倡导每个销售开启手机商店,以朋友圈做推广,迅速推动终端裂变式增长,极大促进销售
+						与老客户进行社交圈传播。例如销售员可以在微信朋友圈晒图搭配
+						推荐的商品,方便潜在客户了解情况并购买。
+					</div>
+					
+				</div>
+				<!--商品介绍end-->
+				<div class="floor"></div>
+				<!--猜你喜欢-->
+				<div class="public_love">
+					<div class="pd-tb-8 pd-left-5 border-b217 bg-rgb-255">
+						猜你喜欢
+					</div>
+					<!--产品循环列表-->
+					<div class="width-50 f-left list">
+						<img src="img/swiper_demo1.jpg">
+						<div class="t-esis font-size-8 title">
+							芬尚女士香水秘密50ml000
+						</div>
+						<div class="price">
+							￥<div class="font-size-11 d-inlineBlock">749</div>
+							<div class="f-right liang">销售量2000</div>
+						</div>
+					</div>
+					<!--产品循环列表end-->
+					<div class="width-50 f-left list">
+						<img src="img/swiper_demo1.jpg">
+						<div class="t-esis font-size-8 title">
+							芬尚女士香水秘密50ml000
+						</div>
+						<div class="price">
+							￥<div class="font-size-11 d-inlineBlock">749</div>
+							<div class="f-right liang">销售量2000</div>
+						</div>
+					</div>
+					
+				</div>
+				<!--猜你喜欢end-->
+			</div>
+			<!--main  end-->
+			
+				
+			<!--遮罩层-->
+			<div class="mask" id="mask"></div>
+			<!--遮罩层-->
+			
+			
+				
+			<!--底部-->
+			<div class="footer bor-top-230">
+				<div class="foo-list pd-top-5">
+					<img src="img/pro-footer-1.png"/>
+					<em>客服</em>
+				</div>
+				<div class="foo-list pd-top-5" id="footer_collect">
+					<img src="img/pro-footer-2.png"/>
+					<em>收藏</em>
+				</div>
+				<a href="goods-list.html">
+					<div class="foo-list pd-top-5 relative">
+						<img src="img/pro-footer-3.png"/>
+						<em>购物车</em>
+						
+						<span class="tip br-50 font-size-8 t-esis" id="goods_number">1</span>
+					</div>
+				</a>
+				<div class="foo-list foo-btn foo-t1"  id="add_goods">
+					加入购物车
+				</div>
+				<div class="foo-list foo-btn foo-t2"  id="buy_now">
+					立即购买
+				</div>
+			</div>
+			<!--底部end-->
+			<div style="height: 3.7rem;"></div>
+			
+			
+			<!--底部滑出开始-->  
+			<!--选择规格时的滑出层（--选择--尺寸、颜色分类）（立即购买---加入购物车按钮）-->
+			<div class="public-footer-slide fixed" id="footer_slide">
+				<div class="top relative mg-lr-10">
+					<div class="img pd-5 bor-210 f-left br-3 relative f-left">
+						<img src="demoImg/swiper_demo1.png" />
+					</div>
+					<div class="right pd-left-5 font-size-9">
+						<div class="price pd-top-5">
+							￥500
+						</div>
+						<div class="pd-top-5">
+							库存<span id="stock">10</span>件
+						</div>
+						<div class="pd-top-5 select_ready">
+							已选：<span id="select_result"></span>
+						</div>
+						
+						<img src="img/close.png" class="close" id="close"/>
+					</div>
+				</div>
+				<div class="group">
+					<div class="list mg-lr-10 clear border-b217">
+						<div class="pd-tb-5">颜色</div>
+						<ul class="privite_select">
+							<li>粉色adfasd</li>
+							<li>白色fds</li>
+							<li>红色adf</li>
+							<li>黄色</li>
+							<li>红色</li>
+						</ul>
+					</div>
+					
+					<div class="list mg-lr-10 clear border-b217 pd-bottom-8">
+						<div class="pd-tb-5">大小</div>
+						<ul class="privite_select">
+							<li>50ml</li>
+							<li>100ml</li>
+							<li>50madsfl</li>
+							<li>100adsfml</li>
+							<li>50adfasdml</li>
+							<li>100ml</li>
+						</ul>
+					</div>
+					
+					<div class="list mg-lr-10 clear pd-tb-8 border-b217 mg-bottom-5">
+						<div class="pd-tb-5 f-left">购买数量</div>
+						<div class="btn_number">
+							<button class="btn_minues" type="button" id="minues" >-</button>
+							<input type="text" value="1" id="goodsValue" class="font-size-9"/>
+							<button class="btn_add" type="button" id="add">+</button>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<!--选择规格 显示的底部两个按钮-->
+				<div class="list_btn footer_btn_tab"><!--footer_btn_tab唯一性-->
+					<button type="button" class="goods_btn" id="sel_add_goods">加入购物车</button>
+					<button type="button" class="buy_btn" id="sel_buy_now">立即购买</button>
+				</div>
+				<!--立即购买显示的确定按钮  -----立即购买-->
+				<div class="list_btn footer_btn_tab" style="display: none;">
+					<button type="button" class="confirm" id="confirm_buy">确定</button>
+				</div>
+				<!--加入购物车显示确定按钮 ----加入购物车------>
+				<div class="list_btn footer_btn_tab" style="display: none;">
+					<button type="button" class="confirm" id="confirm_add_goods">确定</button>
+				</div>
+			</div>
+			<!--选择规格时的滑出层（--选择--尺寸、颜色分类）（立即购买----加入购物车按钮）end-->
+			
+			
+			<!--底部滑出(优惠券领取  ---领取-----领券----)-->
+			<div class="fixed quan" id="quan">
+				<div class="title t-center relative">
+					领取优惠券
+					<img src="img/close.png" class="close" id="quan_close"/>
+				</div>
+				<div class="group">
+					<div class="br-3 mg-10 pd-8 quan_list quan_active">
+						<div class="quan_left f-left width-75">
+							<div class="pd-bottom-10">
+								全场适用
+							</div>
+							<div class="font-size-8">
+								满100使用
+							</div>
+							<div class="font-size-8">
+								有效期2017.03.02-2017.05.31
+							</div>
+						</div>
+						<div class="quan_right relative">
+							<div class="t-center">
+								￥<span class="font-size-15">5</span>
+							</div>
+							<button type="button" class="quan_btn">立即领取</button>
+						</div>
+						<div class="clear"></div>
+					</div>
+					
+					<div class="br-3 mg-10 pd-8 quan_list quan_active quan_gray">
+						<div class="quan_left f-left width-75">
+							<div class="pd-bottom-10">
+								全场适用
+							</div>
+							<div class="font-size-8">
+								满100使用
+							</div>
+							<div class="font-size-8">
+								有效期2017.03.02-2017.05.31
+							</div>
+						</div>
+						<div class="quan_right relative">
+							<div class="t-center">
+								￥<span class="font-size-15">5</span>
+							</div>
+							<button type="button" class="quan_btn">已领取</button>
+						</div>
+						<div class="clear"></div>
+					</div>
+					
+					<div class="br-3 mg-10 pd-8 quan_list quan_active">
+						<div class="quan_left f-left width-75">
+							<div class="pd-bottom-10">
+								全场适用
+							</div>
+							<div class="font-size-8">
+								满100使用
+							</div>
+							<div class="font-size-8">
+								有效期2017.03.02-2017.05.31
+							</div>
+						</div>
+						<div class="quan_right relative">
+							<div class="t-center">
+								￥<span class="font-size-15">5</span>
+							</div>
+							<button type="button" class="quan_btn">立即领取</button>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<button class="quan_confirm" id="quan_confirm">完成</button>
+			</div>
+			<!--底部滑出（优惠券领取  ---领取-----领券）end------>
+			
+			
+			<!--底部滑出（放心购买服务----赠送保险---七天无理由退换货）-->
+			<div class="fixed quan seaver" id="server">
+				<div class="title t-center relative border-b217">
+					放心购买服务
+					<img src="img/close.png" class="close" id="server_close"/>
+				</div>
+				<div class="group pd-lr-10">
+
+					<div class="seaver_list pd-tb-10">
+						<div class="seaver_left bao_icon">
+						</div>
+						<div class="seaver_right overhidden">
+							<div class="sea_title ">正品保证</div>
+							<div class="sea_con">该商品有中国人保承保正品保证险</div>
+						</div>
+					</div>
+					
+					<div class="seaver_list pd-bottom-10">
+						<div class="seaver_left zeng_icon">
+						</div>
+						<div class="seaver_right overhidden">
+							<div class="sea_title ">赠送保险</div>
+							<div class="sea_con">卖家为您购买的商品投保退货运费险</div>
+						</div>
+					</div>
+					
+					<div class="seaver_list pd-bottom-20">
+						<div class="seaver_left qi_icon">
+						</div>
+						<div class="seaver_right overhidden">
+							<div class="sea_title ">七天无理由退换</div>
+							<div class="sea_con">消费者满足七天无理由退换货申请条件的前提下，可以提出“七天无理由退换货”的申请</div>
+						</div>
+					</div>
+				</div>
+				<button class="quan_confirm" id="server_confirm">确定</button>
+			</div>
+			<!--底部滑出（放心购买服务----赠送保险---七天无理由退换货）end-->
+			
+			<!--底部滑出（促销----满100减100----促销）-->
+			<div class="fixed quan seaver sales" id="sales_slide">
+				<div class="title t-center relative border-b217">
+					促销
+					<img src="img/close.png" class="close" id="sales_close"/>
+				</div>
+				<div class="group pd-lr-10">
+
+					<div class="seaver_list pd-tb-10">
+						<div class="sale_left">
+							赠券
+						</div>
+						<div class="seaver_right overhidden">
+							<div class="sea_title ">满200赠送20元抵用券</div>
+							<div class="sea_con">该抵用券可用于下次购买抵用付款</div>
+						</div>
+					</div>
+					
+					<div class="seaver_list pd-bottom-10">
+						<div class="sale_left">
+							限购
+						</div>
+						<div class="seaver_right overhidden">
+							<div class="sea_title ">每个账号仅限1件</div>
+							<div class="sea_con">该商品没人每个账号仅限购买1件</div>
+						</div>
+					</div>
+					
+					<div class="seaver_list pd-bottom-20">
+						<div class="sale_left">
+							积分
+						</div>
+						<div class="seaver_right overhidden">
+							<div class="sea_title ">购买可得50积分</div>
+						</div>
+					</div>
+				</div>
+				<button class="quan_confirm" id="sales_confirm">确定</button>
+			</div>
+			<!--底部滑出（促销----满100减100----促销）end-->
+			
+			
+		</div>
+		<script src="js/font-initial.js"></script>
+		<script src="js/swiper.min.js"></script>
+		<script type="text/javascript" src="js/moudle.js" ></script>
+		<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
+		<script>
+			
+	    var swiper = new Swiper('.swiper-container', {
+	        pagination: '.swiper-pagination',
+	        paginationClickable: true
+	    });
+		
+		
+		document.ready(function(){
+			var select_result = $("#select_result");//选择的结果，已选
+			var footer_btn_tab = document.getElementsByClassName("footer_btn_tab");
+			var quan_active = document.getElementById("quan").getElementsByClassName("quan_active");//领券  立即领券时用到的class
+			var privite_select = document.getElementsByClassName("privite_select");//选择规格时的class；
+			
+			var str = [];//接收规格（颜色，大小等）;
+			
+			var confirm_buy = document.getElementById("confirm_buy")//立即购买滑出后的id确定按钮
+			var confirm_add_goods = document.getElementById("confirm_add_goods");//加入购物车滑出后的确定id按钮
+			var goodsValue = document.getElementById("goodsValue");//购买数量的id
+			var goods_number = document.getElementById("goods_number")//购物车数量id
+			var sel_add_goods = document.getElementById("sel_add_goods")//选择规格后的加入购物车的id （滑出层）
+			var sel_buy_now = document.getElementById("sel_buy_now")//选择规格后的立即购买id （滑出层）
+			
+			
+			
+			//快速导航滑出效果---快速导航-------快速导航----
+			show_slide({
+    			el:"aside_left",      //点击的id
+    			slideEl:"aside_wrap", //滑出的id
+    			mask:"mask",          //遮罩层的id
+    			sty:"right:0;"	//设置样式	
+    			
+    		}) 
+    		//快速导航滑出效果---快速导航-------快速导航----end
+    		
+    		//头部提示信息点击
+    		$("#nav_btn").click(function(){
+    			$("#hide_nav").toggle();
+    		})
+    		//头部提示信息点击end
+    		
+    		
+    		//我的收藏
+    		collect_change("footer_collect","收藏成功","已取消收藏");
+    		//我的收藏  end
+    		
+			//底部滑出后后选择规格   已选---已选---已选
+			str.length = privite_select.length;//初始化数组的长度
+			for(var i=0 ; i<privite_select.length ; i++){
+				var privite_li = privite_select[i].getElementsByTagName("li");
+				for(var j=0 ; j<privite_li.length ; j++){
+					privite_li[j].onclick = function(j,i){
+						return function(){
+							$(this).addClass("active");
+							$(this).siblings().removeClass("active");
+							//$(this).toggleClass("active").siblings().removeClass("active");
+							str[i]='"'+$(this).text()+'"';
+				  			select_result.text(str.join());
+						}
+					}(j,i)
+				}
+			}
+			i=null;
+    		//底部滑出后后选择规格   已选---已选---已选end
+    		
+			//底部滑出后加减购买数量  ---购买数量---ｓｓｆ
+    		buy_number({
+    			stock:"stock",//库存id
+    			minues:"minues",//减库存id
+    			add:"add",//加库存id
+    			textValue:"goodsValue"//购买的数量id
+    		});
+    		//底部滑出后加减购买数量  ---购买数量---
+    		
+			//点击选择时底部滑出效果
+    		goods_footer_slideDown("footer_slide");
+    		$("#show_selected_wrap").click(function(){
+    			for(var i=0 ; i<footer_btn_tab.length;i++){
+    				footer_btn_tab[i].setAttribute("style","display: none;");
+    			}
+    			i=null;
+    			footer_btn_tab[0].setAttribute("style","display: block;");
+    			mask_show("mask",109)
+    			goods_footer_slideUp("footer_slide");//滑出
+    		})
+    		$("#close").click(function(){
+    			mask_hide("mask")//隐藏遮罩层
+      			goods_footer_slideDown("footer_slide");//滑下
+    		})
+    		//点击选择时底部滑出效果end
+    		
+    		
+    		//滑出两个按钮的时候 -----加入购物车--加入购物车-----
+    		sel_add_goods.onclick = function(){
+    			for(var i=0 ; i<str.length ; i++){
+    				if(str[i]==undefined){
+    					_tip("请选择颜色/大小");
+    					return false;
+    				}
+    			}
+    			if(parseInt(goodsValue.value)<=0){
+    				_tip("请选择购买数量");
+    				return false;
+    			}
+    			str[privite_select.length]=parseInt(goodsValue.value)
+    			alert(str);
+    			goods_footer_slideDown("footer_slide");//底部滑出
+    			mask_hide("mask");//隐藏遮罩层
+    			_tip("加入购物车成功");//提示信息
+    			goods_number.innerHTML = str[str.length-1];
+    		}
+    		//滑出两个按钮的时候 -----加入购物车--加入购物车-----end
+    		
+    		//滑出两个按钮的时候 -----立即购买--立即购买----
+    		sel_buy_now.onclick = function(){
+    			for(var i=0 ; i<str.length ; i++){
+    				if(str[i]==undefined){
+    					_tip("请选择颜色/大小");
+    					return false;
+    				}
+    			}
+    			
+    			if(parseInt(goodsValue.value)<=0){
+    				_tip("请选择购买数量");
+    				return false;
+    			}
+    			str[privite_select.length]=parseInt(goodsValue.value)
+    			alert(str);
+    		}
+    		//滑出两个按钮的时候 -----立即购买--立即购买-----end
+    		
+
+			//点击立即购买滑出--立即购买滑出---
+    		$("#buy_now").click(function(){  			
+	    		for(var i=0 ; i<footer_btn_tab.length;i++){
+    				footer_btn_tab[i].setAttribute("style","display: none;");
+    			}
+	    		i=null;
+    			footer_btn_tab[1].setAttribute("style","display: block;");
+	    		mask_show("mask",109)//显示遮罩层
+	    		goods_footer_slideUp("footer_slide");//滑出
+    		})
+    		//点击立即购买滑出--立即购买滑出---end
+    		
+    		//点击立即购买---滑出后的确定按钮----
+    		confirm_buy.onclick = function(){
+    			for(var i=0 ; i<str.length ; i++){
+    				if(str[i]==undefined){
+    					_tip("请选择颜色/大小");
+    					return false;
+    				}
+    			}
+    			
+    			if(parseInt(goodsValue.value)<=0){
+    				_tip("请选择购买数量");
+    				return false;
+    			}
+    			str[privite_select.length]=parseInt(goodsValue.value)
+    			alert(str);
+    		}
+    		//点击立即购买---滑出后的确定按钮----end
+    		
+    		
+			//加入购物车滑出   ----加入购物车----
+    		$("#add_goods").click(function(){  			
+	    		for(var i=0 ; i<footer_btn_tab.length;i++){
+    				footer_btn_tab[i].setAttribute("style","display: none;");
+    			}
+	    		i=null;
+    			footer_btn_tab[2].setAttribute("style","display: block;");
+	    		mask_show("mask",109)//显示遮罩层
+	    		goods_footer_slideUp("footer_slide");//滑出
+    		})
+    		//加入购物车滑出   ----加入购物车----end
+    		
+    		//点击加入购物车---滑出后的确定按钮----
+    		confirm_add_goods.onclick = function(){
+    			for(var i=0 ; i<str.length ; i++){
+    				if(str[i]==undefined){
+    					_tip("请选择颜色/大小");
+    					return false;
+    				}
+    			}
+    			if(parseInt(goodsValue.value)<=0){
+    				_tip("请选择购买数量");
+    				return false;
+    			}
+    			str[privite_select.length]=parseInt(goodsValue.value)
+    			alert(str);
+    			goods_footer_slideDown("footer_slide");//底部滑出
+    			mask_hide("mask");//隐藏遮罩层
+    			_tip("加入购物车成功");//提示信息
+    			goods_number.innerHTML = str[str.length-1];
+    		}
+    		//点击加入购物车---滑出后的确定按钮----end
+    		
+    		
+    		
+			//领券  领券------效果
+    		goods_footer_slideDown("quan");//初始化滑出部分移到底部 quan为滑块最外层id
+    		$("#coupon_wrap").click(function(){
+    			mask_show("mask",120);
+    			goods_footer_slideUp("quan")
+    		})
+    		$("#quan_close").click(function(){//领券关闭图标
+    			goods_footer_slideDown("quan");
+    			mask_hide("mask");
+    		})
+    		$("#quan_confirm").click(function(){  //领券的完成按钮
+    			goods_footer_slideDown("quan");
+    			mask_hide("mask");
+    		})
+    		
+    		//点击领取----点击领取------立即领取
+    		for(var i=0 ; i<quan_active.length ; i++){
+    			var getClass = quan_active[i].getAttribute("class");
+				if(getClass.indexOf("quan_gray")==-1){
+					quan_active[i].getElementsByTagName("button")[0].onclick = function(i){
+						return function(){
+							this.innerHTML="已领取";
+							//_tip("领取成功");
+							var cls = this.parentNode.parentNode.getAttribute("class");
+							this.parentNode.parentNode.setAttribute("class",cls+" quan_gray");
+						}
+					}(i)
+				}
+    		}//点击领取----点击领取------end
+    		i=null;
+    		//领券  领券------效果end
+    		
+    		//放心购买服务----赠送保险---七天无理由退换货end
+    		goods_footer_slideDown("server");//初始化滑出部分移到底部 server为滑块最外层id
+    		$("#compensate").click(function(){
+    			mask_show("mask",120);
+    			goods_footer_slideUp("server")
+    		})
+    		$("#server_close").click(function(){//关闭图标
+    			goods_footer_slideDown("server");
+    			mask_hide("mask");
+    		})
+    		$("#server_confirm").click(function(){  //确定按钮
+    			goods_footer_slideDown("server");
+    			mask_hide("mask");
+    		})
+    		//放心购买服务----赠送保险---七天无理由退换货end
+    		
+    		//底部滑出（促销----满100减100----促销）
+    		goods_footer_slideDown("sales_slide");//初始化滑出部分移到底部 server为滑块最外层id
+    		$("#sales").click(function(){
+    			mask_show("mask",120);
+    			goods_footer_slideUp("sales_slide")
+    		})
+    		$("#sales_close").click(function(){//关闭图标
+    			goods_footer_slideDown("sales_slide");
+    			mask_hide("mask");
+    		})
+    		$("#sales_confirm").click(function(){  //确定按钮
+    			goods_footer_slideDown("sales_slide");
+    			mask_hide("mask");
+    		})
+    		//底部滑出（促销----满100减100----促销）--end
+		})
+    	
+    		 
+
+		</script>
+	</body>
+</html>

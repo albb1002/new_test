@@ -1,0 +1,100 @@
+
+/*商品详情*/
+.product-info .swiper-container{background: #fff;}
+.product-info .swiper-slide img{width: 22rem;height: 22rem;}
+.product-info .swiper-pagination-bullet{background: rgb(255,255,255);width: 0.6rem;margin:0 0.5rem !important;height: 0.6rem;border: 0.1rem solid rgb(216,216,216);opacity: 1;}
+.product-info .swiper-pagination-bullet-active{background: rgb(242,48,49);border-color: rgb(242,48,49);}
+.product-info .head{position: relative;width: 100%;z-index: 99;}
+.product-info .head span{line-height: 0.28rem;display: block;width:2rem;height: 2rem;color: white;background: rgba(0,0,0,0.5);font-size: 2rem;position: absolute;border-radius: 50%;-webkit-border-radius: 50%;}
+.product-info .head .right{right: 0.5rem;top: 0.5rem;background: url(../img/p_r_icon.png) no-repeat center;background-size: 1.6rem 1.6rem;background-color: rgba(0,0,0,0.5);;}
+.product-info .head .left{left: 0.5rem;top: 0.5rem;background: url(../img/p_left.png) no-repeat center;background-size: 1.6rem 1.6rem;background-color: rgba(0,0,0,0.5);;}
+.product-info .head span img{width: 80%;}
+
+/*main*/
+.product-info .main{background: #fff;}
+.product-info .main .name{color: #000000;line-height: 1.5rem;font-size: 0.9rem;padding: 0 0.5rem 0.5rem 0.5rem;font-weight: bold;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;word-break: break-all;text-overflow: ellipsis;}
+.product-info .main .pd{padding: 0.8rem 0.5rem;}
+.product-info .main .now{font-size: 1.4rem;}
+.product-info .main .odd{margin-left: 0.6rem;text-decoration:line-through;color: rgb(144,144,144);}
+.product-info .main .t-list{color: rgb(96,96,96);padding: 0.2rem 0.5rem 0.8rem 0.5rem;font-size: 0.8rem;}
+.product-info .main .t-list:after{content: "";display: block; clear: both;}
+.product-info .main .price{color: rgb(242,48,49);padding: 0 0.5rem;font-size: 0.8rem;}
+.product-info .main .t-list .t-l{float: left;width: 33.33%;color: rgb(96,96,96);}
+.product-info .main .t-list .t-end{text-align: right;}
+.product-info .main .coupon{font-size: 0.8rem;background: url(../img/right.png) no-repeat center right;background-size: 1rem 1rem;background-position: 20.5rem 1rem}
+.product-info .main .yunfei{background: #FFFFFF;}
+.product-info .main .sales{background-position: 20.5rem 1.5rem}
+.product-info .main .coupon .cou{float: left;color: rgb(96,96,96);font-size: 0.8rem;line-height: 1.5rem;}
+.product-info .main .coupon .cou-l{display: inline-block;margin-left: 0.5rem;padding: 0.1rem 0.3rem;color: rgb(236,44,78);border: 1px solid rgb(236,44,78);font-size: 0.8rem;}
+.product-info .main .coupon .cou-h{height: 3rem;}
+.product-info .main .coupon .zen{color: rgb(242,48,49);border: 1px solid rgb(242,48,49);padding: 0.1rem 0.3rem;margin-right: 0.1rem;}
+.product-info .main .sel-col{line-height: 1.5rem;}
+.product-info .main .coupon .fake{line-height: 1.5rem;}
+.product-info .main .coupon .fake img{width: 0.8rem;height: 0.8rem;margin-right: 0.3rem;}
+.product-info .main .coupon .com-rd{color: rgb(242,48,49);}
+.product-info .main .comment-list{}
+.product-info .main .comment-list .comment-img{width: 22.5%;margin-right: 2.5%;}
+
+.product-info .main .comment-list .judge{width: 5rem;position: absolute;right: 0;top: 0.6rem;}
+.product-info .main .comment-list .judge img{width: 5rem !important;height: 1rem !important;}
+.product-info .main .comment-list .title img{width: 2rem;height: 2rem;}
+.product-info .main .comment-list .comment-name{position: relative;overflow: hidden;padding-left: 0.5rem;}
+.product-info .main .comment-list .comment-name .level{color: white;background: rgb(184,185,187);display: inline-block;padding: 0.1rem 0.3rem;}
+.product-info .main .suggest img{width: 100%;float: left;}
+.product-info .main .suggest .suggest-con{font-size: 0.8rem;line-height: 1.3rem;color: rgb(93,93,93);}
+.product-info .main .suggest:after{content: "";display: block;clear: both;}
+/*footer*/
+.product-info .footer{position: fixed;width: 100%;bottom: 0;left: 0;background: #fff;color: rgb(96,96,96);max-width: 640px;}
+@media only screen and (min-width: 640px){
+	.product-info .footer{left: 50%;margin-left: -320px;}
+}
+.product-info .footer .tip{position: absolute;display: block;width: 1rem;height: 1rem;right: 0.3rem;top: 0.3rem;background: rgb(242,48,49);color: white;text-align: center;line-height: 1rem;}
+.product-info .footer .foo-list{float: left;width:15%;text-align: center;}
+.product-info .footer .foo-list img{width: 1.3rem;height: 1.3rem;}
+.product-info .footer em{font-style: normal;font-size: 0.8rem;display: block;text-align: center;padding-top: 0.05rem;}
+.product-info .footer .foo-btn{width: 27.5%;color: white;height: 100%;line-height: 3.5rem;font-size: 0.9rem;}
+.product-info .footer .foo-t1{background: rgb(255,150,0);}
+.product-info .footer .foo-t2{background: rgb(242,48,49);}
+
+
+/*footer-slide 底部滑出部分*/
+.product-info .footer-slide{bottom:0;left: 0;width: 100%;z-index: 110;background: #fff;opacity: 0;transition: 0.5s bottom,1s opacity;-webkit-transition: 0.5s bottom,1s opacity;}
+.product-info .footer-slide .group{max-height: 15rem;overflow: scroll;clear: both;}
+.product-info .footer-slide .top .close{position: absolute;top: 0.5rem;right: 0rem;width: 1.5rem;height: 1.5rem;}
+.product-info .footer-slide .select_ready{word-break: break-all;}
+.product-info .footer-slide .list{font-size: 0.9rem;}
+.product-info .footer-slide .list ul .active{border: rgb(242,48,49);border: 1px solid rgb(242,48,49);color: rgb(242,48,49);}
+.product-info .footer-slide .list ul li{display:inline-block; margin-right: 0.5rem;border:1px solid rgb(200,200,200);color: rgb(146,146,146);padding: 0.2rem 1.25rem;border-radius: 0.2rem;-webkit-border-radius: 0.2rem;margin-bottom: 0.5rem;}
+@media only screen and (min-width: 640px) {
+	.product-info .footer-slide{width: 640px;left: 50%;margin-left: -320px;}
+}
+.product-info .footer-slide .img{top: -1rem;background: #fff; width: 6rem;height: 6rem;}
+.product-info .footer-slide .right{overflow: hidden;}
+.product-info .footer-slide .right .price{color: rgb(242,48,49);font-size: 1rem;}
+.product-info .footer-slide .img img{width: 6rem;height: 6rem;}
+
+.product-info .quan{background: #fff;bottom: 0;left: 0;color: white;width: 100%;font-size: 0.9rem;z-index: 120;opacity: 0;transition: 0.5s bottom,1s opacity;-webkit-transition: 0.5s bottom,1s opacity;}
+@media only screen and (min-width: 640px) {
+	.product-info .quan{width: 640px;left: 50%;margin-left: -320px;}
+}
+.product-info .quan .title{color: black;padding: 0.8rem 1rem;}
+.product-info .quan .title .close{position: absolute;top: 0.8rem;right: 1rem;width: 1.5rem;height: 1.5rem;}
+.product-info .quan .quan_active{background: rgb(242,48,49);transition: 0.5s background-color;-webkit-transition: 0.5s background-color;}
+.product-info .quan .quan_left{border-right: 1px dashed #fff;}
+.product-info .quan .quan_right{overflow: hidden;}
+.product-info .quan .quan_btn{background: rgba(242,48,49,0);width: 100%;color: #fff;padding-top: 1.3rem;text-align: center;font-size: 0.8rem;}
+.product-info .quan .quan_list{padding-right: 0;}
+.product-info .quan .quan_gray{background: rgb(242,242,242); color: rgb(153,153,153);}
+.product-info .quan .quan_gray .quan_btn{color: rgb(153,153,153);}
+.product-info .quan .quan_gray .quan_left{border-right: 1px dashed rgb(153,153,153);}
+.product-info .quan .quan_confirm{width: 100%;background: rgb(242,48,49);color: white;padding: 0.8rem 0;font-size: 0.9rem;}
+.product-info .quan .group{max-height: 15rem;overflow: scroll;clear: both;}
+.product-info .seaver{color: rgb(153,153,153);}
+.product-info .seaver .title{color: rgb(242,48,49);}
+.product-info .seaver .seaver_right .sea_title{color: black;font-size: 0.9rem;padding-bottom: 0.3rem;}
+.product-info .seaver .seaver_right .sea_con{font-size: 0.75rem;}
+.product-info .seaver .seaver_left{width: 2rem;height: 2rem;background: red;float: left;background: url(../img/bao.png) no-repeat center left;background-size: 1.5rem 1.5rem;}
+.product-info .seaver .zeng_icon{background-image: url(../img/zeng.png);}
+.product-info .seaver .qi_icon{background-image: url(../img/qi.png);}
+.product-info .sales .title{color: #000000;}
+.product-info .sales .sale_left{float: left;font-size: 0.8rem;color: rgb(242,48,49);border: 1px solid rgb(242,48,49);padding: 0 0.2rem;margin-right: 0.3rem;}
