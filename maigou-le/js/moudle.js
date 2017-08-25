@@ -178,7 +178,12 @@ function goods_footer_slideDown(id){
 function goods_footer_slideUp(id,args){
 	var idNode = document.getElementById(id);
 	idNode.setAttribute("style","bottom:0px;opacity:1")
-	
+}
+
+//购物车重新选择规格
+function goods_f_up(id,args){
+	var idNode = document.getElementById(id);
+	idNode.setAttribute("style","bottom:0px;opacity:1")
 	if(args.arr){
 		var inn = "";
 		//sel_cls 底部滑出后的ulclass
@@ -188,7 +193,7 @@ function goods_footer_slideUp(id,args){
 		//str1:str,//更改后的值 数组
 		//shock:"private-stock",//当前可购买的库存的class;
 		//goodsValue:"goodsValue"//滑出后的库存textid
-		if(args.sel_cls){
+		if(typeof args.sel_cls == "object"){
 			var arr = args.arr;
 			args.str1.length=arr.length;
 			for(var i=0 ; i<args.sel_cls.length ; i++){
@@ -216,8 +221,8 @@ function goods_footer_slideUp(id,args){
 		
 		args.result.innerHTML = args.str1;
 	}
-	
 }
+
 
 //我的收藏  改变图标
 function collect_change(id,message,message1){
@@ -550,7 +555,29 @@ function get_class_len(cls,sx){
 	
 }
 
+function check_name(val){
+	var check_name =  /(?:[\u4E00-\u9FFF]{1,8}·\u4E00-\u9FFF]{1,8})|(?:[\u4E00-\u9FFF]{2,5})/
+	if(!check_name.test(val)){
+		_tip("请输入正确的姓名")
+		return false;
+	}
+}
 
+function check_phone(val){
+	var check_phone = /^1[34578]\d{9}$/;
+	if(!check_phone.test(val)){
+		_tip("请输入正确的手机号码");
+		return false;
+	}
+}
+
+function check_special(val){
+	var re =/[`~!@#$%^&*_+<>{}\/'[\]]/im;
+	if(re.test(val)){
+		_tip("不能输入特殊字符");
+		return false;
+	}
+}
 
 
 

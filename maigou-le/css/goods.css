@@ -15,7 +15,7 @@ border-radius: 50%;-webkit-border-radius: 50%;-ms-border-radius:50%;-moz-border-
 .goods-list .goods-img{width: 5rem;height: 5rem;padding: 0.7rem;margin-left: 2.5rem;border: 1px solid rgb(217,217,217);}
 .goods-list .goods-img img{width: 100%;height: 100%;}
 .goods-list .goods-con{position: absolute;width: 12rem;right: 0.5rem;top: 0.5rem;}
-.goods-list .goods-con h4{font-weight: normal;}
+.goods-list .goods-con h4{font-weight: normal;display: -webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow: hidden;word-break: break-all;text-overflow: ellipsis;}
 .goods-list .select-gz{color: rgb(153,153,153);padding: 0.4rem 1rem 0.4rem 0.2rem;border: 1px solid rgb(217,217,217);margin: 0.3rem 0;max-height: 1rem;line-height: 1.2rem;
 background: url(../img/bottom.png) no-repeat center right;background-size: 1rem 0.5rem;background-position: 98% 0.75rem;word-break: break-all;overflow: hidden;}
 .goods-list .goods-price{font-size: 1.3rem;color: rgb(242,48,49);}

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/module.css" />
+		<link rel="stylesheet" href="css/order.css" />
+		<link rel="stylesheet" href="css/changeCity.css" />
+	</head>
+	<body>
+		<div class="wrap order">
+			<div class="public-back-wrap">
+				<a class="public-back-a" onclick="window.history.back()" id="goods_back"></a>
+				确认订单
+			</div>
+			<!--选择地址--没有地址的情况-->
+			<div class="address-top t-rgb-153">
+				选择收货人
+				<img src="img/right.png" class="right-icon"/>
+			</div>
+			<!--选择地址--没有地址的情况--end-->
+			
+			<!--选择地址--有地址的情况-->
+			<div class="add-has">
+				<img src="img/od-address.png" class="add-icon"/>
+				<div class="add-inf f-left">
+					<div class="mg-bottom-2">
+						收件人:某某某
+						<span class="mg-left-5">15355555552</span>
+					</div>
+					<div class="t-rgb-153 t-esis-2">
+						福建省厦门市思明区软件园二期观日路54号之一502adfasdfasdfasdfsadfasdfasdfasdfasd
+					</div>
+				</div>
+				<img src="img/right.png" class="right-icon"/>
+			</div>
+			<!--选择地址--有地址的情况--end-->
+			
+			<!--选择地址--有地址的情况-->
+			<div class="add-has">
+				<img src="img/od-address.png" class="add-icon"/>
+				<div class="add-inf f-left">
+					<div class="mg-bottom-2">
+						收件人:某某某
+						<span class="mg-left-5">15355555552</span>
+					</div>
+					<div class="t-rgb-153">
+						<div class="t-esis">世贸总店自提 0592-3235666adfasdfasdfasd</div>
+						<div class="t-esis">厦门市思明区软件园二期观日路54号楼fasdfasdfasdf</div>
+					</div>
+				</div>
+				<img src="img/right.png" class="right-icon"/>
+			</div>
+			<!--选择地址--有地址的情况--end-->
+			
+			
+			
+			<!--产品信息-->
+			<div class="od-list mg-top-10">
+				<div class="title border-b217 title-ng">掌沃自营</div>
+				<div class="od-con border-b217">
+					<div class="od-con-img br-3 mg-right-5">
+						<img src="demoImg/swiper_demo1.png"/>
+					</div>
+					<div class="od-cen f-left">
+						<h1 class="mg-bottom-2">芬尚女士香水秘密50ml 香水女士持久淡香清新 专柜正品包邮</h1>
+						<div class="mg-bottom-2">编号:13231532153</div>
+						<div class="mg-bottom-2">规格:粉红，50ml</div>
+						<div class="display-none" id="stock">5</div>
+						<div class="btn_number border-btn-number">
+							<button class="btn_minues" type="button" id="minues">-</button>
+							<input type="text" value="1" class="font-size-9  gz-value" id="kucun_number"/>
+							<button class="btn_add" type="button" id="add">+</button>
+						</div>
+					</div>
+					<div class="od-price">
+						<div class="price">￥298.00</div>
+						<div class="count">x1</div>
+					</div>
+				</div>
+				
+				<div class="title border-b217">
+					配送方式
+					<span id="sel_peisong">快递 ￥6.00</span>
+				</div>
+			</div>
+			<!--产品信息end-->
+			
+			
+			<!--优惠券等信息-->
+			<div class="od-or">
+				<div class="title border-b217">
+					优惠券
+					<span class="t-rgb-153" id="sel_coupon">无可用</span>
+				</div>
+				
+				<div class="title border-b217 title-ng">
+					可用260积分抵￥2.6
+					<span><input type="checkbox" /></span>
+				</div>
+				
+				<div class="title border-b217 title-ng">
+					可用余额35
+					<span><input type="checkbox" /></span>
+				</div>
+			</div>
+			<!--优惠券等信息-->
+			
+			
+			<!--支付-->
+			<div class="od-pay mg-top-10">
+				<div class="title border-b217 title-ng">
+					<img src="img/od-weixin.png" class="pay-icon"/>
+					微信支付
+					<span><input type="checkbox" /></span>
+				</div>
+				<div class="title border-b217 title-ng">
+					<img src="img/od-zfb.png" class="pay-icon"/>
+					支付宝支付
+					<span><input type="checkbox" /></span>
+				</div>
+			</div>
+			<!--支付--end-->
+			
+			<!--留言-->
+			<div class="od-mes mg-top-10">
+				<div class="title border-b217">
+					发票信息
+					<span id="mingxi">公司 明细</span>
+				</div>
+				<div class="title border-b217 title-ng">
+					<div class="f-left mg-right-5">给卖家留言:</div>
+					<div class="overhidden">
+						<input type="text" placeholder="对本次交易的说明（选填）"/>
+					</div>
+				</div>
+			</div>
+			<!--留言--end-->
+			
+			<!--提交-->
+			<div class="od-oder mg-top-10 pd-5 bg-rgb-255 t-center">
+				<div class="pd-tb-10">
+					总价:<span class="price">￥301.22</span>
+				</div>
+				<button type="button" class="br-3">
+					提交订单
+				</button>
+			</div>
+			<!--提交---end-->
+			<div class="mask" id="mask">
+				
+			</div>
+			<!--底部滑块-->
+			<!--配送方式-->
+			<div class="public-footer-slide fixed" id="peisong">
+				<div class="relative public-info border-b217">
+					配送方式
+					<img src="img/close.png" class="close" id="close"/>
+				</div>
+				
+				<div class="group">
+					<div class="public-info t-left border-b217">
+						快递 ￥6.00
+						<input type="checkbox" class="f-right"/>
+					</div>
+					<div class="public-info t-left border-b217">
+						门店自提
+						<input type="checkbox" class="f-right"/>
+					</div>
+				</div>
+				
+				<div class="list_btn footer_btn_tab">
+					<button type="button" class="confirm" id="confirm_buy">确定</button>
+				</div>
+			</div>
+			<!--配送方式---end-->
+			
+			<!--优惠券-->
+			<div class="public-footer-slide fixed" id="coupon">
+				<div class="relative public-info border-b217">
+					选择优惠券
+					<img src="img/close.png" class="close" id="cp_close"/>
+				</div>
+				
+				<div class="group">
+					
+					<!--代金券列表-->
+					<div class="cp-list br-3 active">
+						<div class="cp-img">
+							<div class="pd-top-5">￥<span class="price">10</span></div>
+							<div class="pd-top-3">满<span>10</span>使用</div>
+						</div>
+						<div class="cp-con overhidden">
+							<div class="cp-name">
+								<span class="cp-quan br-2">代金券</span>
+								限购200 巧克力味小熊饼干
+							</div>
+							<div class="cp-time">2011.10.02-2015.22.22</div>
+						</div>
+					</div>
+					<!--代金券列表--end-->
+					
+					<div class="cp-list br-3">
+						<div class="cp-img">
+							<div class="pd-top-5">￥<span class="price">10</span></div>
+							<div class="pd-top-3">满<span>10</span>使用</div>
+						</div>
+						<div class="cp-con overhidden">
+							<div class="cp-name">
+								<span class="cp-quan br-2">代金券</span>
+								限购200 巧克力味小熊饼干
+							</div>
+							<div class="cp-time">2011.10.02-2015.22.22</div>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="list_btn footer_btn_tab">
+					<button type="button" class="confirm" id="cp_confirm">确定</button>
+				</div>
+			</div>
+			<!--优惠券--end-->
+			<!--没有优惠券的情况-->
+			<div class="public-footer-slide fixed" id="ncoupon">
+				<div class="relative public-info border-b217">
+					选择优惠券
+					<img src="img/close.png" class="close" id="ncp_close"/>
+				</div>
+				
+				<div class="group t-center">
+					<div class="no-coupon">
+						<div class="t-rgb-153">
+							很遗憾
+						</div>
+						<div class="t-rgb-153 mg-top-5">
+							您暂无可以使用的优惠券
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="list_btn footer_btn_tab">
+					<button type="button" class="confirm" id="ncp_confirm">确定</button>
+				</div>
+			</div>
+			<!--没有优惠券的情况--end-->
+			
+			<!--填写收货人-->
+			<div class="public-footer-slide fixed" id="edi_per" style="opacity: 1;">
+				<div class="relative public-info border-b217">
+					编辑收货人
+					<img src="img/close.png" class="close" id="edi_close"/>
+				</div>
+				
+				<div class="group">
+					<div class="edi-list">
+						<span>收货人</span>
+						<div class="edi-txt"><input type="text" placeholder="收货人名字" id='userName'/></div>
+					</div>
+					<div class="edi-list">
+						<span>联系电话</span>
+						<div class="edi-txt"><input type="text" placeholder="请填写手机号码" id="userPhone"/></div>
+					</div>
+					
+					<div class="edi-list">
+						<span>选择地址</span>
+						<div class="edi-txt"><input type="text" placeholder="点击选择省市县" id="city" readonly="readonly"/></div>
+					</div>
+					<div class="edi-list">
+						<span>详细地址</span>
+						<div class="edi-txt"><input type="text" placeholder="街道门牌信息" id="userAddress_m"/></div>
+					</div>
+					<div class="edi-list mg-bottom-10">
+						<input type="checkbox" class="br-50 f-left mg-right-5" checked="checked"/>
+						<div class="edi-txt t-rgb-153">设为默认地址</div>
+					</div>
+					
+				</div>
+				
+				<div class="list_btn footer_btn_tab">
+					<button type="button" class="confirm" id="submit">确定</button>
+				</div>
+			</div>
+			<!--填写收货人----end-->
+			
+			<!--发票信息-->
+			
+			<!--发票信息end-->
+			<div class="public-footer-slide fixed" id="bill">
+				<div class="relative public-info border-b217">
+					发票信息
+					<img src="img/close.png" class="close" id="bill_close"/>
+				</div>
+				
+				<div class="group bill mg-bottom-5">
+					<div class="bill-list">
+						抬头发票
+					</div>
+					
+					<div class="bill-list">
+						<input type="radio" name="fp"  />个人
+						<input type="radio"  name="fp"  checked="checked"/>单位
+					</div>
+					
+					<div class="bill-list">
+						<input type="text" placeholder="请填写单位名称" class="bill-txt br-2"/>
+					</div>
+					
+					<div class="bill-list">
+						<div class="f-left pd-tb-5 mg-right-5">纳税识别码:</div>
+						<div class="overhidden">
+							<input type="text" class="bill-txt br-2"/>
+						</div>
+					</div>
+					
+					<div class="bill-list">
+						发票内容
+					</div>
+					<div class="bill-list">
+						<input type="radio" name="2" checked="checked"/>明细
+					</div>
+					<div class="bill-list">
+						<input type="radio" name="2"/>明细
+					</div>
+					<div class="bill-list">
+						<input type="radio" name="2"/>明细
+					</div>
+					<div class="bill-list">
+						<input type="radio" name="2" />明细
+					</div>
+				</div>
+				
+				<div class="list_btn footer_btn_tab">
+					<button type="button" class="confirm" id="bill_confirm">确定</button>
+				</div>
+			</div>
+			<!--底部滑块--end-->
+			
+		</div>
+		
+			
+		<script type="text/javascript" src="js/font-initial.js" ></script>
+		<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
+		<script type="text/javascript" src="js/moudle.js" ></script>
+		<script type="text/javascript" src="js/Popt.js" ></script>
+		<script type="text/javascript" src="js/cityJson.js" ></script>
+		<script type="text/javascript" src="js/citySet.js" ></script>
+		<script>
+		
+		document.ready(function(){
+			mask_show("mask",100)
+			
+			//底部滑出后加减购买数量  ---购买数量---
+    		buy_number({
+    			stock:"stock",//库存id
+    			minues:"minues",//减库存id
+    			add:"add",//加库存id
+    			textValue:"kucun_number"//购买的数量id
+    		})
+    		//底部滑出后加减购买数量  ---购买数量---
+    		
+    		
+    		//配送方式
+    		document.getElementById("sel_peisong").onclick = function(){
+    			goods_footer_slideUp("peisong");
+    			mask_show("mask");
+    		}
+    		goods_footer_slideDown("peisong");
+    		document.getElementById("confirm_buy").onclick = function(){
+    			goods_footer_slideDown("peisong");
+    			mask_hide("mask")
+    		}
+    		document.getElementById("close").onclick = function(){
+    			goods_footer_slideDown("peisong");
+    			mask_hide("mask");
+    		}
+    		//配送方式-----end---
+    		
+    		
+    		//优惠券---
+    		$(".cp-list").click(function(){//选择优惠券切换
+    			$(this).addClass("active").siblings().removeClass("active");
+    		})
+    		
+    		document.getElementById("sel_coupon").onclick = function(){
+    			mask_show("mask");
+    			goods_footer_slideUp("coupon");
+    		}
+    		goods_footer_slideDown("coupon");
+    		document.getElementById("cp_confirm").onclick = function(){
+    			goods_footer_slideDown("coupon");
+    			mask_hide("mask")
+    		}
+    		document.getElementById("cp_close").onclick = function(){
+    			goods_footer_slideDown("coupon");
+    			mask_hide("mask");
+    		}
+    		//优惠券---end
+    		
+    		
+    		//没有优惠券的情况
+    		document.getElementById("sel_peisong").onclick = function(){
+    			goods_footer_slideUp("peisong");
+    			mask_show("mask");
+    		}
+    		goods_footer_slideDown("ncoupon");
+    		document.getElementById("ncp_confirm").onclick = function(){
+    			goods_footer_slideDown("ncoupon");
+    			mask_hide("mask")
+    		}
+    		document.getElementById("ncp_close").onclick = function(){
+    			goods_footer_slideDown("ncoupon");
+    			mask_hide("mask");
+    		}
+    		////没有优惠券的情况---end---
+    		
+    		
+    		//没有收货人的情况-----
+    		document.getElementById("submit").onclick = function(){
+    			var name = document.getElementById("userName").value;
+    			var phone = document.getElementById("userPhone").value;
+    			//var address = document.getElementById("userAddress").value;
+    			var address_m = document.getElementById("userAddress_m").value;
+    			
+    			if(check_name(name)==false){
+    				return false;
+    			}
+    			if(check_phone(phone)==false){
+    				return false;
+    			}
+    			if(check_special(address_m)==false){
+    				return false;
+    			}
+    			mask_hide("mask");
+    			goods_footer_slideDown("edi_per");
+    		}
+    		
+    		document.getElementById("edi_close").onclick = function(){
+    			mask_hide("mask");
+    			goods_footer_slideDown("edi_per")
+    		}
+    		//没有收货人的情况---end---
+    		goods_footer_slideDown("bill")
+    		document.getElementById("mingxi").onclick = function(){
+    			mask_show("mask");
+    			goods_footer_slideUp("bill");
+    		}
+    		document.getElementById("bill_close").onclick = function(){
+    			mask_hide("mask");
+    			goods_footer_slideDown("bill");
+    		}
+    		
+    		
+    	})
+	
+		</script>
+		
+		
+		
+		<script type="text/javascript">
+	window.onload=function(e){
+	var obj=document.getElementById("city");
+	SelCity(obj,e);
+}
+$(function(){
+	$("#city").click(function () {
+		//mask_show("mask",111)
+		$("#PoPy").show();
+	    $("._citys").animate({
+				bottom:'0rem'
+			},300);
+	});
+})
+</script>
+	</body>
+</html>

@@ -30,7 +30,13 @@ border-bottom-left-radius: 0.3rem;-webkit-border-bottom-left-radius: 0.3rem;
 .btn_number button{background: rgb(242,242,242);color: rgb(204,204,204);width: 2rem;height: 2rem;text-align: center;line-height: 2rem;font-size: 0.9rem;}
 .btn_number input[type="text"]{width: 3rem;text-align: center;text-align: center;}
 .btn_number .active{background: rgb(230,230,230);color: rgb(153,153,153);}
-
+/*加减--带border*/
+.border-btn-number{position: relative;height: 2rem;width: 7rem;border: 1px solid rgb(217,217,217);padding-top: 0;margin-top: 0.5rem;float: none;}
+.border-btn-number input[type="text"]{position: absolute;height: 1.8rem;left: 2rem;width: 3rem;}
+.border-btn-number button{background: #fff;color: rgb(100,100,100);position: absolute;}
+.border-btn-number .btn_minues{left: 0;top: 0rem;border-right: 1px solid rgb(217,217,217);}
+.border-btn-number .btn_add{left: 5rem;top: 0rem;border-left: 1px solid rgb(217,217,217);}
+.border-btn-number .active{background:#FFFFFF !important;color:black;}
 
 /*加入购物车*/
 .list_btn button{width: 50%;text-align: center;padding: 1rem 0;color: white;background: red;float: left;font-size: 0.9rem;}
@@ -53,7 +59,7 @@ border-bottom-left-radius: 0.3rem;-webkit-border-bottom-left-radius: 0.3rem;
 .hide_nav img{float: left;width: 1rem;margin-right: 0.2rem;margin-top: 0.3rem;}
 
 /*头部返回*/
-.public-back-wrap{text-align: center;padding: 0.8rem 0;font-weight: bold;background: #fff;border-bottom: 1px solid rgb(217,217,217);position: relative;}
+.public-back-wrap{text-align: center;font-size: 0.9rem;padding: 0.8rem 0;font-weight: bold;background: #fff;border-bottom: 1px solid rgb(217,217,217);position: relative;}
 .public-back-a{position:absolute;left: 0.5rem;top: 0.8rem;width: 2rem;height: 1.5rem;background: url(../img/left.png) no-repeat center left;background-size: auto 100%;}
 .public-edi{position: absolute;right: 0.5rem;font-size: 0.8rem;top: 0.9rem;padding: 0;}
 #back_Wrap{position: fixed;left: 0;top: 0;width: 100%;max-width: 640px;background: #fff;z-index: 1;}
@@ -64,7 +70,7 @@ border-bottom-left-radius: 0.3rem;-webkit-border-bottom-left-radius: 0.3rem;
 
 /*footer-slide 底部滑出部分*/
 .public-footer-slide{bottom:0;left: 0;width: 100%;z-index: 110;background: #fff;opacity: 0;transition: 0.5s bottom,1s opacity;-webkit-transition: 0.5s bottom,1s opacity;}
-.public-footer-slide .group{max-height: 15rem;overflow: scroll;clear: both;}
+.public-footer-slide .group{max-height: 15rem;overflow-y: scroll;clear: both;min-height: 10rem;}
 .public-footer-slide .top .close{position: absolute;top: 0.5rem;right: 0rem;width: 1.5rem;height: 1.5rem;}
 .public-footer-slide .select_ready{word-break: break-all;}
 .public-footer-slide .list{font-size: 0.9rem;}
@@ -78,6 +84,8 @@ border-bottom-left-radius: 0.3rem;-webkit-border-bottom-left-radius: 0.3rem;
 .public-footer-slide .right .price{color: rgb(242,48,49);font-size: 1rem;}
 .public-footer-slide .footer-slide .img img{width: 6rem;height: 6rem;}
 .public-footer-slide .btn_number{float: right !important;margin-right: 1rem;}
+.public-footer-slide .public-info{text-align: center;padding: 0.8rem 1rem;}
+.public-footer-slide .public-info .close{position: absolute;right: 1rem;width: 1.5rem;top: 0.8rem;}
 
 .del_comfirm{position: fixed;z-index: 121;width: 90%;max-width: 450px;background: #FFFFFF;left: 5%;top: 25%;padding: 0.8rem 0rem;text-align: center;font-size: 1.2rem;
 display: none;

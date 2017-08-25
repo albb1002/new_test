@@ -1,6 +1,6 @@
 (function(){
 	var f_w_height = window.width;
-	var c= browserRedirect() ;
+	//var c= browserRedirect() ;
 	
 	if(document.compatMode=="CSS1Compat"){
 		f_w_height = document.documentElement.clientWidth;
@@ -8,13 +8,7 @@
 			f_w_height=640
 		}
 		var font_size = f_w_height/22;
-		if(c==1){
-			document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+font_size+"px;");
-		}else{
-			document.getElementsByTagName("html")[0].setAttribute("style","font-size:18px;");
-			document.getElementsByClassName("wrap")[0].setAttribute("style","min-width: 640px;")
-		}
-		
+		document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+font_size+"px;");
 	}else{
 		f_w_height = document.body.clientWidth;
 		if(f_w_height>640){
@@ -22,11 +16,8 @@
 		}
 		var font_size = f_w_height/22;
 
-		if(c==1){
-			document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+font_size+"px;");
-		}else{
-			document.getElementsByTagName("html")[0].setAttribute("style","font-size:18px;");
-		}
+		document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+font_size+"px;");
+
 	}
 	
 	 
