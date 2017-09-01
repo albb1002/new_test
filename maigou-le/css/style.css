@@ -1,7 +1,7 @@
 
 /*商品详情*/
 .product-info .swiper-container{background: #fff;}
-.product-info .swiper-slide img{width: 22rem;height: 22rem;}
+.product-info .swiper-slide img{width: 100%;}
 .product-info .swiper-pagination-bullet{background: rgb(255,255,255);width: 0.6rem;margin:0 0.5rem !important;height: 0.6rem;border: 0.1rem solid rgb(216,216,216);opacity: 1;}
 .product-info .swiper-pagination-bullet-active{background: rgb(242,48,49);border-color: rgb(242,48,49);}
 .product-info .head{position: relative;width: 100%;z-index: 99;}
@@ -21,9 +21,9 @@
 .product-info .main .price{color: rgb(242,48,49);padding:0 0.7333rem;font-size: 0.8rem;}
 .product-info .main .t-list .t-l{float: left;width: 33.33%;color: rgb(96,96,96);}
 .product-info .main .t-list .t-end{text-align: right;}
-.product-info .main .coupon{font-size: 0.71rem;background: url(../img/right.png) no-repeat center right;background-size: 1rem 1rem;background-position: 20.5rem 1rem}
+.product-info .main .coupon{font-size: 0.71rem;background: url(../img/right.png) no-repeat center right;background-size: 1rem 1rem;background-position: 98% 1rem}
 .product-info .main .yunfei{background: #FFFFFF;}
-.product-info .main .sales{background-position: 20.5rem 2rem;padding: 0 0.7333rem;}
+.product-info .main .sales{background-position: 98% 2rem;padding: 0 0.7333rem;}
 .product-info .main .coupon .cou{float: left;color: rgb(96,96,96);font-size: 0.71rem;line-height: 1.5rem;}
 .product-info .main .coupon .cou-l{display: inline-block;margin-left: 0.5rem;padding: 0rem 0.3rem;color: rgb(236,44,78);border: 1px solid rgb(236,44,78);font-size: 0.71rem;line-height: 1.5rem;}
 .product-info .main .coupon .cou-h{height: 3rem;}

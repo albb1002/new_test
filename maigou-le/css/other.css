@@ -41,8 +41,11 @@ border-radius: 0.15rem;
 padding: 0 0.2rem;
 }
 .index .index-price{max-width: 100%;;overflow: hidden;padding-bottom: 0.5822rem;}
-.index .search{position: absolute;width: 80%;height: auto;left: 0;top: 0.5rem;z-index: 111;left: 10%;
+.index .search{position: absolute;width: 80%;max-width: 500px;height: auto;left: 0;top: 0.5rem;z-index: 111;left: 10%;
 background: rgba(0,0,0,0.3);}
+@media only screen and (min-width: 640px) {
+	.index .search{left: 50%;margin-left: -250px;}
+}
 .index .search input[type="text"]{width: 100%;height: 100%;padding: 0.5rem 0;text-indent: 1.6rem;
 background: none;font-size: 0.8rem;color: white;
 }
@@ -99,8 +102,8 @@ line-height: 1.2rem;
 float: left;margin-right: 0.3rem;margin-left: 0.7333rem;
 background-size: 90% auto;
 }
-.center .cen-list{padding: 0.8rem 0;border-bottom: 1px solid rgb(217,217,217);background: url(../img/right.png) no-repeat center right;
-background-size: 1.2rem auto;
+.center .cen-list{padding: 0.8823rem 0;border-bottom: 1px solid rgb(217,217,217);background: url(../img/right.png) no-repeat center right;
+background-size: 1.2rem auto;background-position: 98% 0.8823rem;
 }
 
 .center .cen-block a{display: block;}

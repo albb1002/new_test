@@ -5,14 +5,14 @@
 	if(document.compatMode=="CSS1Compat"){
 		f_w_height = document.documentElement.clientWidth;
 		if(f_w_height>640){
-			f_w_height=640
+			f_w_height=414
 		}
 		var font_size = f_w_height/22;
 		document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+font_size+"px;");
 	}else{
 		f_w_height = document.body.clientWidth;
 		if(f_w_height>640){
-			f_w_height=640
+			f_w_height=414
 		}
 		var font_size = f_w_height/22;
 
