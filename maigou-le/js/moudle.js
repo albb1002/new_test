@@ -53,14 +53,14 @@ function mask_show(id,z_index){
 	var height = new GetClient().height();
 	var id = document.getElementById(id);
 	id.setAttribute("style","height:"+height+"px;opacity:1;z-index:"+z_index+";");
-//	document.getElementsByTagName("html")[0].setAttribute("class","mask-html");
+	//document.getElementsByTagName("html")[0].setAttribute("class","mask-html");
 }
 //遮罩层隐藏
 function mask_hide(id){
 	var height = new GetClient().height();
 	var id = document.getElementById(id);
 	id.setAttribute("style","opacity: 0;");
-//	document.getElementsByTagName("html")[0].setAttribute("class","");
+	//document.getElementsByTagName("html")[0].setAttribute("class","");
 }
 
 //侧栏的滑出效果
@@ -71,18 +71,18 @@ function show_slide(arg){
 	var sty = arg.sty;//设置的style
 	var ctr = 0;
 	var cls = document.getElementById(slideEl);
-	var aside_left_icon = document.getElementById("aside_left_icon");
+	var aside_left_icon =arg.icon;
 	if(typeof el == "string" && el){
 		document.getElementById(el).onclick = function(){
 			if(ctr==0){
 				mask_show(arg.mask)
 				cls.setAttribute("style",sty);
-				aside_left_icon.innerHTML = "&gt;&gt;";
+				document.getElementById(aside_left_icon).setAttribute("style","background-position: -6rem -4rem;")
 				ctr=1
 			}else{
 				mask_hide(arg.mask);
 				cls.setAttribute("style","");
-				aside_left_icon.innerHTML = "&lt;&lt;";
+				document.getElementById(aside_left_icon).setAttribute("style","background-position: -6rem -2rem;")
 				ctr=0;
 			}
 			
@@ -227,16 +227,16 @@ function goods_f_up(id,args){
 //我的收藏  改变图标
 function collect_change(id,message,message1){
 	var el = document.getElementById(id);
-	var el_img = el.getElementsByTagName("img")[0];
+	var el_img = el.getElementsByClassName("foo-icon2")[0];
 	
 	var el_control = 1;
 	el.onclick = function(){
 		if(el_control==1){
-			el_img.setAttribute("src","./img/pro-footer-2-ed.png");	
+			el_img.setAttribute("style","background-position: 0 -6rem;");	
 			_tip(message);//提示收藏成功的信息
 			el_control=0;
 		}else{
-			el_img.setAttribute("src","./img/pro-footer-2.png");
+			el_img.setAttribute("style","background-position: 0 -2rem;");	
 			_tip(message1);
 			el_control=1;
 		}
@@ -579,7 +579,17 @@ function check_special(val){
 	}
 }
 
-
+function check_integer(val,null_mes,err_mes){
+	var re = /^[1-9]\d*$/;
+	if(val==undefined||val==""){
+		_tip(null_mes);
+		return false;
+	}
+	if(!re.test(val)){
+		_tip(err_mes);
+		return false;
+	}
+}
 
 
 

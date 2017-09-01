@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>脉购微商城</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/swiper.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/module.css" />
+		<link rel="stylesheet" href="css/address.css" />
+	</head>
+	<body>
+		<div class="wrap address">
+			<!--返回-->
+			<div class="public-back-wrap">
+				<a class="public-back-a" onclick="window.history.back()" id="goods_back"></a>
+				收货地址管理
+			</div>
+			<!--返回end-->
+			<!--地址列表-->
+			<div class="list mg-bottom-10">
+				<div class="add-list pd-top-7588 border-b217">
+					<div class="pd">
+						<span>某某某</span>
+						<span class="f-right">185262545645</span>
+					</div>
+					<div class="pd">
+						福建省厦门市思明区软件园二期观日路54号之一502
+					</div>
+				</div>
+				<div class="add-edi">
+					<div class="edi-radio">
+						<input type="radio" name="1" checked="checked"/><span>默认地址</span>
+					</div>
+					<div class="f-right ae-icon">
+						<div class="f-left mg-right-10"><img src="img/address_edi.png"/>编辑</div>
+						<div class="f-left del"><img src="img/address_delete.png"/>删除</div>
+					</div>
+				</div>
+			</div>
+			<!--地址列表--end-->
+			
+			<!--2-->
+			<div class="list mg-bottom-10">
+				<div class="add-list pd-top-7588 border-b217">
+					<div class="pd">
+						<span>某某某</span>
+						<span class="f-right">185262545645</span>
+					</div>
+					<div class="pd">
+						福建省厦门市思明区软件园二期观日路54号之一502
+					</div>
+				</div>
+				<div class="add-edi">
+					<div class="edi-radio">
+						<input type="radio" name="1" /><span>默认地址</span>
+					</div>
+					<div class="f-right ae-icon">
+						<div class="f-left mg-right-10"><img src="img/address_edi.png"/>编辑</div>
+						<div class="f-left del"><img src="img/address_delete.png"/>删除</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--没有收货地址的情况-->
+			<!--<div class="address-nil">
+				<img src="img/add_nil.png" />
+				<div class="mg-tb-5 t-rgb-153">你还没有收货地址呢</div>
+			</div>-->
+			<!--没有收货地址的情况--end-->
+			
+			<!--底部添加地址-->
+			<div class="add-btn">
+				<a href="address-add.html">
+				<div class="pd-75-73">
+					<button type="button" class="br-2">添加新地址</button>
+				</div>
+				</a>
+			</div>
+			<!--底部添加地址--end-->
+			<div style="height: 4rem;"></div>
+		</div>
+		
+		<script type="text/javascript" src="js/font-initial.js" ></script>
+		<script type="text/javascript" src="js/moudle.js" ></script>
+		<script>
+			document.ready(function(){
+				var delCls = document.getElementsByClassName("del");
+				var listCls = document.getElementsByClassName("list");
+				
+				for(var i=0 ; i<delCls.length ; i++){
+					
+					delCls[i].onclick = function(i){
+						return function(e){
+							e.preventDefault();
+							listCls[i].setAttribute("style","display: none;")
+						}
+					}(i)
+				}
+				
+			})
+		</script>
+	</body>
+</html>

@@ -19,11 +19,6 @@
 		document.getElementsByTagName("html")[0].setAttribute("style","font-size:"+font_size+"px;");
 
 	}
-	
-	 
-	
-	
-	
 })()
 
 

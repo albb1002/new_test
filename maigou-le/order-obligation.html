@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>脉购微商城</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/module.css" />
+		<link rel="stylesheet" href="css/order.css" />
+	</head>
+	<body>
+		<div class="wrap order">
+			<div class="public-back-wrap">
+			<a class="public-back-a" onclick="window.history.back()" id="goods_back"></a>
+				订单详情
+			</div>
+			<!--去支付---待付款-->
+			<div class="pd-lr-7333 bg-rgb-255 border-b217">
+				<div class="og-list pd-top-8823"><em>订单状态:</em><span class="blue">待付款</span></div>
+				<div class="og-list"><em>订单编号:</em><span>21152152153215321</span></div>
+				<div class="og-list"><em>下单时间:</em><span>2017-01-12 14:53</span></div>
+				<div class="og-list t-center">
+					<button type="button" class="quxiao mg-right-10">取消订单</button>
+					<button type="button" class="pay">去支付</button>
+				</div>
+			</div>
+			<!--去支付---待付款--end-->
+			<div class="floor"></div>
+			
+			<!--代发货--再次购买-->
+			<div class="pd-lr-7333 bg-rgb-255 border-b217">
+				<div class="og-list pd-top-8823"><em>订单状态:</em><span class="blue">代发货</span></div>
+				<div class="og-list"><em>订单编号:</em><span>21152152153215321</span></div>
+				<div class="og-list"><em>下单时间:</em><span>2017-01-12 14:53</span></div>
+				<div class="og-list t-center">
+					<button type="button" class="quxiao mg-right-10">查看物流</button>
+					<button type="button" class="pay-again">再次购买</button>
+				</div>
+			</div>
+			<!--代发货--再次购买--end-->
+			<div class="floor"></div>
+			
+			<!--待收货--再次购买-->
+			<div class="pd-lr-7333 bg-rgb-255 border-b217">
+				<div class="og-list pd-top-8823"><em>订单状态:</em><span class="blue">待收货</span></div>
+				<div class="og-list"><em>订单编号:</em><span>21152152153215321</span></div>
+				<div class="og-list"><em>下单时间:</em><span>2017-01-12 14:53</span></div>
+				<div class="og-list t-center">
+					<button type="button" class="quxiao mg-right-10">查看物流</button>
+					<button type="button" class="pay">确认收货</button>
+				</div>
+			</div>
+			<!--待收货--再次购买--end-->
+			<div class="floor"></div>
+			
+			<!--待收货--再次购买-->
+			<div class="pd-lr-7333 bg-rgb-255 border-b217">
+				<div class="og-list pd-top-8823"><em>订单状态:</em><span class="blue">已完成</span></div>
+				<div class="og-list"><em>订单编号:</em><span>21152152153215321</span></div>
+				<div class="og-list"><em>下单时间:</em><span>2017-01-12 14:53</span></div>
+				<div class="og-list t-center">
+					<button type="button" class="pay-again pa-width-100">确认收货</button>
+				</div>
+			</div>
+			<!--待收货--再次购买--end-->
+			<div class="floor"></div>
+			
+			
+			<div class="pd-lr-7333 bg-rgb-255 border-b217">
+				<div class="og-list pd-top-8823"><em>商品金额:</em><span class="price">￥200</span>(微信支付)</div>
+				<div class="og-list"><em>收货地址:</em><span>福建省厦门市思明区观日路54号之一502</span></div>
+				<div class="og-list"><em>收货人:</em><span>张三 188556215231</span></div>
+				<div class="og-list"><em>配送方式:</em><span>快递配送</span></div>
+			</div>
+			<div class="floor"></div>
+			
+			<div class="pd-lr-7333 bg-rgb-255 border-b217">
+				<div class="og-list pd-top-8823"><em>商品金额:</em><span>普通发票  厦门掌沃软件科技有限公司 明细</span></div>
+			</div>
+			<div class="floor"></div>
+			
+			<!--产品信息-->
+			<div class="od-list">
+				<div class="title border-b217 title-ng">掌沃自营</div>
+				<div class="od-con border-b217">
+					<div class="od-con-img br-3 mg-right-5">
+						<img src="demoImg/swiper_demo1.png"/>
+					</div>
+					<div class="od-cen f-left">
+						<h1 class="mg-bottom-2">芬尚女士香水秘密50ml 香水女士持久淡香清新 专柜正品包邮</h1>
+						<div class="mg-bottom-2 font-24">规格: 粉红，50ml</div>
+						<div class="display-none" id="stock">5</div>	
+						<button type="button" class="od-cen-btn br-3 ">申请售后</button>
+					</div>
+					<div class="od-price">
+						<div class="price">￥298.00</div>
+						<div class="count">x1</div>
+						
+					</div>
+				</div>
+				<div class="title border-b217 og-nbg">
+					配送方式
+					<span id="sel_peisong">快递 ￥6.00</span>
+				</div>
+			</div>
+			<!--产品信息end-->
+			<div class="floor"></div>
+			
+			<div class="pd-lr-7333 bg-rgb-255">
+				<div class="og-list pd-top-8823">商品总价:<span class="price f-right">￥299.00</span></div>
+				<div class="og-list">运费(快递):<span class="price f-right">+￥9.00</span></div>
+				<div class=" border-b217"></div>
+				<div class="og-list pd-top-8823">优惠券:<span class="price f-right">-￥9.00</span></div>
+				<div class="og-list">积分:<span class="price f-right">-￥9.00</span></div>
+				<div class="og-list">余额:<span class="price f-right">-￥9.00</span></div>
+				<div class=" border-b217"></div>
+				<div class="og-list pd-top-8823 t-right">实付余额:<span class="price f-right t-bold">￥229.00</span></div>
+			</div>
+			
+			<div class="mg-10">
+				<button type="button" class="tuikuan br-3">申请退款</button>
+			</div>
+			
+			<!--客服-->
+			<div class="t-center server">
+				<img src="img/server-icon.png" />脉购客服
+			</div>
+			<!--客服--end-->
+			
+			
+			<!--侧栏滑出-->
+			<div class="public-aside-wrap fixed" id="aside_wrap">
+				<!--快速导航-->
+				<div class="public-aside-top" id="aside_left">
+					<div class="f-left aside-dx" id="aside_left_icon"></div>
+					<div class="title">
+						快速<br/>导航
+					</div>
+				</div>
+				<!--快速导航end-->
+				<!--4个导航列表-->
+				<div class="aside-nav">
+					<ul>
+						<li>
+							<i class="aside-nav-icon"></i>
+							<span class="d-block">首页</span>
+						</li>
+						<li>
+							<i class="aside-nav-icon ani-2"></i>
+							<span class="d-block">商品</span>
+						</li>
+						<li>
+							<i class="aside-nav-icon ani-3"></i>
+							<span class="d-block">我的</span>
+						</li>
+						<li>
+							<i class="aside-nav-icon ani-4"></i>
+							<span class="d-block">我的收藏</span>
+						</li>
+					</ul>
+				</div>
+				<!--4个导航列表end-->
+			</div>
+			<!--侧栏滑出end-->
+			
+			<div class="mask" id="mask"></div>
+		</div>
+		
+		
+		
+		<script type="text/javascript" src="js/font-initial.js" ></script>
+		<script type="text/javascript" src="js/moudle.js" ></script>
+		<script>
+			//快速导航滑出效果---快速导航-------快速导航----
+			show_slide({
+    			el:"aside_left",      //点击的id
+    			slideEl:"aside_wrap", //滑出的id
+    			mask:"mask",          //遮罩层的id
+    			icon:"aside_left_icon",//更换图片的上一层id
+    			sty:"right:0;"	//设置动画样式	
+    			
+    		}) 
+    		//快速导航滑出效果---快速导航-------快速导航----end
+		</script>
+		
+	</body>
+</html>

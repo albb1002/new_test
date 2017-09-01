@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/module.css" />
+		<link rel="stylesheet" href="css/other.css"  />
+	</head>
+	<body>
+		<div class="wrap rechange-record" id="rechange-record">
+			<div class="public-back-wrap">
+				<a class="public-back-a" onclick="window.history.back()"></a>
+				充值记录
+			</div>
+			<div class="pd-75-73 bg-rgb-255 font-l-30">
+				充值记录
+			</div>
+			
+			<!--循环列表开始-->
+			<div v-for="item in record">
+				<!--月份-->
+				<div class="pd-75-73 font-24" style="background: rgb(230,230,230);">
+					{{item.month}}
+				</div>
+				<!--月份--end-->
+				
+				<!--充值记录-->
+				<div class="pd-75-73 font-30 bg-rgb-255 list" v-for="list in item.list">
+					<div class="f-left">
+						<div class="font-l-30 title">{{list.week}}</div>
+						<div class="font-l-24 con">{{list.min}}</div>
+					</div>
+					<div class="f-left">
+						<img src="img/rechange-icon.png" />
+					</div>
+					<div class="f-left">
+						<div class="font-l-30 title">{{list.money}}</div>
+						<div class="font-l-24 con">{{list.data}}</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<!--充值记录--end-->
+				<div style="height: 0.71rem;"></div>
+			</div>
+			<!--循环列表--end-->
+			
+			
+		</div>
+		
+		
+		<script type="text/javascript" src="js/font-initial.js" ></script>
+		<script type="text/javascript" src="js/moudle.js" ></script>
+		<script type="text/javascript" src="js/vue.min.js" ></script>
+		<script type="text/javascript" src="js/vue-resource.min.js" ></script>
+		
+		<script>
+			new Vue({
+				el:"#rechange-record",
+				data:{
+//					充值记录
+					record:[
+						{
+							month:"本月",
+							list:[
+								{week:"周一",min:"18:00",money:"+100",data:"2017.01.02"},
+								{week:"周一",min:"18:20",money:"+200",data:"2017.01.03"},
+								{week:"周一",min:"18:10",money:"+500",data:"2017.01.04"}
+							]
+						},
+						{
+							month:"12月",
+							list:[
+								{week:"周一",min:"18:00",money:"+100",data:"2017.01.02"},
+								{week:"周一",min:"18:20",money:"+200",data:"2017.01.03"}
+							]
+						}
+					]
+				}
+			})
+		</script>
+	</body>
+</html>

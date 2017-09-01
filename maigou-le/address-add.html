@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>脉购微商城</title>
+		<link href="css/swiper.min.css" rel="stylesheet" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/module.css" />
+		<link rel="stylesheet" href="css/address.css" />
+		<link rel="stylesheet" href="css/changeCity.css" />
+	</head>
+	<body>
+		<div class="wrap address">
+			<!--返回-->
+			<div class="public-back-wrap">
+				<a class="public-back-a" onclick="window.history.back()" id="goods_back"></a>
+				添加新地址
+			</div>
+			<!--返回end-->
+			
+			<div class="an-list">
+				<div class="title">收货人:</div>
+				<div class="overhidden"><input type="text" placeholder="收货人姓名" class="width-75" id="name"/></div>
+			</div>
+			<div class="an-list">
+				<div class="title">联系电话:</div>
+				<div class="overhidden"><input type="text" placeholder="请输入手机号码" class="width-75" id="phone"/></div>
+			</div>
+			<div class="an-list an-bg">
+				<div class="title">所在地区:</div>
+				<div class="overhidden"><input type="text" placeholder="点击选择省市区" readonly="readonly" class="width-75" id="city"/></div>
+			</div>
+			<div class="an-list">
+				<div class="title">详细地址:</div>
+				<div class="overhidden"><input type="text" placeholder="街道、楼牌号等" class="width-75" id="address"/></div>
+			</div>
+		
+			<!--没有收货地址的情况--end-->
+			<div class="add-btn">
+				
+				<div class="pd-75-73">
+					<button type="button" class="br-2" id="save">保存</button>
+				</div>
+			</div>
+		</div>
+		
+	<script type="text/javascript" src="js/font-initial.js" ></script>
+		<script type="text/javascript" src="js/jquery-1.11.3.js" ></script>
+		<script type="text/javascript" src="js/moudle.js" ></script>
+		<script type="text/javascript" src="js/Popt.js" ></script>
+		<script type="text/javascript" src="js/cityJson.js" ></script>
+		<script type="text/javascript" src="js/citySet.js" ></script>
+	
+		<script>
+			document.ready(function(){
+				var name = document.getElementById("name");
+				var phone = document.getElementById("phone");
+				var city = document.getElementById("city");
+				var address = document.getElementById("address");
+				var save = document.getElementById("save");
+				
+				
+				save.onclick = function(){
+					if(check_name(name.value)==false){
+						return false;
+					}
+					if(check_phone(phone.value)==false){
+						return false;
+					}
+				}
+				
+			})
+			
+			
+			
+			
+		</script>
+	
+		<!--选择地址-->
+		<script type="text/javascript">
+	window.onload=function(e){
+	var obj=document.getElementById("city");
+	SelCity(obj,e);
+}
+$(function(){
+	$("#city").click(function () {
+		//mask_show("mask",111)
+		$("#PoPy").show();
+	    $("._citys").animate({
+				bottom:'0rem'
+			},300);
+	});
+})
+</script>
+	</body>
+</html>

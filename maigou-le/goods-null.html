@@ -26,11 +26,9 @@
 			<div class="public-aside-wrap fixed" id="aside_wrap">
 				<!--快速导航-->
 				<div class="public-aside-top" id="aside_left">
-					<div class="f-left aside-dx" id="aside_left_icon">
-						&lt;&lt;					
-					</div>
+					<div class="f-left aside-dx" id="aside_left_icon"></div>
 					<div class="title">
-						快速导航
+						快速<br/>导航
 					</div>
 				</div>
 				<!--快速导航end-->
@@ -38,19 +36,19 @@
 				<div class="aside-nav">
 					<ul>
 						<li>
-							<img src="img/shouye-icon.png">
+							<i class="aside-nav-icon"></i>
 							<span class="d-block">首页</span>
 						</li>
 						<li>
-							<img src="img/sp-icon.png">
+							<i class="aside-nav-icon ani-2"></i>
 							<span class="d-block">商品</span>
 						</li>
 						<li>
-							<img src="img/my-icon.png">
+							<i class="aside-nav-icon ani-3"></i>
 							<span class="d-block">我的</span>
 						</li>
 						<li>
-							<img src="img/pro-footer-2.png">
+							<i class="aside-nav-icon ani-4"></i>
 							<span class="d-block">我的收藏</span>
 						</li>
 					</ul>
@@ -72,7 +70,7 @@
 							芬尚女士香水秘密50ml000
 						</div>
 						<div class="price">
-							￥<div class="font-size-11 d-inlineBlock">749</div>
+							￥<div class="font-size-10 d-inlineBlock">749.00</div>
 							<div class="f-right liang">销售量2000</div>
 						</div>
 					</div>
@@ -83,7 +81,7 @@
 							芬尚女士香水秘密50ml000
 						</div>
 						<div class="price">
-							￥<div class="font-size-11 d-inlineBlock">749</div>
+							￥<div class="font-size-10 d-inlineBlock">7499.00</div>
 							<div class="f-right liang">销售量2000</div>
 						</div>
 					</div>
@@ -94,7 +92,7 @@
 							芬尚女士香水秘密50ml000
 						</div>
 						<div class="price">
-							￥<div class="font-size-11 d-inlineBlock">749</div>
+							￥<div class="font-size-10 d-inlineBlock">7499.00</div>
 							<div class="f-right liang">销售量2000</div>
 						</div>
 					</div>
@@ -118,7 +116,8 @@
     			el:"aside_left",      //点击的id
     			slideEl:"aside_wrap", //滑出的id
     			mask:"mask",          //遮罩层的id
-    			sty:"right:0;"	//设置样式	
+    			icon:"aside_left_icon",//更换图片的上一层id
+    			sty:"right:0;"	//设置动画样式	
     			
     		}) 
     		//快速导航滑出效果---快速导航-------快速导航----end

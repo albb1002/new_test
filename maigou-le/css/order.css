@@ -1,40 +1,48 @@
-.order{font-size: 0.9rem;}
+.order{font-size: 0.8823rem;line-height: 0.8823rem;}
 
 /*无地址*/
-.order .address-top{padding: 2rem 0.5rem;background: url(../img/od-icon1.png) center bottom repeat-x ;
+.order .address-top{padding: 2rem 0.7333rem;background: url(../img/od-icon1.png) center bottom repeat-x ;
 background-color: #FFFFFF;position: relative;}
-.order .address-top .right-icon{position: absolute;width: 1.5rem;right: 0rem;top: 2rem;}
+.order .address-top .right-icon{position: absolute;width: 1.5rem;right: 0.2333rem;top: 1.7rem;}
 /*无地址---end*/
 
 .order .add-has{
 	background: url(../img/od-icon1.png) center bottom repeat-x ;
 background-color: #FFFFFF;position: relative;
-padding: 0.8rem 0.5rem;
+padding: 0.7588rem 0.7333rem;
+line-height: 1.2rem;
 }
 .order .add-icon{float: left;width: 0.8rem;margin-right: 0.5rem;padding-top: 0.2rem;}
 .order .add-inf{max-width: 83%;}
 .order .add-has:after{content: "";display: block;clear: both;}
-.order .add-has .right-icon{position: absolute;width: 1.5rem;right: 0rem;top: 2rem;}
+.order .add-has .right-icon{position: absolute;width: 1.5rem;right: 0.2333rem;top: 1.85rem;}
 
-.order .title{padding: 0.8rem 0.5rem;background: url(../img/right.png) no-repeat right center;background-size: 1.5rem;
+.order .title{padding: 0.7588rem 0.7333rem;background: url(../img/right.png) no-repeat right center;background-size: 1.5rem;
 background-color: rgb(255,255,255);
 
 }
 
 
+/*产品列表*/
+/*确认订单--我的订单--中都有用到*/
 .order .title span{float: right;margin-right: 1rem;}
 .order .title-ng{background: #FFFFFF;}
 .order .title-ng span{margin-right: 0rem;}
-.order .od-con{padding: 0.8rem 0.5rem;background: #FFFFFF;}
+.order .od-con{padding: 0.7588rem 0.7333rem;background: #FFFFFF;}
 .order .od-con:after{content:"";display: block;clear: both;}
 .order .od-con-img{width: 3.5rem;height: 3.5rem;float: left;border: 1px solid rgb(217,217,217);padding: 0.5rem;
 }
 
-.order .od-con h1{padding: 0;font-size: 0.8rem;font-weight: normal;color:black;}
-.order .od-cen{width: 11.5rem;font-size: 0.8rem;color: rgb(153,153,153);}
+.order .od-con h1{padding: 0;font-size: 0.8235rem;font-weight: normal;color:black;line-height: 1rem;
+display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;
+}
+.order .od-cen{width: 11rem;font-size: 0.8rem;color: rgb(153,153,153);}
+.order .od-cen .od-cen-btn{border: 1px solid rgb(242,48,49);color: rgb(242,48,49);font-size: 0.71rem;line-height: 0.71rem;
+padding: 0.3rem 0.6rem;
+}
 .order .od-price{overflow: hidden;text-align: right;}
 .order .od-price .price{color: rgb(242,48,49);}
-.order .count{color: rgb(153,153,153);}
+.order .count{color: rgb(153,153,153);line-height: 1.2rem;}
 
 .order .od-or{background: #FFFFFF;margin-top: 1rem;}
 .order input[type="checkbox"]{width: 1rem;height: 1rem;border: 1px solid rgb(217,217,217);}
@@ -45,6 +53,8 @@ background-color: rgb(255,255,255);
 .order .od-oder{padding-bottom: 1rem;}
 .order .od-oder button{color: white;background: rgb(242,48,49);width: 100%;padding: 0.6rem 0;font-size: 0.9rem;}
 .order .od-oder .price{color: rgb(242,48,49);}
+/*产品列表*/
+/*确认订单--我的订单--中都有用到*/
 
 /*优惠券*/
 .order .cp-img{width: 6rem;height: 5.5rem;float: left;background: url(../img/od-coupon.png) no-repeat center;
@@ -83,3 +93,52 @@ border-radius: 50%;
 
 .order .bill-list{padding: 0.5rem 1rem;}
 .order .bill-txt{background-color: rgb(242,242,242);width: 100%;padding: 0.5rem 0;text-indent: 0.5rem;font-size: 0.8rem;}
+
+/*订单详情--待付款*/
+
+.order .og-list{padding-bottom: 0.8823rem;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+.order .og-list em{font-style: normal;color: rgb(115,115,115);display: inline-block;width: 4rem;}
+.order .og-list span{margin-left: 0.5rem;}
+.order .og-list button{width: 45%;padding: 0.5rem 0;font-size: 0.8rem;
+-webkit-border-radius: 0.2rem;
+-ms-border-radius:0.2rem;
+-moz-border-radius:0.2rem;
+-o-border-radius:0.2rem;
+border-radius: 0.2rem;
+}
+.order .pay-again{background: rgb(255,150,0);color: white;}
+.order .pa-width-100{width: 92% !important;}
+.order .og-list .quxiao{background: rgb(230,230,230);}
+.order .og-list .pay{background: rgb(242,48,49);color: white;}
+.order .og-list .blue{color: rgb(65,128,255);}
+.order .og-list .price{color: rgb(242,48,49);}
+.order .server{padding: 0rem 0 2rem 0;color: rgb(153,153,153);}
+.order .server img{width: 1rem;height: 1rem;margin-right: 0.2rem;position: relative;top: 0.15rem;}
+.order .tuikuan{width: 100%;padding: 0.8233rem 0;text-align: center;font-size: 0.8823rem;line-height: 0.8823rem;}
+.order .og-nbg{background: #FFFFFF;}
+
+
+/*我的订单*/
+.order-all{font-size: 0.9rem;}
+.order-all .oa-nav{background: #FFFFFF;}
+.order-all .oa-nav:after{content: "";display: block;clear: both;}
+.order-all .oa-nav ul{width: 100%;}
+.order-all .oa-nav ul .active{color: rgb(242,48,49);border-bottom: 2px solid rgb(242,48,49);}
+.order-all .oa-nav li{float: left;width: 20%;text-align: center;padding: 0.5rem 00;}
+.order-all .oa-active{clear: both;width: 20%;background: rgb(242,48,49);height: 2px;}
+.order-all .oa-botm{text-align: right;background: #FFFFFF;}
+
+.order-all .oa-btn button{font-size: 0.8rem;border: 1px solid rgb(217,217,217);padding: 0.2rem 0.8rem;
+-ms-border-radius:0.2rem;
+-webkit-border-radius: 0.2rem;
+-moz-border-radius: 0.2rem;
+border-radius: 0.2rem;
+}
+.order-all .oa-list{margin-bottom: 1rem;}
+.order-all .oa-gray{margin-right: 0.5rem;}
+.order-all .oa-red{color: rgb(242,48,49);border-color: rgb(242,48,49) !important;}
+.order-all .oa-order{background: #FFFFFF;padding: 0.8rem 0.5rem;border-top: 1px solid rgb(217,217,217);
+border-bottom: 1px solid rgb(217,217,217);
+}
+.order-all .od-cen{width: 75% !important;}
+.order-all .od-con-img{width: 4.5rem;height: 4.5rem;padding: 0;}
