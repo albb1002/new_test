@@ -76,7 +76,7 @@ background-size: 100% 100%;color: white;text-align: center;margin-right: 0.3rem;
 .order .edi-list{padding: 0.8rem 1rem;border-bottom: 1px solid rgb(217,217,217);}
 .order .edi-list span{line-height: normal;}
 .order .edi-list span:first-child{float: left;width: 4rem;}
-.order .edi-list input[type="text"]{font-size: 0.8235rem;width: 95%;}
+.order .edi-list input[type="text"]{font-size: 0.8835rem;width: 95%;padding: 0;}
 .order .edi-txt{overflow: hidden;}
 .order .edi-list input[type="checkbox"]:checked{background: url(../img/radio-checked.png) no-repeat center;background-size:100% 100%;border-color:rgb(242,48,49);}
 
