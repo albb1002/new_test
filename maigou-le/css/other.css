@@ -240,7 +240,7 @@ border-radius: 0.2rem;
 /*充值金额*/
 .rechange{font-size: 0.9rem;}
 .rechange .rechange-val input[type="text"]{width: 15.1rem;border: 1px solid rgb(217,217,217);
-height: 2.2529rem;font-size: 0.8823rem;text-indent: 0.5rem;
+height: 2.2529rem;font-size: 0.8823rem;text-indent: 0.5rem;padding: 0;
 }
 .rechange .rechange-val button{padding: 0.5rem 0;width: 4.117rem;height: 2.3529rem;
 float: right;color: white;background: rgb(242,48,49);font-size: 0.8823rem;cursor: pointer;}
