@@ -54,7 +54,7 @@ background: none;font-size: 0.8rem;color: white;
 .index .price{padding: 0.5882rem 0.5882rem!important;}
 
 
-.center{font-size: 0.9rem;color: rgb(51,51,51);}
+.center{font-size: 0.8823rem;color: rgb(51,51,51);}
 .center .head{background: rgb(242,48,49);color: white;height: 8rem;position: relative;overflow: hidden;}
 .center .head .help{text-align: right;padding: 0.3rem 0.5rem 0 0;}
 .center .head:after{content: "";display: block;clear: both;}
@@ -101,10 +101,10 @@ line-height: 1.2rem;
 .center .cen-order{background: url(../img/cen-order.png) no-repeat left;background-size: 0.5rem auto;}
 .center .cen-list-icon{width: 1.5rem;height: 1.5rem;background: url(../img/cen-list.png) no-repeat left;
 float: left;margin-right: 0.3rem;margin-left: 0.7333rem;
-background-size: 90% auto;
+background-size: 90% auto;position: absolute;top: 0.6323rem;
 }
-.center .cen-list{padding: 0.8823rem 0;border-bottom: 1px solid rgb(217,217,217);background: url(../img/right.png) no-repeat center right;
-background-size: 1.2rem auto;background-position: 98% 0.8823rem;
+.center .cen-list{padding: 0.8823rem 0;border-bottom: 1px solid rgb(230,230,230);background: url(../img/right.png) no-repeat center right;
+background-size: 1.2rem auto;background-position: 98% 0.8823rem;position: relative;text-indent: 2.5rem;line-height: 0.8823rem;
 }
 
 .center .cen-block a{display: block;}
@@ -114,10 +114,10 @@ background-size: 1.2rem auto;background-position: 98% 0.8823rem;
 .center .cli4{background-position: 0 -6rem;}
 
 .center .cli5{background-position: 0 -14.1rem;}
-.center .cli6{background-position: 0 -8rem;}
+.center .cli6{background-position: 0 -7.9rem;}
 
-.center .cli7{background-position: 0 -10.05rem;}
-.center .cli8{background-position: 0 -12rem;}
+.center .cli7{background-position: 0 -10rem;}
+.center .cli8{background-size: 85% auto;background-position: 0 -11.4rem;top: 0.6rem;}
 /*首页end*/
 
 
