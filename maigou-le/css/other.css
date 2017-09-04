@@ -38,9 +38,10 @@ border-radius: 0.15rem;
 .index .swiper-pagination-bullet{background: #FFFFFF !important;opacity: 0.4 !important;}
 .index .swiper-pagination-bullet-active{opacity: 1 !important;}
 .index .index-span{display: inline-block;border: 1px solid rgb(242,48,49);font-size: 0.71rem;
-padding: 0 0.2rem;
+padding: 0 0.2rem;line-height: normal;
 }
 .index .index-price{max-width: 100%;;overflow: hidden;padding-bottom: 0.5822rem;}
+.index .index-price span{line-height: normal;}
 .index .search{position: absolute;width: 80%;max-width: 500px;height: auto;left: 0;top: 0.5rem;z-index: 111;left: 10%;
 background: rgba(0,0,0,0.3);}
 @media only screen and (min-width: 640px) {
@@ -108,15 +109,15 @@ background-size: 1.2rem auto;background-position: 98% 0.8823rem;
 
 .center .cen-block a{display: block;}
 .center .cli1{background-position: 0 0.15rem;}
-.center .cli2{background-position: 0 -1.35rem;}
-.center .cli3{background-position: 0 -2.7rem;}
-.center .cli4{background-position: 0 -4.2rem;}
+.center .cli2{background-position: 0 -2rem;}
+.center .cli3{background-position: 0 -4rem;}
+.center .cli4{background-position: 0 -6rem;}
 
-.center .cli5{background-position: 0 -10.2rem;}
-.center .cli6{background-position: 0 -5.65rem;}
+.center .cli5{background-position: 0 -14.1rem;}
+.center .cli6{background-position: 0 -8rem;}
 
-.center .cli7{background-position: 0 -7rem;}
-.center .cli8{background-position: 0 -8.5rem;}
+.center .cli7{background-position: 0 -10.05rem;}
+.center .cli8{background-position: 0 -12rem;}
 /*首页end*/
 
 
@@ -240,7 +241,7 @@ border-radius: 0.2rem;
 /*充值金额*/
 .rechange{font-size: 0.9rem;}
 .rechange .rechange-val input[type="text"]{width: 15.1rem;border: 1px solid rgb(217,217,217);
-height: 2.2529rem;font-size: 0.8823rem;text-indent: 0.5rem;
+height: 2.2529rem;font-size: 0.8823rem;text-indent: 0.5rem;padding: 0;
 }
 .rechange .rechange-val button{padding: 0.5rem 0;width: 4.117rem;height: 2.3529rem;
 float: right;color: white;background: rgb(242,48,49);font-size: 0.8823rem;cursor: pointer;}
