@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/module.css" />
+		<link rel="stylesheet" href="css/other.css">
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="wrap index pro-list" id="pro_list">
+			<!--头部搜索部分-->
+			<div class="ol-head">
+				<div class="ol-left-icon" @click="slideToggle">
+				</div>
+				<input type="text" class="ol-search" @click="search" readonly="readonly" placeholder="输入您想寻找的商品"/>
+				<div class="ol-right-icon" @click="change_list">
+				</div>
+			</div>
+			<div style="height: 3.0576rem"></div>
+			<!--头部搜索部分--end-->
+			
+			<!--标题-->
+			<div class="ol-t-title">
+				<ul>
+					<li @click="productShow(index)" v-for="(item,index) in ol_title" v-bind:class="{active:item.ctr_cls}">{{item.title}}</li>
+				</ul>
+			</div>
+			<div class="clear"></div>
+			<!--标题--end-->
+			
+			<!--单列商品开始-->
+			<div class="ol-one-list" v-if="control.one_list">
+				<div class="pd-75-73 border-b217" v-for="list in product_list">
+					<div class="oo-img f-left mg-right-7">
+						<img v-bind:src="list.img">
+					</div>
+					<div class="relative overhidden" style="height: 5.35rem;">
+						<div class="t-esis-2 title">
+							{{list.name}}
+						</div>
+						<div class="oo-price">
+							￥<span class="font-34">{{list.price}}</span>
+							<span class="oo-active">领券</span>
+						</div>
+						<div class="oo-saless">
+							<span class="mg-right-5">{{list.sales}}</span>
+							<span>{{list.sales}}</span>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<!--单列商品结束-->
+			
+			<!--两列商品开始-->
+			<div class="public_love" v-if="control.two_list">
+				<!--产品循环列表-->
+				<div class="width-50 f-left list" v-for="list in product_list">
+					<a href="product-info.html">
+						<div class="product-img"><img v-bind:src="list.img"></div>
+						<div class="t-esis title">
+							{{list.name}}
+						</div>
+						<div class="price">
+							<div class="font-size-9 d-inlineBlock index-price">
+								<span class="font-24">￥</span><span class="font-34">{{list.price}}</span>
+								<span class="index-span">领券</span>
+								<span class="index-span">自营</span>
+							</div>
+							<div class="t-rgb-153 font-size-8">
+								{{list.sales}}
+								<span class="f-right">{{list.assess}}好评</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<!--两列商品开始--end-->
+			
+			<!--侧栏滑出-->
+			<div class="mask" id="mask" @click = "slide_hide"></div>
+			<div class="ol-slide" v-bind:style="ol_slide">
+				<div class="ol-slide-list ">
+					<div class="ols-title">全部分类</div>
+				</div>
+				<div class="ol-slide-list">
+					<div class="ol-slide-img">香水彩妆</div>
+				</div>
+				
+				<div class="ol-slide-list">
+					<div class="ol-second-nav">子菜单</div>
+				</div>
+			</div>
+			<!--侧栏滑出--end-->
+			<!--底部菜单-->
+			<div class="bottom-nav">
+				<ul>
+					<a href="index.html">
+						<li><div class="bottom-icon nav1"></div><em>首页</em></li>
+					</a>
+					
+					<li class="active"><div class="bottom-icon nav2"></div><em>商品</em></li>
+					
+					<a href="goods-list.html">
+						<li ><div class="bottom-icon nav3"></div><em>购物车</em></li>
+					</a>
+					
+					<a href="my-center.html">
+						<li><div class="bottom-icon nav4"></div><em>我的</em></li>
+					</a>
+				</ul>
+			</div>
+			<div style="height: 3.5rem;"></div>
+			<!--底部菜单--end-->
+		</div>
+		
+		<script type="text/javascript" src="js/font-initial.js" ></script>
+		<script type="text/javascript" src="js/moudle.js" ></script>
+		<script type="text/javascript" src="js/vue.min.js"></script>
+		<script type="text/javascript" src="js/vue-resource.min.js" ></script>
+		
+		<script>
+		document.ready(function(){
+		
+		
+		if(!window.localStorage){
+			//浏览器不支持localStorage是默认显示两列
+			var sta = {
+				one_list:false,//单列控制器
+				two_list:true,//两列控制器
+			}
+		}else{
+			//浏览器支持localStorage先判断是否存在status,存在则获取上一次的数据
+			if(window.localStorage.getItem("status")){
+				var getStatus =window.localStorage.getItem("status");
+				var status = JSON.parse(getStatus);
+				//console.log(status);
+				var sta = status
+			}else{
+				var sta = {
+					one_list:false,//单列控制器
+					two_list:true,//两列控制器
+				}
+			}
+		}
+
+		
+		new Vue({
+			el:"#pro_list",
+			data:{
+				control:sta,//单列和两列的控制器
+				ol_slide_control:true,//点击顶部侧栏滑出控制器,true点击可以滑出，false隐藏
+				price_order_control:true,//价格排序控制器，true箭头向上，false箭头向下。
+				//商品排序显示状态栏选项
+				ol_title:[
+					{title:"综合",ctr_cls:true},
+					{title:"销量",ctr_cls:false},
+					{title:"价格",ctr_cls:false}
+				],
+				//订单列表数据
+				product_list:[
+					{img:"img/swiper_demo1.jpg",name:"芬尚女士香水秘密50ml00011店铺名称，形容日啊打发斯蒂芬是大法师的地方地方",price:"799.00",sales:"销量2000",assess:"99%"},
+					{img:"img/swiper_demo1.jpg",name:"芬尚女士香水秘密50ml00011",price:"799.00",sales:"销量2000",assess:"99%"},
+					{img:"img/swiper_demo1.jpg",name:"芬尚女士香水秘密50ml00011",price:"799.00",sales:"销量2000",assess:"99%"},
+					{img:"img/swiper_demo1.jpg",name:"芬尚女士香水秘密50ml00011",price:"799.00",sales:"销量2000",assess:"99%"}
+				],
+				//侧栏的滑出动画的样式
+				ol_slide:{
+					height:"auto",
+					left:"-17.6rem",
+					opacity:0
+				}//侧栏滑出的高度
+			},
+			computed:function(){
+				
+			},
+			//所有方法的集合
+			methods:{
+				//点击搜索框
+				search:function(){
+					window.location.href="search.html";
+				},
+				//切换单列和两列
+				change_list:function(){
+					this.control.one_list=!this.control.one_list;
+					this.control.two_list=!this.control.two_list;
+					var str = JSON.stringify(this.control)//保存之前浏览的状态
+					window.localStorage.setItem("status",str);//将状态保存在status中
+				},
+				//选择排序
+				productShow:function(ind){
+					var len = this.ol_title.length;
+					for(var i=0;i<len;i++){
+						this.ol_title[i].ctr_cls=false;
+					}
+					this.ol_title[ind].ctr_cls=true;
+				},
+				//左侧滑出
+				slideToggle:function(){
+					if(this.ol_slide_control==true){
+						var height = document.documentElement.clientHeight;
+						var top_height = document.documentElement.clientWidth/22*3.0576;
+						mask_show("mask");
+						this.ol_slide.height=height-top_height+"px";
+						this.ol_slide.left="0rem";
+						this.ol_slide.opacity="1";
+						this.ol_slide_control=false;
+					}else{
+						this.ol_slide.left="-17.6rem";
+						this.ol_slide.opacity="0";
+						this.ol_slide_control=true;
+						mask_hide("mask");
+					}
+				},
+				//点击遮罩层侧栏滑出
+				slide_hide:function(){
+					this.ol_slide.left="-17.6rem";
+					this.ol_slide.opacity="0";
+					this.ol_slide_control=true;
+					mask_hide("mask");
+				}
+			}
+		})
+		
+		
+		})
+		
+		</script>
+	</body>
+</html>

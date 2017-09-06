@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/module.css" />
+		<link rel="stylesheet" href="../css/suc_service.css"  />
+	</head>
+	<body>
+		<div class="wrap service_select service-list" id="service_list">
+			
+			<!--循环列表开始-->
+			<div class="sl-list" v-for="item in service_list">
+				<div class="pd-75-73 border-b217">服务单号:{{item.service_order}}</div>
+				<!--订单详情-->
+				<div class="pd-75-73 ss-wrapper">
+					<div class="ss-img">
+						<img :src="item.img"/>
+					</div>
+					<div class="ss-con">
+						<div>
+							<div class="relative overhidden f-left width-75 t-esis-2">
+								{{item.title}}
+							</div>
+							<div class="f-left width-25 t-right t-rgb-153">x{{item.count}}</div>
+						</div>
+						<div class="clear"></div>
+						<div class="ss-102">编号:1354854522</div>
+						<div class="ss-red" style="margin-top: 0.2rem;">退款金额:￥{{item.price}}</div>
+					</div>
+				</div>
+				<!--订单详情--end-->
+				
+				<!--退款状态-->
+				<div class="ss-tip border-b217">
+					<div class="ss-tip-icon"></div>
+					{{item.state}}&nbsp;{{item.state_result}}
+					<button type="button">查看详情</button>
+				</div>
+				<!--退款状态--end-->
+			</div>
+			<!--循环列表--end-->
+			
+		</div>
+		
+		<script type="text/javascript" src="../js/font-initial.js" ></script>
+		<script type="text/javascript" src="../js/vue.min.js" ></script>
+		<script type="text/javascript" src="../js/vue-resource.min.js" ></script>
+		
+		
+		<script>
+			new Vue({
+				el:"#service_list",
+				data:{
+					service_list:[
+						{
+							service_order:"12345678978989",
+							img:"../demoImg/swiper_demo1.png",
+							title:"芬尚女士香水秘密50ml 香水女士持久淡香清新 专柜正品包邮",
+							count:"1",
+							no:"153453215",
+							price:"293.00",
+							state:"仅退款",
+							state_result:"退款成功"
+						},
+						{
+							service_order:"12345678978989",
+							img:"../demoImg/swiper_demo1.png",
+							title:"芬尚女士香水秘密50ml 香水女士持久淡香清新 专柜正品包邮",
+							count:"1",
+							no:"153453215",
+							price:"293.00",
+							state:"仅退款",
+							state_result:"请等待商家处理"
+						}
+					]
+				}
+			})
+		</script>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/module.css" />
+		<link rel="stylesheet" href="css/other.css">
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="wrap  pro-list classify" id="classify">
+			<!--头部搜索部分-->
+			<div class="ol-head cla-head">
+				<input type="text" class="ol-search" @click="search" readonly="readonly" placeholder="输入您想寻找的商品"/>
+			</div>
+			<div style="height: 3.0576rem"></div>
+			<!--头部搜索部分--end-->
+			
+			<!--侧栏导航-->
+			<div class="cla-aside" :style="{height: aside_height}">
+				<div class="cla-aside-bf">
+					<div class="cla-list" v-for="(list,index) in classify_list" :class="{active:selected_active===index}" @click="tab_aside(index)">
+						{{list}}
+					</div>
+					<!--底部菜单高度-->
+					<div style="height: 3.5rem;"></div>
+				</div>
+			</div>
+			<!--侧栏导航--end-->
+			
+			<!--右侧内容开始-->
+			<div class="cla-content">
+				<div class="cla-content-wrap">
+					<div class="cla-order-title">
+						进入男鞋频道&gt;
+					</div>
+					
+					<!--分类详情列表-->
+					<div class="cla-block" v-for="item in classify_block_list">
+						<div class="cla-block-title">{{item.title}}</div>
+						<ul>
+							<li v-for="list in item.list">
+								<div class="clab"><img :src="list.img"/></div>
+								<em>{{list.name}}</em>
+							</li>
+						</ul>
+					</div>
+					<!--分类详情列表--end-->
+				</div>
+				<div style="height: 3.5rem;"></div>
+			</div>
+			<!--右侧内容结束-->
+			
+			
+			<!--底部菜单-->
+			<div class="bottom-nav">
+				<ul>
+					<a href="index.html">
+						<li><div class="bottom-icon nav1"></div><em>首页</em></li>
+					</a>
+					
+					<li class="active"><div class="bottom-icon nav2"></div><em>商品</em></li>
+					
+					<a href="goods-list.html">
+						<li ><div class="bottom-icon nav3"></div><em>购物车</em></li>
+					</a>
+					
+					<a href="my-center.html">
+						<li><div class="bottom-icon nav4"></div><em>我的</em></li>
+					</a>
+				</ul>
+			</div>
+			
+			<!--底部菜单--end-->
+			
+		</div>
+		
+		
+		
+		<script type="text/javascript" src="js/font-initial.js" ></script>
+		<script type="text/javascript" src="js/moudle.js" ></script>
+		<script type="text/javascript" src="js/vue.min.js"></script>
+		<script type="text/javascript" src="js/vue-resource.min.js" ></script>
+		
+		<script>
+			new Vue({
+				el:"#classify",
+				data:{
+					classify_list:["品牌男装","女装","品牌女装","品牌男鞋",
+					"男鞋","鞋鞋鞋","衣服","裤子","袜子","男装","女装","男鞋","鞋鞋鞋","衣服","裤子","袜子","男装","女装"],
+					selected_active:0,
+					classify_block_list:[
+						{
+							title:"热卖选购1",
+							list:[
+								{img:"demoImg/swiper_demo1.png",name:"休闲鞋"},
+								{img:"demoImg/swiper_demo1.png",name:"休闲鞋2"},
+								{img:"demoImg/swiper_demo1.png",name:"休闲鞋3"},
+								{img:"demoImg/swiper_demo1.png",name:"休闲鞋4"},
+								{img:"demoImg/swiper_demo1.png",name:"休闲鞋5"},
+							]
+						},
+						{
+							title:"热卖选购22",
+							list:[
+								{img:"demoImg/swiper_demo1.png",name:"休闲鞋"},
+								{img:"demoImg/swiper_demo1.png",name:"休闲鞋2"},
+								{img:"demoImg/swiper_demo1.png",name:"休闲鞋3"},
+								{img:"demoImg/swiper_demo1.png",name:"休闲鞋4"},
+								{img:"demoImg/swiper_demo1.png",name:"休闲鞋5"},
+							]
+						}
+					]
+				},
+				//页面渲染完成--$nextTick--必须
+				 mounted: function () {
+				  this.$nextTick(function () {
+				  	
+				  })
+				},
+				//computed计算属性，计算侧栏的高度
+				computed:{
+					//计算侧栏的高度
+					aside_height:function(){
+						var height = document.documentElement.clientHeight;
+						//获取头部高度
+						var width = document.documentElement.clientWidth;
+						var of_height = width/22*3.0576;
+						if(width>=640){
+							return height-58.5+"px";
+						}
+						else
+						return height-of_height+"px";
+					}
+				},
+				methods:{
+				 	search:function(){
+				 		window.location.href="search.html";
+				 	},
+				 	tab_aside:function(index){
+				 		this.selected_active = index;
+				 	}
+				 	
+				 }
+			})
+		</script>
+		
+	</body>
+</html>
