@@ -81,6 +81,7 @@ background: url(../img/pro-icon.png) no-repeat top left;background-size: 8rem au
 .product-info .footer-slide .right .price{color: rgb(242,48,49);font-size: 1rem;}
 .product-info .footer-slide .img img{width: 6rem;height: 6rem;}
 
+/*领取优惠券*/
 .product-info .quan{background: #fff;bottom: 0;left: 0;color: white;width: 100%;font-size: 0.9rem;z-index: 120;opacity: 0;transition: 0.5s bottom,1s opacity;-webkit-transition: 0.5s bottom,1s opacity;}
 @media only screen and (min-width: 640px) {
 	.product-info .quan{width: 640px;left: 50%;margin-left: -320px;}
@@ -96,7 +97,24 @@ background: url(../img/pro-icon.png) no-repeat top left;background-size: 8rem au
 .product-info .quan .quan_gray .quan_btn{color: rgb(153,153,153);}
 .product-info .quan .quan_gray .quan_left{border-right: 1px dashed rgb(153,153,153);}
 .product-info .quan .quan_confirm{width: 100%;background: rgb(242,48,49);color: white;padding: 0.8rem 0;font-size: 0.9rem;}
-.product-info .quan .group{max-height: 15rem;overflow: scroll;clear: both;}
+.product-info .quan .group{height: 15rem;overflow: scroll;clear: both;}
+.product-info .quan .red{color: rgb(242,48,49)}
+.product-info .quan .quan-list{border: 1px solid rgb(242,48,49);margin: 0.8823rem;color: black;}
+.product-info .quan .quan-list:after{content: "";display: block;clear: both;}
+.product-info .quan .quan-list .ql-left{width: 7.1176rem;float: left;text-align: center;
+background: url(../img/bl-icon.png) no-repeat;background-size:5% auto;background-position: 100% 0%;padding: 0.8rem 0;
+}
+.product-info .quan .quan-list .ql-left .ql-price{font-size: 2.3529rem;}
+.product-info .quan .quan-list .ql-right{position: relative;overflow: hidden;padding: 0.58823rem;font-size: 0.8235rem;line-height: 1.5rem;height: 4.88235rem;}
+.product-info .quan .quan-list .ql-right .ql-span{color: white;background-color: rgb(242,48,49);padding: 0 0.3rem;margin-right: 0.3rem;}
+.product-info .quan .quan-list .ql-right .ql-time{font-size: 0.7rem;position: absolute;bottom: 0.5rem;}
+.product-info .quan .quan-list .ql-right button{font-size: 0.7rem;border: 1px solid rgb(242,48,49);color: rgb(242,48,49);width:3.7rem;margin-left: 0.1rem;}
+.product-info .quan .active{border: 1px solid rgb(217,217,217);}
+.product-info .quan .active .ql-left{color:rgb(153,153,153);background-position: 100% 100%;}
+.product-info .quan .active .ql-right .ql-span{background: rgb(153,153,153);}
+.product-info .quan .active .ql-right button{color: rgb(153,153,153);border: 1px solid rgb(153,153,153);}
+
+
 .product-info .seaver{color: rgb(153,153,153);}
 .product-info .seaver .title{color: rgb(242,48,49);}
 .product-info .seaver .seaver_right .sea_title{color: black;font-size: 0.9rem;padding-bottom: 0.3rem;}

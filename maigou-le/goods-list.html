@@ -10,12 +10,12 @@
 	</head>
 	<body>
 		<div class="wrap goods-list">
-			<div class="public-back-wrap" id="back_Wrap">
+			<div class="public-back-wrap">
 				<a class="public-back-a" onclick="window.history.back()" id="goods_back"></a>
 				购物车
 				<button type="button" class="public-edi" id="edi_btn">编辑</button>
 			</div>
-			<div style="height: 3rem;"></div>
+			
 			
 			
 			<!--侧栏滑出-->
@@ -67,7 +67,7 @@
 					</div>
 					<div class="overhidden goods-con">
 						<h4>芬尚女士香水秘密50ml 香水女士持久淡香清新 专柜正品包邮</h4>
-						<div class="select-gz br-2">
+						<div class="select-gz br-2 t-esis">
 							颜色：<span class="private-sel">黄色</span> 
 							大小：<span class="private-sel">50ml</span>
 							<span class="display-none private-stock">10</span><!--当前产品的库存(或者限制的购买数量)---隐藏-->
@@ -287,7 +287,7 @@
 			<!--底部总计开始-->
 			<div class="goods-footer">
 				<div class="f-left relative gf-list1">
-					<input type="radio" class="select-radio-all" id="sel_total"/>
+					<input type="checkbox" class="select-radio-all" id="sel_total"/>
 					全选
 				</div>
 				<div class="f-left gf-list2">
@@ -323,7 +323,7 @@
 			<!--编辑后底部显示栏-->
 			<div class="goods-footer" id="goods_edi" style="display: none;">
 				<div class="f-left relative gf-list1">
-					<input type="radio" class="select-radio-all" id="edi_radio_all"/>
+					<input type="checkbox" class="select-radio-all" id="edi_radio_all"/>
 					全选
 				</div>
 				<div class="f-right gf-list2 edi-right">

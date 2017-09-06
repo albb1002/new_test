@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>脉购微商城</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link rel="stylesheet" href="../css/common.css" />
 		<link rel="stylesheet" href="../css/module.css" />
@@ -10,7 +10,12 @@
 	</head>
 	<body>
 		<div class="wrap service_select status" id="status"> 
-			
+			<!--返回-->
+			<div class="public-back-wrap">
+				<a class="public-back-a" onclick="window.history.back()" id="goods_back"></a>
+				售后订单详情
+			</div>
+			<!--返回end-->
 			<!--商家待处理-->
 			<div class="status-head pd-75-73">
 				<div class="sh-title">请等待商家处理</div>
@@ -29,14 +34,11 @@
 					<button type="button">修改申请</button>
 				</div>
 			</div>
-			<div class="pd-75-73 border-b217 bg-rgb-255">
-				退款信息
-			</div>
 			<!--商家待处理--end-->
 			
 			
 
-			<!--商家待同意退款-->
+			<!--商家同意退款-请填写物流信息-->
 			<div class="status-head pd-75-73">
 				<div class="sh-title">请填写物流信息</div>
 				<div class="sh-con">还剩9天10小时预期未处理，申请将自动关闭</div>
@@ -58,44 +60,74 @@
 					<button type="button">填写退货物流</button>
 				</div>
 			</div>
-			<div class="pd-75-73 border-b217 bg-rgb-255">
-				退款信息
-			</div>
-			<!--商家待处理--end-->
+			<!--商家同意退款-请填写物流信息--end-->
 			
 			
 			
-			<!--商家待同意退款-->
+			<!--商家拒绝退款-请重新填写-->
 			<div class="status-head pd-75-73">
-				<div class="sh-title">请填写物流信息</div>
-				<div class="sh-con">还剩9天10小时预期未处理，申请将自动关闭</div>
+				<div class="sh-title">请修改退货申请</div>
+				<div class="sh-con">还剩9天10时，预期未处理，申请将自动关闭</div>
 			</div>
 			
 			<div class="pd-75-73 border-b217 bg-rgb-255">
-				商家已同意退货申请，请尽早退货
+				商家拒绝理由：请上传鞋底照片，证明鞋子未被穿过
 			</div>
 			<div class="pd-75-73 font-24 t-rgb-128 border-b217 bg-rgb-255">
-				<div class="font-28 t-rgb-0 pd-bottom-4">退货说明:</div>
-				<div class="pd-bottom-4">张三 18878546545</div>
-				<div>厦门市思明区软件园二期观日路54号楼502</div>
-			</div>
-			<div class="pd-75-73 font-24 t-rgb-128 border-b217 bg-rgb-255">
-				<div class="font-28 t-rgb-0 pd-bottom-4">退货说明:</div>
-				<div>未与商家协商一致，请勿使用到付或平邮，以免商家拒签货物</div>
+				<div class="pd-bottom-4">1.如果同意，请根据拒绝原因修改申请，卖家会重新处理。</div>
+				<div>2.如果有疑问，请主动和卖家沟通</div>
 				<div class="sh-btn">
 					<button type="button">撤销申请</button>
-					<button type="button">填写退货物流</button>
+					<button type="button">修改申请</button>
 				</div>
 			</div>
+			<!--商家拒绝退款-请重新填写--end-->
+			
+			
+			<!--等待商家收货-->
+			<div class="status-head pd-75-73">
+				<div class="sh-title">请等待商家收货并退款</div>
+				<div class="sh-con">还剩9天10时，商家预期未处理，系统将自动退款给您</div>
+			</div>
+			<div class="pd-75-73 font-24 t-rgb-128 border-b217 bg-rgb-255">
+				<div class="pd-bottom-4">1.如果商家收到货并验证货无误，将退款给您。(原支付方式退款)</div>
+				<div>2.如果商家拒绝，需要您修改退货退款申请</div>
+				<div class="sh-btn">
+					<button type="button">撤销申请</button>
+					<button type="button">修改申请</button>
+				</div>
+			</div>
+			<!--等待商家收货--end-->
+			
+			
+			<!--退款成功-->
+			<div class="status-head pd-75-73">
+				<div class="sh-title">退款成功</div>
+				<div class="sh-con">2017年1月1日 11:48</div>
+			</div>
+			<div class="pd-75-73 border-b217 bg-rgb-255">
+				退款总金额 <span class="f-right">￥39.00</span>
+			</div>
+			<div class="pd-75-73 border-b217 bg-rgb-255">
+				退回支付宝 <span class="f-right">￥39.00</span>
+			</div>
+			<!--退款成功--end-->
+			
+			
+			<!--退款关闭-->
+			<div class="status-head pd-75-73">
+				<div class="sh-title">退款关闭</div>
+				<div class="sh-con">2017年1月1日 11:48</div>
+			</div>
+			<div class="pd-75-73 border-b217 bg-rgb-255">
+				关闭原因：由于您取消退款，退款关闭
+			</div>
+			<!--退款关闭--end-->
+			
+			
 			<div class="pd-75-73 border-b217 bg-rgb-255">
 				退款信息
 			</div>
-			<!--商家待处理--end-->
-			
-			
-			
-			
-			
 			<!--产品-->
 			<div class="pd-75-73 ss-wrapper">
 				<div class="ss-img">

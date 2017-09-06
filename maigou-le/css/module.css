@@ -46,7 +46,7 @@ background:url(../img/pro-icon.png) no-repeat top left;background-size: 8rem aut
 
 /*加减*/
 .btn_number{float: right;margin-right: 1rem;}
-.btn_number button{background: rgb(242,242,242);color: rgb(204,204,204);width: 2rem;height: 2rem;text-align: center;line-height: 2rem;font-size: 0.9rem;}
+.btn_number button{background: rgb(242,242,242);color: rgb(204,204,204);width: 1.7647rem;height: 1.7647rem;text-align: center;line-height: 1.7647rem;font-size: 0.9rem;}
 .btn_number input[type="text"]{width: 3rem;text-align: center;text-align: center;}
 .btn_number .active{background: rgb(230,230,230);color: rgb(153,153,153);}
 /*加减--带border*/
