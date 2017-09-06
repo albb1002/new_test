@@ -146,3 +146,9 @@ background-size: 6.5rem;
 .bottom-nav .active .nav2{width: 1.6rem;background-position:31% 100%;}
 .bottom-nav .active .nav3{background-position:70% 100%;}
 .bottom-nav .active .nav4{background-position:102.5% 100%;}
+/*底部菜单--end*/
+
+/*所有的联系客服*/
+.public-server{color: rgb(102,102,102);text-align: center;margin: 1.17rem 0;}
+.public-server img{width: 1rem;height: 1rem;margin-right: 0.2rem;position: relative;top: 0.15rem;}
+/*联系客服--end*/
