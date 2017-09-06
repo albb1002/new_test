@@ -30,7 +30,7 @@ background: url(../img/bottom.png) no-repeat center right;background-size: 1rem 
 .goods-list .goods-number .btn_minues{left: 0;top: 0rem;border-right: 1px solid rgb(217,217,217);}
 .goods-list .goods-number .btn_add{right: 0;top: 0rem;border-left: 1px solid rgb(217,217,217);}
 
-.goods-list .goods-footer{position: fixed;width: 100%;max-width:640px;left: 0;bottom: 3.28rem;background: #FFFFFF;font-size: 0.8rem;height: 3rem;border-top: 1px solid rgb(217,217,217);}
+.goods-list .goods-footer{position: fixed;width: 100%;max-width:640px;left: 0;bottom: 3.23rem;background: #FFFFFF;font-size: 0.8rem;height: 3rem;border-top: 1px solid rgb(217,217,217);}
 @media only screen and (min-width: 640px) {
 	.goods-list .goods-footer{;left: 50%;margin-left: -320px;}
 }
