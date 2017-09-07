@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/module.css" />
+		<link rel="stylesheet" href="css/order.css" />
+	</head>
+	<body>
+		<div class="wrap order order-logistics" id="olgsis">
+			<div class="public-back-wrap">
+				<a class="public-back-a" onclick="window.history.back()" id="goods_back"></a>
+				物流详情
+			</div>
+			<div class="bg-rgb-255 pd-75-73">
+				<div class="olg-list">
+					物流状态：已完成
+				</div>
+				<div class="olg-list">
+					承运公司：圆通快递
+				</div>
+				<div class="olg-list">
+					运单编号：12456879
+				</div>
+			</div>
+			<div class="floor"></div>
+			
+			<div class="pd-75-73 bg-rgb-255 border-b217">
+				派件导航
+			</div>
+			
+			<div class="pd-lr-7333 bg-rgb-255 overhidden pd-top-7588" >
+				<div class="olg-nav-list" v-for="(list,index) in nav_list">
+					<div class="olg-nav-left">
+						<div class="olg-nav-line"></div>
+						<span class="olg-nav-square"></span>
+					</div>
+					<div class="olg-nav-right">
+						<div>
+							{{list.message}}
+						</div>
+						
+						<div>电话：<a href="tel:{{list.phone}}" class="phone">{{list.phone}}</a></div>
+						<div>{{list.time}}</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			
+		</div>
+		
+		<script type="text/javascript" src="js/font-initial.js" ></script>
+		<script type="text/javascript" src="js/vue.min.js" ></script>
+		<script>
+			new Vue({
+				el:"#olgsis",
+				data:{
+					//导航数据
+					nav_list:[
+						{
+							message:"已签收，签收人凭取货码签收。感谢使用FJ古歌·蔡塘de家蜂巢【自提柜】，期待再次为您服务。adfadsfads",
+							time:"2016-12-20 17:25:13",
+							phone:"152551532153"
+						},
+						{
+							message:"已签收，签收人凭取货码签收。",
+							time:"2016-12-20 17:25:13",
+							phone:"152551532153"
+						},
+						{
+							message:"已签收，签收人凭取货码签收。感谢使用FJ古歌·蔡塘de家蜂巢【自提柜】，期待再次为您服务。撒打发斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿萨德啥地方啥地方阿萨德",
+							time:"2016-12-20 17:25:13"
+						},{
+							message:"已签收，大法师的阿斯蒂芬啥地方啥地方阿斯蒂芬阿斯蒂芬阿斯蒂芬阿斯蒂芬阿萨德阿萨德发生的阿萨德发顺丰撒地方阿斯蒂芬阿斯蒂芬阿斯蒂芬阿萨德阿萨德发到",
+							time:"2016-12-20 17:25:13"
+						}
+						,{
+							message:"已签收，",
+							time:"2016-12-20 17:25:13"
+						},{
+							message:"已签收，",
+							time:"2016-12-20 17:25:13"
+						}
+					]
+				},
+				mounted:function(){
+					this.$nextTick(function () {
+					 	var cls = document.getElementsByClassName("olg-nav-list");
+					 	var cls_left = document.getElementsByClassName("olg-nav-left");
+					 	var cls_right = document.getElementsByClassName("olg-nav-right");
+					 	var len = cls.length;
+					 	for(var i=0 ; i<cls.length ; i++){
+					 		var cls_right_height = cls_right[i].offsetHeight;
+					 		var sty = len-i;
+					 		cls_left[i].setAttribute("style","height:"+cls_right_height+"px;z-index:"+sty+";");
+					 	}
+					})
+				}
+			})
+		</script>
+	</body>
+</html>

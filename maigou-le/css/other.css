@@ -79,15 +79,15 @@ animation:vip 2s ease 3 forwards;
 	50%{bottom: -0.7rem;}
 	100%{bottom: 0;}
 }
-.center .cen-icon{width: 2rem;height: 2rem;margin: auto;position: relative;
+.center .cen-icon{width: 1.7647rem;height: 1.7647rem;margin: auto;position: relative;
 background: url(../img/cen-ff-icon.png) no-repeat center;background-size: 100% auto;
 }
 
-.center .pi1{background-position: 0 0.1rem;}
-.center .pi2{background-position: 0 -1.9rem;}
-.center .pi3{background-position: 0 -3.9rem;}
-.center .pi4{background-position: 0 -5.9rem;}
-.center .pi5{background-position: 0 -7.9rem;}
+.center .pi1{background-position: 0 -1.3%;}
+.center .pi2{background-position: 100% 24.5%;}
+.center .pi3{background-position: 0 49%;}
+.center .pi4{background-position: 0.17rem 75.5%;}
+.center .pi5{background-position: 0.25rem 102%;}
 
 .center .unread{position: absolute;width: 1.2rem;height: 1.2rem;background: red;color: white;font-size: 0.8rem;
 -moz-border-radius: 50%;
@@ -106,18 +106,20 @@ background-size: 90% auto;position: absolute;top: 0.8323rem;
 .center .cen-list{padding: 0.8823rem 0;border-bottom: 1px solid rgb(230,230,230);background: url(../img/right.png) no-repeat center right;
 background-size: 1.2rem auto;background-position: 98% 0.8823rem;position: relative;text-indent: 2.5rem;
 }
+.center .borderN{border: none;}
+
 
 .center .cen-block a{display: block;}
-.center .cli1{background-position: 0 0.15rem;}
-.center .cli2{background-position: 0 -2rem;}
-.center .cli3{background-position: 0 -4rem;}
-.center .cli4{background-position: 0 -6rem;}
+.center .cli1{background-position: 50% -1.1%;}
+.center .cli2{background-position: 50% 13%;}
+.center .cli3{background-position: 50% 27.5%;}
+.center .cli4{background-position: 50% 40.5%;}
 
-.center .cli5{background-position: 0 -14.1rem;}
-.center .cli6{background-position: 0 -7.9rem;}
+.center .cli5{background-position: 50% 96%;}
+.center .cli6{background-position: 50% 53.7%;}
 
-.center .cli7{background-position: 0 -10rem;}
-.center .cli8{background-size: 85% auto;background-position: 0 -11.4rem;top: 0.8rem;}
+.center .cli7{background-position: 50% 68.1%;}
+.center .cli8{background-position: 50% 82.5%}
 /*首页end*/
 
 
@@ -187,10 +189,11 @@ font-size: 0.8rem;
 .collect{font-size: 0.9rem;}
 .collect .coll-edi{background: none;color: rgb(93,93,93);font-size: 0.9rem;}
 .collect .coll-title{border-bottom: 1px solid rgb(217,217,217);padding: 0.8rem 0.5rem;}
-.collect .coll-list{background: #FFFFFF;padding: 0.8rem 0.5rem;border-bottom: 1px solid rgb(217,217,217);position: relative;overflow: hidden;}
+.collect .coll-list{background: #FFFFFF;padding: 0.7588rem 0.7333rem;border-bottom: 1px solid rgb(217,217,217);position: relative;overflow: hidden;}
 
 .collect .coll-list .coll-img{width: 4.5rem;height: 4.5rem;margin-right: 0.5rem;}
-.collect .coll-price{font-size: 1.2rem;color: rgb(242,48,49);padding-top: 0.2rem;}
+.collect .coll-list .coll-con{height: 4.5rem;}
+.collect .coll-price{font-size: 1.2rem;color: rgb(242,48,49);padding-top: 0.2rem;position: absolute;bottom: 0;}
 .collect .coll-bottom{position: fixed;bottom: 0;width: 100%;background: rgba(255,255,255,0.8);max-width: 640px;
 padding: 0.8rem 0;line-height: 2.1rem;border-top: 1px solid rgb(217,217,217);
 }
@@ -264,3 +267,61 @@ border-radius: 0.2rem;
 .rechange-record .list img{width: 2.3529rem;height: 2.3529rem;margin: 0 1.38235rem 0 1.1764rem;}
 .rechange-record .title{line-height: 1.3529rem;}
 .rechange-record .con{line-height: 1rem;}
+/*充值记录--end*/
+
+/*设置*/
+.setting{font-size: 0.8823rem;background: #FFFFFF;}
+.setting .title{width: 2.94rem;height: 2.94rem;float: left;}
+.setting .list{border-bottom: 1px solid rgb(217,217,217);background:url(../img/right.png) no-repeat center right;background-size: 1.5rem auto;}
+.setting .weixinName{height: 2.94rem;line-height:3rem;margin-right:0.8rem;color: rgb(153,153,153);max-width: 50%;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;}
+/*设置--end*/
+
+/*我的预约*/
+.appointment{font-size: 0.8823rem;}
+.appointment .app1active{border-bottom: 2px solid rgb(242,48,49);}
+.appointment .app1{float: left;padding: 0.7588rem 0;width: 20%;margin: 0 15%;}
+.appointment .app2{float: left;width: 22%;font-size: 0.8235rem;padding: 0.7588rem 0;margin: 0 1.5%;}
+.appointment .app2active{border-bottom: 2px solid rgb(242,48,49);}
+.appointment .app-red{color: rgb(242,48,49);}
+.appointment .app-btn{text-align: right;}
+.appointment .app-btn button{border: 1px solid rgb(0,0,0);padding: 0.4111rem 0.8823rem;}
+.appointment .app-list{margin-bottom: 0.8823rem;}
+
+
+.appointment .sl-list{background: #FFFFFF;margin-bottom: 0.7647rem;}
+.appointment .ss-tip{position: relative;padding: 0.5288rem 0.7333rem;text-align: right;}
+
+.appointment .ss-tip button{border: 1px solid rgb(242,48,49);;background-color: #FFFFFF;font-size: 0.8823rem;
+padding:0.4411rem 0.7352rem;color: rgb(242,48,49);
+border-radius: 0.3rem;-webkit-border-radius: 0.3rem;cursor: pointer;
+}
+.appointment{font-size: 0.8823rem;}
+.appointment .ss-img{width: 4.70588rem;height:4.70588rem;border: 1px solid rgb(230,230,230);
+border-radius: 0.3rem;margin-right: 0.58823rem;
+-webkit-border-radius: 0.3rem;float: left;
+}
+.appointment .ss-img:after{content: "";display: block;clear: both;}
+.appointment .ss-img img{float: left;width: 100%;height: 100%;}
+.appointment .ss-wrapper{background: #FFFFFF;font-size: 0.8235rem;border-bottom: 1px solid rgb(230,230,230);}
+.appointment .ss-wrapper:after{content: "";display: block;clear: both;}
+.appointment .ss-con{overflow: hidden;}
+.appointment .ss-title{min-height: 2.3rem;}
+.appointment .ss-102{color: rgb(102,102,102);margin-top: 0.2rem;}
+.appointment .ss-153{color: rgb(153,153,153);}
+.appointment .ss-red{color: rgb(242,48,49);}
+.appointment .ss-select-list{background: url(../img/ss_service_icon.png) no-repeat;position: relative;
+background-size: 1.7rem;background-position: 100% 37.5%;background-color: #FFFFFF;font-size: 0.8235rem;
+border-bottom: 1px solid rgb(217,217,217);
+}
+.appointment .ss-left-17647{margin-left: 1.7955rem;}
+.appointment .ss-icon{width: 1.5rem;height:1.5rem;background: url(../img/ss_service_icon.png) no-repeat;
+position: absolute;top: 1.3rem;left: 0.7333rem;background-size: 1.5rem;
+background-position: 0 0;
+}
+.appointment .ss-icon-tui{background-position: 0 19.5%;}
+
+
+
+
+
+

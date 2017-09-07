@@ -110,16 +110,18 @@ border-radius: 0.2rem;
 }
 .order .pay-again{background: rgb(255,150,0);color: white;}
 .order .pa-width-100{width: 92% !important;}
-.order .og-list .quxiao{background: rgb(230,230,230);}
+.order .og-list .quxiao{background: rgb(230,230,230);color: rgb(102,102,102);}
 .order .og-list .pay{background: rgb(242,48,49);color: white;}
-.order .og-list .blue{color: rgb(65,128,255);}
+.order .og-list .blue{color: rgb(255,150,0);}
+.order .og-list .copy{color: rgb(255,150,0);border: 1px solid rgb(255,150,0);padding: 0 0.4423rem;}
 .order .og-list .price{color: rgb(242,48,49);}
 .order .tuikuan{width: 100%;padding: 0.8233rem 0;text-align: center;font-size: 0.8823rem;line-height: 0.8823rem;}
 .order .og-nbg{background: #FFFFFF;}
-
-
+.order .og-wt-goods .quxiao{width: 29% !important;margin-right: 0.8rem}
+.order .og-wt-goods .pay{width: 29% !important;margin-right: 0.8rem;}
+.order .og-wt-goods .pay-again{width: 29% !important;}
 /*我的订单*/
-.order-all{font-size: 0.9rem;}
+.order-all{font-size: 0.8823rem;}
 .order-all .oa-nav{background: #FFFFFF;}
 .order-all .oa-nav:after{content: "";display: block;clear: both;}
 .order-all .oa-nav ul{width: 100%;}
@@ -137,8 +139,33 @@ border-radius: 0.2rem;
 .order-all .oa-list{margin-bottom: 1rem;}
 .order-all .oa-gray{margin-right: 0.5rem;}
 .order-all .oa-red{color: rgb(242,48,49);border-color: rgb(242,48,49) !important;}
-.order-all .oa-order{background: #FFFFFF;padding: 0.8rem 0.5rem;border-top: 1px solid rgb(217,217,217);
+.order-all .oa-order{background: #FFFFFF;padding: 0.7588rem 0.7333rem;border-top: 1px solid rgb(217,217,217);
 border-bottom: 1px solid rgb(217,217,217);
 }
 .order-all .od-cen{width: 74% !important;}
-.order-all .od-con-img{width: 4.5rem;height: 4.5rem;padding: 0;}
+.order-all .od-con-img{width: 4.7rem;height: 4.7rem;padding: 0;}
+.order-all .od-con-img img{width: 100%;height: 100%;}
+.order-all .od-cen{position: relative;color: rgb(104,104,104);height: 4.7rem;}
+.order-all .oa-guiz{position: absolute;bottom: 1.2rem;}
+.order-all .oa-cen-price{position: absolute;bottom: 0rem;}
+.order-all .od-con h1{line-height: 1.05rem !important;}
+
+/*物流详情*/
+.order-logistics{color: ;}
+.order-logistics .olg-list{padding-bottom: 0.7588rem;}
+.order-logistics .olg-list:last-child{padding: 0;}
+.order-logistics .olg-nav-list{line-height: 1.3rem;color: rgb(153,153,153);}
+.order-logistics .olg-nav-list:first-child{color: black;}
+.order-logistics .olg-nav-list:first-child .olg-nav-right{padding-top: 0;}
+.order-logistics .olg-nav-list:first-child .olg-nav-left{padding-top: 0.5rem;}
+.order-logistics .olg-nav-list:first-child .olg-nav-square{background: rgb(242,48,49) !important;box-shadow: 0 0 0 0.2rem rgba(242,48,49,0.5);}
+.order-logistics .olg-nav-list:after{content: "";display: block;clear: both;}
+.order-logistics .olg-nav-list .phone{color: rgb(57,132,255);}
+.order-logistics .olg-nav-left{width: 1.5294rem;height: 3.6764rem;float: left;margin-right: 0.58823rem;position: relative;z-index: 11;}
+.order-logistics .olg-nav-line{width: 2px;height: 100%;position: relative;background: rgb(153,153,153);left: 0.7rem;top: 0rem;z-index: 33;}
+.order-logistics .olg-nav-square{display: block;width: 1rem;height: 1rem;background: rgb(153,153,153);position: absolute;top:1rem;left: 0.2rem;z-index: 9999;
+border-radius: 50%;-webkit-border-radius: 50%;
+}
+.order-logistics .olg-nav-list:first-child .olg-nav-square{top: 0.3rem;}
+.order-logistics .olg-nav-right{position: relative;overflow: hidden;border-bottom: 1px solid rgb(217,217,217);padding: 0.7588rem 0;}
+/*物流详情--end-*/

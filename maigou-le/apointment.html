@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/module.css" />
+		<link rel="stylesheet" href="css/other.css" />
+	</head>
+	<body>
+		<div class="wrap appointment" id="appointment">
+			<div class="public-back-wrap">
+				<a class="public-back-a" onclick="window.history.back()"></a>
+				我的预约
+			</div>
+			
+			<!--预约--待预约--标题-->
+			<div class="pd-lr-7333 t-center border-b217 bg-rgb-255">
+				<div class="app1" :class="{app1active:tabApp1===index}" v-for="(list,index) in app1" @click="tabapp1(index)">{{list}}</div>
+				<div class="clear"></div>
+			</div>
+			<!--预约--待预约--标题--end-->
+			
+			
+			<!--已预约开始-->
+			<div v-if="tabApp1===0">
+				<div class="pd-lr-7333 t-center border-b217 bg-rgb-255">
+					<div class="app2 app2active">全部(3)</div>
+					<div class="app2">审核中(3)</div>
+					<div class="app2">已接受(3)</div>
+					<div class="app2">已拒绝(3)</div>
+					<div class="clear"></div>
+				</div>
+				
+				<div class="floor"></div>
+				<div class="app-list bg-rgb-255 font-28">
+					<div class="pd-75-73 border-b217">
+						体检预约
+						<span class="f-right app-red">审核中</span>
+					</div>
+					<div class="border-b217 pd-75-73">
+						<div class="mg-bottom-5">商品名称：999安康体体检套餐</div>
+						<div  class="mg-bottom-5">预约时间：2017年8月26日 19:00</div>
+						<div  class="mg-bottom-5">真实姓名：某某</div>
+						<div  class="mg-bottom-5">手机号码：15266654666</div>
+						<div  class="mg-bottom-5">备注：体检</div>
+					</div>
+					<div class="pd-75-73 border-b217 app-btn bg-rgb-255">
+						<button type="button" class="br-3"> 取消预约</button>
+					</div>
+				</div>
+				<div class="app-list bg-rgb-255 font-28">
+					<div class="pd-75-73 border-b217">
+						体检预约
+						<span class="f-right app-red">已接受</span>
+					</div>
+					<div class="border-b217 pd-75-73">
+						<div class="mg-bottom-5">商品名称：999安康体体检套餐</div>
+						<div  class="mg-bottom-5">预约时间：2017年8月26日 19:00</div>
+						<div  class="mg-bottom-5">真实姓名：某某</div>
+						<div  class="mg-bottom-5">手机号码：15266654666</div>
+						<div  class="mg-bottom-5">备注：体检</div>
+					</div>
+					<div class="pd-75-73 border-b217 app-btn bg-rgb-255">
+						<button type="button" class="br-3"> 取消预约</button>
+					</div>
+				</div>
+			</div>
+			<!--已预约结束-->
+			
+			<!--待预约开始-->
+			<div v-if="tabApp1===1">
+				<div class="sl-list" v-for="item in service_list">
+					<div class="pd-75-73 border-b217">服务单号:{{item.service_order}}</div>
+					<!--订单详情-->
+					<div class="pd-75-73 ss-wrapper">
+						<div class="ss-img">
+							<img :src="item.img"/>
+						</div>
+						<div class="ss-con">
+							<div>
+								<div class="relative overhidden f-left width-75 t-esis-2 font-30 ss-title">
+									{{item.title}}
+								</div>
+								
+								<div class="f-left width-25 t-right t-rgb-153">
+									<div class="ss-red">￥297.00</div>
+									x{{item.count}}</div>
+							</div>
+							<div class="clear"></div>
+							<div class="ss-102 font-26">编号:1354854522</div>
+							<div class="ss-102 font-26" style="margin-top: 0.2rem;">规格:￥{{item.price}}</div>
+						</div>
+					</div>
+					<!--订单详情--end-->
+					
+					<!--退款状态-->
+					<div class="ss-tip border-b217">
+						<button type="button">立即预约</button>
+					</div>
+					<!--退款状态--end-->
+				</div>
+				
+			</div>
+			<!--待预约结束-->
+			
+			
+		</div>
+		
+		<script type="text/javascript" src="js/font-initial.js" ></script>
+		<script type="text/javascript" src="js/vue.min.js" ></script>
+		<script>
+			new Vue({
+				el:"#appointment",
+				data:{
+					tabApp1:0,//已预约--待预约切换控制器
+					app1:["已预约","待预约"],
+					service_list:[
+						{
+							service_order:"12345678978989",
+							img:"demoImg/swiper_demo1.png",
+							title:"芬尚女士香水秘密50ml 香水女士持久淡香清新 专柜正品包邮",
+							count:"1",
+							no:"153453215",
+							price:"粉色，50ml",
+							state:"仅退款",
+							state_result:"退款成功"
+						},
+						{
+							service_order:"12345678978989",
+							img:"demoImg/swiper_demo1.png",
+							title:"芬尚女士香水秘密50ml 香水女士持久淡香清新 专柜正品包邮",
+							count:"1",
+							no:"153453215",
+							price:"粉色，50ml",
+							state:"仅退款",
+							state_result:"请等待商家处理"
+						}
+					]
+				},
+				methods:{
+					tabapp1:function(index){
+						this.tabApp1=index;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
