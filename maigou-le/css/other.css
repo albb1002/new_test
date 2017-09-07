@@ -101,7 +101,7 @@ line-height: 1.2rem;
 .center .cen-order{background: url(../img/cen-order.png) no-repeat left;background-size: 0.5rem auto;}
 .center .cen-list-icon{width: 1.5rem;height: 1.5rem;background: url(../img/cen-list.png) no-repeat left;
 float: left;margin-right: 0.3rem;margin-left: 0.7333rem;
-background-size: 90% auto;position: absolute;top: 0.75rem;background-color: sandybrown;
+background-size: 90% auto;position: absolute;top: 0.75rem;
 }
 .center .cen-list{padding: 0.8823rem 0;border-bottom: 1px solid rgb(230,230,230);background: url(../img/right.png) no-repeat center right;
 background-size: 1.2rem auto;background-position: 98% 0.8823rem;position: relative;text-indent: 2.5rem;
