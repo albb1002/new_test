@@ -48,3 +48,12 @@ background: url(../img/bottom.png) no-repeat center right;background-size: 1rem 
 .goods-list .goods-footer .edi-right .edi-coupon{color: white;background: rgba(0,0,0,0.7);margin-right: 0.5rem;}
 .goods-list .goods-footer .edi-right .edi-del{color: rgb(242,48,49);border: 1px solid rgb(242,48,49);
 }
+
+
+
+.successful{font-size: 0.8823rem;}
+.successful .price{color: rgb(242,48,49);font-size: 1.7647rem;}
+.successful .goods-null-icon{height: 6.7647rem;padding: 2.3529rem 0 0 0;}
+.successful .goods-null-icon img{height: 100%;}
+.successful .btn_link{width: 5.8823rem;padding: 0.58823rem 0;border-radius: 0.3rem;-webkit-border-radius: 0.3rem;}
+.successful .btn_link:first-child{margin-right: 4.3rem;}

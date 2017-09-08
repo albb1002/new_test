@@ -320,8 +320,26 @@ background-position: 0 0;
 }
 .appointment .ss-icon-tui{background-position: 0 19.5%;}
 
+/*我的预约--end*/
 
-
-
-
+/*支付密码*/
+.password{font-size: 0.8823rem;}
+.password .code-phone{width: 12.35rem;padding-top: 2px;padding-bottom: 2px;}
+.password .code-phone input[type="text"],input[type="password"]{text-indent: 0.5rem;box-shadow: 0 0 0 1px rgb(200,200,200);}
+.password .code-btn{position: relative;overflow: hidden;text-align: right;padding-top: 2px;padding-bottom: 2px;}
+.password .code-btn button{padding: 0.9rem 0;width: 6.5rem;text-align: center;font-size: 0.8823rem;color: rgb(242,48,49);
+box-shadow: 0 0 0 1px rgb(242,48,49);margin-right: 2px;
+}
+.password .password-confirm{margin-top: 1.47rem;}
+.password .password-confirm button{color: white;padding: 1rem 0;width: 100%;font-size: 0.8823rem;text-align: center;
+background-color: rgb(242,48,49);
+}
+.password .sel-list{display: block;padding: 0.7588rem 0.7333rem;border-bottom: 1px solid rgb(217,217,217);
+background: url(../img/right.png) no-repeat center right;background-color: #FFFFFF;background-size: 1.5rem auto;
+}
+.password .sel-bottom{position: fixed;max-width: 640px;width: 100%;bottom: 0;left: 0;}
+.password .sel-bottom img{float: left;}
+@media only screen and (min-width: 640px) {
+	.password .sel-bottom{left: 50%;margin-left: -320px;}
+}
 

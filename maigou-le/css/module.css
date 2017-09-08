@@ -50,11 +50,11 @@ background:url(../img/pro-icon.png) no-repeat top left;background-size: 8rem aut
 .btn_number input[type="text"]{width: 3rem;text-align: center;text-align: center;}
 .btn_number .active{background: rgb(230,230,230);color: rgb(153,153,153);}
 /*加减--带border*/
-.border-btn-number{position: relative;height: 2rem;width: 7rem;border: 1px solid rgb(217,217,217);padding-top: 0;margin-top: 0.5rem;float: none;}
-.border-btn-number input[type="text"]{position: absolute;height: 1.8rem;left: 2rem;width: 3rem;}
+.border-btn-number{position: relative;height: 1.7647rem;width: 6.47rem;border: 1px solid rgb(217,217,217);padding-top: 0;margin-top: 0.5rem;float: none;}
+.border-btn-number input[type="text"]{position: absolute;height: 1.6rem;left: 1.7647rem;width: 3rem;}
 .border-btn-number button{background: #fff;color: rgb(100,100,100);position: absolute;}
 .border-btn-number .btn_minues{left: 0;top: 0rem;border-right: 1px solid rgb(217,217,217);}
-.border-btn-number .btn_add{left: 5rem;top: 0rem;border-left: 1px solid rgb(217,217,217);}
+.border-btn-number .btn_add{right: 0;top: 0rem;border-left: 1px solid rgb(217,217,217);}
 .border-btn-number .active{background:#FFFFFF !important;color:black;}
 
 /*加入购物车*/
@@ -91,6 +91,45 @@ font-size: 0.8823rem !important;line-height: 0.8823rem !important;
 }
 
 
+/*产品列表*/
+.public-od-con{padding: 0.7588rem 0.7333rem;background: #FFFFFF;}
+.public-od-con:after{content:"";display: block;clear: both;}
+.public-od-con-img{width: 3.9rem;height: 3.9rem;float: left;border: 1px solid rgb(230,230,230);padding: 0.3rem;
+}
+
+.public-od-con h1{padding: 0;font-size: 0.7647rem;font-weight: normal;color:black;line-height: 1.2rem;
+display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;
+min-height: 2.3474rem;
+}
+.public-od-cen{width: 11rem;font-size: 0.71rem;color: rgb(153,153,153);}
+.public-od-cen .od-cen-btn{border: 1px solid rgb(242,48,49);color: rgb(242,48,49);font-size: 0.71rem;line-height: 0.71rem;
+padding: 0.3rem 0.6rem;
+}
+
+.public-od-price{overflow: hidden;text-align: right;}
+.public-od-price .price{color: rgb(242,48,49);}
+.public-count{color: rgb(153,153,153);line-height: 1.2rem;}
+
+.public-od-or{background: #FFFFFF;margin-top: 1rem;}
+input[type="checkbox"]{width: 1rem;height: 1rem;border: 1px solid rgb(217,217,217);}
+input[type="checkbox"]:checked{background: url(../img/od-check.png) no-repeat center;background-size:70% 70%}
+.public-od-pay .title{position: relative;text-indent: 1.8rem;}
+.public-od-pay .pay-icon{position: absolute;width: 1.5rem;height: 1.5rem;left: 0.5rem;top: 0.7rem;}
+.public-od-mes input[type="text"]{font-size: 0.8rem;width: 95%;}
+.public-od-oder{padding-bottom: 1rem;}
+.public-od-oder button{color: white;background: rgb(242,48,49);width: 100%;padding: 0.6rem 0;font-size: 0.9rem;}
+.public-od-con .price{color: rgb(242,48,49);font-size: 0.8823rem;line-height: 1.2rem;}
+.public-od-con .count{color: rgb(102,102,102);font-size: 0.8235rem;line-height: 1.2rem;}
+.public-od-auto{position: relative;overflow: hidden;width: auto;}
+.public-od-con .red{color: rgb(242,48,49);}
+/*产品列表*/
+
+
+
+
+
+
+
 /*footer-slide 底部滑出部分*/
 .public-footer-slide{bottom:0;left: 0;width: 100%;z-index: 110;background: #fff;opacity: 0;transition: 0.5s bottom,1s opacity;-webkit-transition: 0.5s bottom,1s opacity;}
 .public-footer-slide .group{max-height: 15rem;overflow-y: scroll;clear: both;min-height: 10rem;}
@@ -108,15 +147,16 @@ font-size: 0.8823rem !important;line-height: 0.8823rem !important;
 .public-footer-slide .footer-slide .img img{width: 6rem;height: 6rem;}
 .public-footer-slide .btn_number{float: right !important;margin-right: 1rem;}
 .public-footer-slide .public-info{text-align: center;padding: 0.8rem 1rem;}
-.public-footer-slide .public-info .close{position: absolute;right: 1rem;width: 1.5rem;top: 0.8rem;}
+.public-footer-slide .public-info .close{position: absolute;right: 1rem;width: 1.5rem;top: 0.6rem;}
 
 /*关闭弹窗*/
-.del_comfirm{position: fixed;z-index: 121;width: 90%;max-width: 450px;background: #FFFFFF;left: 5%;top: 25%;padding: 0.8rem 0rem;text-align: center;font-size: 1.2rem;
+.del_comfirm{position: fixed;z-index: 121;width:17rem;background: #FFFFFF;left:50%;margin-left: -8.5rem;top: 25%;padding: 0.8rem 0rem;text-align: center;font-size: 1rem;
 display: none;
 }
+.del_comfirm .del-close{width: 1.5rem;}
 .del_title{padding: 2.5rem 0;}
 .del_btn{text-align: right;}
-.del_btn button{margin-right: 1rem;background: #FFFFFF;font-size: 0.8rem;}
+.del_btn button{margin-right: 1rem;background: #FFFFFF;font-size: 0.8823em;cursor: pointer;}
 .del_btn #queding{color: rgb(242,48,49);}
 @media only screen and (min-width: 640px) {
 	.del_comfirm{left: 50%;margin-left: -225px;}
