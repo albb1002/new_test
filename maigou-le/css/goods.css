@@ -25,7 +25,7 @@ background: url(../img/bottom.png) no-repeat center right;background-size: 1rem 
 .goods-list .goods-l-right:after{content: "";display: block;clear: both;}
 .goods-list .btn_number{float: none;padding-top: 0.5rem;}
 .goods-list .goods-number{position: relative;height: 1.7647rem;width: 6.47rem;border: 1px solid rgb(217,217,217);padding-top: 0;margin-top: 0.5rem;}
-.goods-list .goods-number input[type="text"]{position: absolute;height: 1.75rem;left: 1.8647rem;width: 2.8rem;background: red;padding: 0;}
+.goods-list .goods-number input[type="text"]{position: absolute;height: 1.75rem;left: 1.8647rem;width: 2.8rem;padding: 0;}
 .goods-list .goods-number button{background: #fff;color: rgb(100,100,100);position: absolute;}
 .goods-list .goods-number .btn_minues{left: 0;top: 0rem;border-right: 1px solid rgb(217,217,217);}
 .goods-list .goods-number .btn_add{right: 0;top: 0rem;border-left: 1px solid rgb(217,217,217);}
