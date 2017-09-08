@@ -89,14 +89,15 @@ background: url(../img/cen-ff-icon.png) no-repeat center;background-size: 100% a
 .center .pi4{background-position: 0.17rem 75.5%;}
 .center .pi5{background-position: 0.25rem 102%;}
 
-.center .unread{position: absolute;min-width: 1rem;background: red;color: white;font-size: 0.71rem;
+.center .unread{position: absolute;min-width: 1rem;background: red;color: white;font-size: 0.70rem;
 -moz-border-radius: 1rem;
 -webkit-border-radius: 1rem;
 -ms-border-radius:1rem;
 border-radius: 1rem;
 top: -0.3rem;
 right: -0.3rem;
-line-height: 1rem;
+line-height: 0.70rem;
+padding: 0.15rem 0;
 white-space: nowrap;max-width: 2rem;overflow: hidden;text-overflow: ellipsis;
 }
 .center .cen-order{background: url(../img/cen-order.png) no-repeat left;background-size: 0.5rem auto;}
