@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+		body{margin: 0;padding: 0;width: 100%;height: 100%;}
+		ul{margin: 0;padding: 0;left: 0;}
+			li{display: block;color: white;background: saddlebrown;padding: 20px 0;width:100%;
+			border-bottom: 1px solid white;cursor: pointer;text-align: center;position: relative;
+			left: 0;
+			}
+			.mask{position: fixed;width:100%;height: 100%;z-index:100;background: rgba(0,0,0,0.3);}
+		</style>
+	</head>
+	<body id="id">
+		
+		<div class="mask" id="mask" style="display: none;">
+			
+		</div>
+		
+		<div id="app">
+			<ul>
+			<li>1111111111</li>
+			<li>2222222222</li>
+			<li>333333333</li>
+			<li>444444444</li>
+			<li>1111111111</li>
+			<li>2222222222</li>
+			<li>333333333</li>
+			<li>444444444</li><li>1111111111</li>
+			<li>2222222222</li>
+			<li>333333333</li>
+			<li>444444444</li><li>1111111111</li>
+			<li>2222222222</li>
+			<li>333333333</li>
+			<li>444444444</li><li>1111111111</li>
+			<li>2222222222</li>
+			<li>333333333</li>
+			<li>444444444</li><li>1111111111</li>
+			<li>2222222222</li>
+			<li>333333333</li>
+			<li>444444444</li><li>1111111111</li>
+			<li>2222222222</li>
+			<li>333333333</li>
+			<li>444444444</li><li>1111111111</li>
+			<li>2222222222</li>
+			<li>333333333</li>
+			<li>444444444</li><li>1111111111</li>
+			<li>2222222222</li>
+			<li>333333333</li>
+			<li>444444444</li><li>1111111111</li>
+			<li>2222222222</li>
+			<li>333333333</li>
+			<li>444444444</li>
+			
+			</ul>
+			<div id="text"></div>
+		</div>
+		
+		<script>
+			var app = document.getElementById("app");
+			
+			
+			
+			
+			slide("li");
+			
+			function slide(node){
+				var li = document.getElementsByTagName(node)
+				var _star = false; //true为可移动 false为不可移动
+				var this_i=0;
+				var _m = false;//次字段控制只能滑出一个-true为当前有字段滑出
+				
+				var star={
+					x:0,//开始x轴
+					y:0//开始y轴
+				};
+				//var star_y = 0;//开始y轴
+				var move={
+					x:0,//移动时当前的x轴
+					y:0//移动时当前的y轴
+				};
+				var move_y = 0;//移动时当前y轴
+				var end_x = 0;//松开鼠标移动结束x轴
+				
+				//document.getElementsByTagName("body")[0].addEventListener("touchstart",cancel_def,false)
+				//document.getElementsByTagName("body")[0].addEventListener("touchmove",cancel_def,false)
+				for(var i = 0 ; i<li.length ; i++){
+					li[i].addEventListener("touchstart",function(i){
+						return function(e){
+							//e.preventDefault();
+							//this.addEventListener("touchstart",cancel_def,false);
+							li[i].addEventListener("touchstart",cancel_def,false);
+							_star=true;
+							this_i=i;
+							var th = e.touches[0];
+							star.x = th.pageX;
+							star.y = th.pageY;
+							//alert(th.pageX)
+							
+							cls(0,0);//首次导入样式
+							//当前无任何滑出
+							if(_m==false){
+								var this_li = this.parentNode.getElementsByTagName(node)
+								var this_li_len = this_li.length;
+								for(var j=0 ; j<this_li_len ; j++){
+									if(j!=i){
+										var cls_j = this_li[j].getAttributeNode("class");
+										if(cls_j){
+											this_li[j].removeAttribute("class");
+										}
+									}
+								}
+							}
+							//当前无任何滑出--end
+							
+							e.target.setAttribute("class","slide_actives");
+							//console.log(star_x);
+						}
+					}(i),false)
+					li[i].addEventListener("touchmove",function(i){
+						return function(e){
+							if(_star==true&&this_i==i){
+								li[i].addEventListener("touchmove",cancel_def,false);
+								//e.preventDefault();
+								//e.target.setAttribute("style","left: 100px;")
+								//this.addEventListener("touchmove",cancel_def,false);
+								var th = e.touches[0];
+								move.x = th.pageX;
+								move.y = th.pageY;
+								if(star.x!=null){
+									var chax = -(star.x-move.x);
+									var abs = Math.abs(chax);
+								}
+								if(star.y!=null){
+									var chay = Math.abs(star.y-move.y);
+								}
+								if(abs>=15){
+									console.log("xxxx")
+									star.y=null;
+									//move.y=0;
+								}
+								if(chay>=15){
+									console.log("yyyyyy");
+									star.x=null;
+									//document.getElementsByTagName("body")[0].removeEventListener("touchstart",cancel_def,false)
+									//move.x=0;
+									li[i].removeEventListener("touchmove",cancel_def,false);
+								}
+								//console.log("starxx",star.y);
+								//-----------------------------------------------
+								
+								//console.log(move_x);
+								//if(chay>=15){
+									//document.getElementsByTagName("body")[0].removeEventListener("touchstart",cancel_def,false)
+									//this.removeEventListener("touchstart",cancel_def,false);
+									//this.removeEventListener("touchmove",cancel_def,false);
+									//console.log(11111111111111)
+								//}
+								//if(abs>=15){
+									//e.preventDefault();
+									//document.getElementsByTagName("body")[0].addEventListener("touchstart",cancel_def,false)
+									cls(chax,1)
+								//}
+document.getElementById("text").innerHTML = chax
+								//console.log(move_x+" "+star)
+							}
+						}
+					}(i),false)
+					li[i].addEventListener("touchend",function(i){
+						return function(e){
+							if(_star==true){
+								//e.preventDefault();
+								_star=false;
+							}
+						}
+					}(i),false)
+				}
+			}
+			//number 手指移动的距离 isend手指是否离开屏幕0--刚触碰屏幕--1移动屏幕---2为离开屏幕
+			function cls(number,isend){
+				var headNode = document.getElementsByTagName("head")[0];
+				var sty = document.createElement("style");
+				sty.id="fuzhu";
+				try{
+					var get_F = document.getElementById("fuzhu");
+					
+				}catch(e){
+					
+				}
+				if(get_F){
+					
+					if(isend==0){
+						get_F.innerHTML = ".slide_actives{transform:translate(0,0);-webkit-transform:translate(0,0);z-index:111}";
+					}
+					if(isend==1){
+
+						get_F.innerHTML = ".slide_actives{transform:translate("+number+"px,0);-webkit-transform:translate("+number+"px,0);z-index:111}";
+					}
+					if(isend==2){
+						get_F.innerHTML = ".slide_actives{transition:0.5s left;-webkit-transition:0.5s left;left:"+number+"px;z-index:111}";
+					}
+				}else{
+					sty.innerHTML = ".slide_actives{left:0}";
+					headNode.appendChild(sty);
+				}
+				
+			}
+			
+			function cancel_def(e){
+				e.preventDefault();
+			}
+			function mask_show(){
+				
+			}
+		</script>
+	</body>
+</html>
