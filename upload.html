@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+   
+</head>
+<body>
+	<input type="file" name="" id="fi" value="" onchange="getImg(this.files,'img_up')" style="display: none;"/>
+	
+	<div id="click">aaa</div>
+	
+	<div id="img_up">
+		
+	</div>
+	
+	<script>
+		//getImg();
+		document.getElementById("click").onclick = function(){
+			document.getElementById("fi").click();
+		}
+		
+		check_reader();
+		function getImg(val,id){
+			var _file = val[0]
+			var img_type = _file.type;
+			if(img_type!="image/png"&&img_type!="image/jpg"&&img_type!="image/jpeg"){
+				alert("请上传.png/.jpg/.jpeg/格式的图片");
+				return false;
+			}
+			var loader = new FileReader();
+			loader.readAsDataURL(_file);  
+			//读取文件成功
+			loader.onload = function(e){
+				var url = e.target.result;
+				var img = document.createElement("img");
+				img.setAttribute("src",url);
+				document.getElementById(id).appendChild(img)
+			}
+			//上传中
+			loader.onprogress = function(){
+				console.log(2323);
+			}
+			//上传错误
+			loader.onerror = function(){
+				alert("上传失败");
+			}
+			//上传中断
+			loader.onabort = function(){
+				alert("上传被中断");
+			}	
+		}
+		function check_reader(){
+			//判断浏览器是否支持FileReader接口  
+			if(typeof FileReader == 'undefined'){  
+			    alert("您的浏览器不支持上传图片")
+			    file.setAttribute("disabled","disabled");  
+			}  
+	  
+		}
+		
+		
+	</script>
+	
+</body>
+</html>
