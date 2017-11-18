@@ -87,10 +87,12 @@
 						setTimeout(function(){
 							var domid = document.getElementById(id);
 							domid.setAttribute("class","list");
+							domid.setAttribute("style","");
 							document.body.setAttribute("style","")
+							has_slide=false;
 						},500)//删除样式
 				
-						has_slide=false;
+						
 					}
 					
 					return false;
@@ -169,6 +171,9 @@
 				setTimeout(function(){
 					var domid = document.getElementById(id);
 					domid.setAttribute("class","list");
+					if(has_slide==false){
+						domid.setAttribute("style","");
+					}
 				},500)//删除样式
 				
 				s=-1//初始化---下次滑动再次启动
