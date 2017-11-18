@@ -88,7 +88,7 @@
 							var domid = document.getElementById(id);
 							domid.setAttribute("class","list");
 							domid.setAttribute("style","");
-							document.body.setAttribute("style","")
+							document.getElementsByTagName("body")[0].setAttribute("style","")
 							has_slide=false;
 						},500)//删除样式
 				
@@ -121,7 +121,7 @@
 						}
 						if(abschax>15){
 							s=1;
-							document.body.setAttribute("style","overflow: hidden;")
+							document.getElementsByTagName("body")[0].setAttribute("style","overflow: hidden;")
 							console.log(e);
 						}
 					}
@@ -164,7 +164,7 @@
 							str+= "-webkit-transform:translateX("+hid_width_right+"px);";
 							str+= "-moz-transform:translateX("+hid_width_right+"px);";
 						domid.setAttribute("style",str);
-						document.body.setAttribute("style","")
+						document.getElementsByTagName("body")[0].setAttribute("style","")
 					}
 					
 				}
