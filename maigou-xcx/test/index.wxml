@@ -1,0 +1,7 @@
+<!--test/index.wxml-->
+<view bindtap='city_show'>show</view>
+
+
+
+
+

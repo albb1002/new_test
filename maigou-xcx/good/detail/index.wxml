@@ -1,0 +1,325 @@
+<!-- 导入猜你喜欢模块 -->
+<import src="../../template/wxml/guess_you_enjoy.wxml"/>
+<!-- 导入公共模块 -->
+<import src="../../template/wxml/common.wxml"/>
+
+<swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{indicatorActiveColor}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}"> 
+  <block wx:for="{{good_info.img_list}}" wx:key="">
+    <swiper-item>
+      <image src="{{item.img}}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<!-- 商品信息 -->
+<view class='pd-30-27 bg-255 bder-bottom'>
+  <view class=' t-esis-2 font-30 good-name'>
+      {{good_info.good_name}}
+  </view>
+  <view class='color-242 mg-top-10'>
+     <view class='display-inline font-24'>￥</view><view class='display-inline font-40'>{{good_info.retail_price}}</view>
+     <view class='display-inline color-153 font-24 t-throuth mg-l-20'>￥{{good_info.market_price}}</view>
+     <view class='display-inline font-24 mg-l-20' wx:if="{{good_info.is_discount==0}}">该商品不支持会员折扣</view>
+  </view>
+  <view class='flex-align-center font-24 color-101 mg-top-15'>
+    <view class='flex-item-grow'>销量:{{good_info.sales}}</view>
+    <view class='flex-item-grow' style='display:none'>销量:10</view>
+  </view>
+</view>
+
+<!-- 领券 -->
+<view class='flex-align-center pd-30-27 font-26 bder-bottom bg-255 list relative' bindtap='click_coupon_list' wx:if="{{good_info.has_coupon==1}}">
+  <view class='mg-r-27 color-101'>
+     领券
+  </view>
+  <view class='flex-align-center color-242'>
+      <view class='coupon-list mg-r-20'  wx:for="{{good_info.coupon_list}}" wx:key="" wx:if="{{index<3}}">满{{item.coupon_flag_rmb}}减{{item.coupon_rmb}}</view>
+  </view>
+  <image src='../../images/right.png'></image>
+</view>
+<!-- 优惠券弹出层 -->
+<view class='tan_wrap bg-255' wx:if="{{show_coupon}}" style="{{coupon_style}}">
+    <view class='relative pd-30-27 font-32 t-center bder-bottom'>
+      领取优惠券
+      <image src='../../images/close.png' class='close' bindtap='mask_hide'></image>
+    </view>
+    <view class='pd-30-27'>
+        <!-- 可领取的优惠券 -->
+        <view class='flex tan-coupon-list relative mg-b-25 color-242 flex-item-grow' wx:for="{{good_info.coupon_list}}" wx:key="" wx:if="{{item.can_receive_coupon==true&&item.is_show_coupon==1}}">
+            <view class='tan-coupon-left relative t-center'>
+                <view class='font-30 display-inline'>￥</view>
+                <view class='font-80 display-inline'>{{item.coupon_rmb}}</view>
+                <view class='font-24 pd-t-25'>满{{item.coupon_flag_rmb}}使用</view>
+                <image src='../../images/good-detail-icon7.png'></image>
+            </view>
+            <view class='color-0 pd-t-20 pd-r-20 pd-l-20 relative flex-item-grow'>
+                <view class='font-28 relative'>
+                    <view class='t-esis-2 coupon-name'>
+                      <view class='bg-color-242 display-inline-block font-24 br-1 coupon-type' >代金券</view>
+                      {{item.coupon_name}}
+                    </view>
+                </view>
+                <view class='coupon-btn-wrap font-20'>
+                    <view class='coupon-tip relative flex-align-center flex-between'>
+                        <view class='pd-l-20'>{{item.start_time}}-{{item.end_time}}</view>
+                        <view class='br-2 color-242 coupon-btn' data-id="{{item.coupon_id}}" catchtap='click_get_coupon_info'>立即领取</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+         <!-- 可领取的优惠券--end -->
+        <!-- 不可领取的优惠券 -->
+        <view class='flex tan-coupon-list relative mg-b-25 color-191'  wx:for="{{good_info.coupon_list}}" wx:key="" wx:if="{{item.can_receive_coupon==false}}">
+            <view class='tan-coupon-left relative t-center'>
+                <view class='font-30 display-inline'>￥</view>
+                <view class='font-80 display-inline'>{{item.coupon_rmb}}</view>
+                <view class='font-24 pd-t-25'>满{{item.coupon_flag_rmb}}使用</view>
+                <image src='../../images/good-detail-icon8.png'></image>
+                <view class="coupon-vip-tip font-24">{{item.member_level_name}}专享券</view>
+            </view>
+            <view class='color-0 pd-t-20 pd-r-20 pd-l-20 relative flex-item-grow'>
+                <view class='font-28 relative'>
+                    <view class='t-esis-2 coupon-name'>
+                      <view class='bg-color-242 display-inline-block font-24 br-1 coupon-type' style="background:rgb(153,153,153)" wx:if="{{item.coupon_mode==3}}">代金券</view>
+                                            <view class='bg-color-242 display-inline-block font-24 br-1 coupon-type' style="background:rgb(153,153,153)" wx:if="{{item.coupon_mode==1}}">包邮券</view>
+                       {{item.coupon_name}}
+                    </view>
+                </view>
+                <view class='coupon-btn-wrap font-20'>
+                    <view class='coupon-tip relative flex-align-center flex-between'>
+                        <view style='color:rgb(191,191,191);' class='pd-l-20'>{{item.start_time}}-{{item.end_time}}</view>
+                        <view class='br-2 color-242 coupon-btn' style='color:rgb(191,191,191);'>立即领取</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <!-- 不可领取的优惠券--end -->
+
+        <view class='t-center color-153 font-26 no-coupon' wx:if="{{good_info.has_coupon==0}}">暂无优惠券可领取</view>
+    </view>
+</view>
+<!-- 优惠券--end -->
+
+
+<!-- 服务次数 --><!--虚拟商品且为服务型商品-->
+<view class='flex-align-center pd-30-27 font-26 bder-bottom bg-255 list relative' wx:if="{{good_info.good_type==2&&good_info.virtual_type==1}}">
+  <view class='mg-r-27 color-101'>
+     服务次数 {{good_info.server_num}}次
+  </view>
+  <view class='flex-align-center color-101'>
+      有效期{{good_info.server_start_time}}-{{good_info.server_end_time}}
+  </view>
+</view>
+
+<!-- 积分 -->
+<view class='flex-align-center pd-30-27 font-26 bder-bottom bg-255 list relative' wx:if="{{good_info.reward_integral>0}}">
+  <view class='mg-r-27 color-101'>
+     积分
+  </view>
+  <view class='flex-align-center'>
+      购买可得{{good_info.reward_integral}}积分
+  </view>
+</view>
+
+<!-- 限购 -->
+<view class='flex-align-center pd-30-27 font-26 bder-bottom bg-255 list relative' wx:if="{{good_info.is_limited==1}}">
+  <view class='mg-r-27 color-101'>
+     限购
+  </view>
+  <view class='flex-align-center'>
+      每个账号
+      <text wx:if="{{good_info.limited_unit==1}}"> 每天 </text> 
+      <text wx:if="{{good_info.limited_unit==2}}"> 每月 </text> 
+      <text wx:if="{{good_info.limited_unit==3}}"> 每年 </text> 
+      限购{{good_info.limited_num}}次
+      每次限购{{good_info.limit_good_num}}件
+      <view class='display-inline-block color-242'>已购{{good_info.buy_num}}次</view>
+  </view>
+</view>
+
+<!-- 正品保证 -->
+<view class='flex-align-center pd-0-27 bg-255 bder-top bder-bottom mg-top-20 mg-b-20 relative flex-wrap list2 ' bindtap='click_server_list' wx:if="{{good_info.tap_arr!='null'}}">
+   <view class='flex-align-center font-26 color-101 mg-r-20 pd-30-0' wx:for="{{good_info.tap_arr}}" wx:if="{{item==1}}" wx:key="">
+      <image src='../../images/good-detail-icon5.png' class='mg-r-10'></image>
+     微信认证
+   </view>
+   <view class='flex-align-center font-26 color-101 mg-r-20 pd-30-0' wx:for="{{good_info.tap_arr}}" wx:if="{{item==2}}" wx:key="">
+      <image src='../../images/good-detail-icon5.png' class='mg-r-10'></image>
+      假一赔十
+   </view>
+   <view class='flex-align-center font-26 color-101 mg-r-20 pd-30-0' wx:for="{{good_info.tap_arr}}" wx:if="{{item==3}}" wx:key="">
+      <image src='../../images/good-detail-icon5.png' class='mg-r-10'></image>
+      正品保证
+   </view>
+    <view class='flex-align-center font-26 color-101 mg-r-20 pd-30-0' wx:for="{{good_info.tap_arr}}" wx:if="{{item==4}}" wx:key="">
+      <image src='../../images/good-detail-icon5.png' class='mg-r-10'></image>
+      送货上门
+   </view>
+   <view class='flex-align-center font-26 color-101 mg-r-20 pd-b-30' wx:for="{{good_info.tap_arr}}" wx:if="{{item==5}}" wx:key="">
+      <image src='../../images/good-detail-icon5.png' class='mg-r-10'></image>
+      七天无理由退货
+   </view>
+   <image src='../../images/right.png' class='list2-img'></image>
+</view>
+<!-- 正品保证--弹出层内容 -->
+<view class='tan_wrap bg-255' wx:if="{{show_server}}" style="{{server_style}}">
+    <view class='relative pd-30-27 font-32 t-center bder-bottom'>
+      放心购买服务
+      <image src='../../images/close.png' class='close' bindtap='mask_hide'></image>
+    </view>
+    <view class='pd-30-27'>
+      <view class='flex-align-center font-30 pd-b-40' wx:for="{{good_info.tap_arr}}" wx:if="{{item==1}}" wx:key="">
+          <view class="server_tip color-242 br-50 font-24">微</view>
+          <view class='mg-l-20'>微信认证</view>
+      </view>
+      <view class='flex-align-center font-30 pd-b-40' wx:for="{{good_info.tap_arr}}" wx:if="{{item==2}}" wx:key="">
+          <view class="server_tip color-242 br-50 font-24">赔</view>
+          <view class='mg-l-20'>假一赔十</view>
+      </view>
+      <view class='flex-align-center font-30 pd-b-40' wx:for="{{good_info.tap_arr}}" wx:if="{{item==3}}" wx:key="">
+          <view class="server_tip color-242 br-50 font-24">保</view>
+          <view class='mg-l-20'>正品保证</view>
+      </view>
+
+      <view class='flex-align-center font-30 pd-b-40' wx:for="{{good_info.tap_arr}}" wx:if="{{item==4}}" wx:key="">
+          <view class="server_tip color-242 br-50 font-24">送</view>
+          <view class='mg-l-20'>送货上门</view>
+      </view>
+
+      <view class='flex-align-center font-30 pd-b-40' wx:for="{{good_info.tap_arr}}" wx:if="{{item==5}}" wx:key="">
+          <view class="server_tip color-242 br-50 font-24">七</view>
+          <view class='mg-l-20'>七天无理由退货</view>
+      </view>
+    </view>
+</view>
+
+
+<!-- 选择--有规格的情况 -->
+<view class='flex-align-center pd-30-27 font-28 bder-bottom bg-255 list relative' bindtap='click_buy' wx:if="{{spec_list_len!=0}}" data-btn-type="0">
+  <view class='mg-r-27'>
+     选择
+  </view>
+  <view class='flex-align-center' wx:if="{{chose_spec==''}}">
+      选择商品规格
+  </view>
+   <view class='flex-align-center' wx:if="{{chose_spec!=''}}">
+      {{chose_spec}}
+  </view>
+  <image src='../../images/right.png'></image>
+</view>
+<!-- 购买 -->
+<view class='tan_wrap tan_wrap_800 bg-255' wx:if="{{show_buy}}" style="{{buy_style}}">
+  <view class='tan-buy-wrap relative'>
+    <view class='relative pd-30-27 color-101 font-28 tan-buy-info'>
+        <view class='tan-buy-good-img bg-255 br-2'>
+            <image src='{{item.img}}' wx:for="{{good_info.img_list}}" wx:if="{{item.is_cover==1}}" wx:key="" class='br-2'></image>            
+        </view>
+        <view class='color-242 font-30' wx:if="{{spec_price==-1}}">
+            ￥{{good_info.retail_price}}
+        </view>
+        <view class='color-242 font-30' wx:if="{{spec_price!=-1}}">
+            ￥{{spec_price}}
+        </view>
+        <view class='pd-t-10' wx:if="{{spec_stock==-1}}">
+            库存{{good_info.stock}}件
+        </view>
+        <view class='pd-t-10' wx:if="{{spec_stock!=-1}}">
+            库存{{spec_stock}}件
+        </view>
+        <view class='pd-t-10'  wx:if="{{spec_list_len!=0}}">
+            已选:{{chose_spec}}
+        </view>
+        <image src='../../images/close.png' class='close-img' bindtap='mask_hide'></image>
+    </view>
+    <!-- 选择规格 -->
+    <view class='spec-wrap' >
+        <view class='pd-30-27 color-101 mg-top-20 pd-b-20 bder-bottom' wx:for="{{good_info.spec_class_list}}" wx:key="" wx:if="{{good_info.has_spec==1}}">
+          <view class='font-30 mg-b-25'>{{item.spec_class_name}}</view>
+          <view class='flex-wrap font-28' >
+              <view class='mg-r-20 br-1 item {{spec.is_checked==1?"item-atv":""}}' wx:for="{{good_info.spec_list}}" wx:for-item="spec" wx:key="" wx:if="{{spec.spec_class_id==item.spec_class_id}}" data-spec-id="{{spec.spec_id}}" data-parent-spec-id="{{item.spec_class_id}}" bindtap='click_spec_list'>{{spec.spec_name}}</view>
+          </view>
+        </view>
+        <!-- 购买数量 -->
+        <view class='pd-30-27 color-101 mg-top-20 pd-b-20 bder-bottom'>
+          <view class='flex-between font-28'>
+              <view>购买数量</view>
+              <view class='flex-align-center center'>
+                  <view><!--input-avt（btn颜色）-->
+                      <view class='input-btn ' bindtap='click_reduce_number'>-</view>
+                  </view>
+                  <view>
+                     <input type='number' class='input-number' value='{{buy_number}}' bindblur="click_buy_bumber"></input>
+                  </view>
+                  <view>
+                      <view class='input-btn' bindtap='click_add_number'>+</view>
+                  </view>
+              </view>
+          </view>
+        </view>
+        <!-- 购买数量--end -->
+        <view style='height:70rpx;'></view>
+    </view>
+    <!-- 选择规格--end -->
+    <!-- 确定按钮--absolute定位 -->
+    <view class='flex-align-center buy-btn t-center font-32' wx:if="{{buy_btn_type==0}}">
+      <view class='good-detail-add width-min-50' data-flag="1" data-buy='0' bindtap='click_buy_obj'>加入购物车</view>
+      <view class='good-detail-buy width-min-50' data-flag="2" data-buy='1' bindtap='click_buy_obj'>立即购买</view>
+    </view>
+    <view class='flex-align-center buy-btn t-center font-32' wx:if="{{buy_btn_type==1}}">
+      <view class='good-detail-add width-min-100' data-flag="1" data-buy='0' bindtap='click_buy_obj'>加入购物车</view>
+    </view>
+    <view class='flex-align-center buy-btn t-center font-32' wx:if="{{buy_btn_type==2}}">
+      <view class='good-detail-buy width-min-100' data-flag="2" data-buy='1' bindtap='click_buy_obj'>立即购买</view>
+    </view>
+    <!-- 确定按钮--absolute定位--end -->
+  </view>
+</view>
+
+<!-- 猜你喜欢 -->
+
+  <template is="guess_you_enjoy" data="{{...guess_love}}"/>
+
+<!-- 底部 -->
+<view style='height:120rpx'></view>
+<view class='buy-wrap bg-255 bder-top'>
+  <view class='flex-align-center'>
+    <view class='flex-align-center buy-icon font-20 t-center'>
+        <view class='flex-item-grow pd-tb-20'>
+            <image src='../../images/good_detail_icon2.png'></image>
+            <view class='mg-top-10'>
+                客服
+            </view>
+        </view>
+        <view class='flex-item-grow pd-tb-20' catchtap='click_coupon'>
+            <image src='../../images/good_detail_icon3.png' wx:if="{{is_collect==0}}"></image>
+            <image src='../../images/good_detail_icon3_1.png' wx:if="{{is_collect==1}}"></image>
+            <view class='mg-top-10' wx:if="{{is_collect==0}}">
+                收藏
+            </view>
+            <view class='mg-top-10' wx:if="{{is_collect==1}}">
+                已收藏
+            </view>
+        </view>
+        <view class='flex-item-grow  pd-tb-20'>
+            <image src='../../images/good_detail_icon4.png' class='good_cart_icon relative'>
+              <view class='shopcart_num bg-color-242 br-50'>{{shopcart_num}}</view>
+            </image>
+            <view class='mg-top-10'>
+                购物车
+            </view>
+        </view>
+    </view>
+    <view class='flex-item-grow flex-baseline t-center font-30'>
+        <view class='flex-item-grow add-goodcart color-255' bindtap='click_buy' data-btn-type="1">加入购物车</view>
+        <view class='flex-item-grow buy-renow color-255' bindtap='click_buy' data-btn-type="2">立即购买</view>
+    </view>
+  </view>
+</view>
+
+<!-- 遮罩层 -->
+<template is="mask" wx:if="{{is_show_mask}}" data="{{...mask_data}}" />
+
+
+
+

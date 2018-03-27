@@ -1,0 +1,61 @@
+<!-- 公共模板ui -->
+<!--遮罩层-->
+<template name="mask">
+    <view class='mask' bindtap="mask_hide" style='{{mask_style}}'>
+    </view>
+</template>
+
+<!--弹出层提示信息-->
+<template name="tip">
+    <view class='module-tan-wrap bg-255 font-30 br-1' style='{{style}}'>
+        <view class='relative'>
+            <view class='pd-30-27'>
+                  <view class='module-tan-tip-text'>
+                      {{txt}}
+                  </view>
+                  <view class='flex-align-center t-right'style='justify-content:flex-end'>
+                      <view class='color-153 mg-r-27' wx:if="{{cancel===true}}" bindtap='mask_hide'>取消</view>
+                      <view class='color-242 mg-l-20' >确定</view>
+                  </view>
+            </view>
+            <image src='../../images/close.png' bindtap='mask_hide'></image>
+        </view>
+    </view>
+</template>
+ 
+<!--我的订单--商品列表-->
+<template name="good-list">
+  <view class='flex order-detail-list bder-bottom'>
+    <view class='img'>
+        <image src='../../images/demo-goodimg1.png'></image>
+    </view>
+    <view>
+        <view class='t-esis-2 font-28 good-name'>阿道夫阿斯蒂芬送达发送到发送到发送撒的发送到发送到发送到发斯蒂芬按时阿萨德发送</view>
+        <view class='color-101 font-24 line-50'>数量:1 黑色,165/M</view>
+        <view class='font-28 pd-t-10'>￥222.00</view>
+    </view>
+  </view>
+</template>
+
+<!-- 商品详情商品循环列表 -->
+<template name="flex-good-list">
+  <view class='flex-between pd-tb-25 good-flex-wrap bder-bottom'>
+      <view class='img mg-r-20'>
+            <image src='{{good_img}}'></image>
+      </view>
+      <view class='flex-item-grow pd-r-25'>
+          <view class='t-esis-2 line-40'>
+              {{good_name}}
+          </view>
+          <view class='color-153 mg-top-20' wx:if="{{spec_name!=''}}">
+              {{spec_name}}
+          </view>
+      </view>
+      <view class='t-right'>
+          <view class='color-242 line-40'>￥{{price}}</view>
+          <view class='color-101 line-40'>x{{count}}</view>
+      </view>
+  </view>
+</template>
+
+

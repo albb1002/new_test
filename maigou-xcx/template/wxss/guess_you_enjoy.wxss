@@ -1,0 +1,4 @@
+.list-type-2{margin-right: 2%;margin-bottom: 15rpx;max-width: 49%;min-width: 49%;}
+.list-type-2:nth-child(2n){margin-right: 0;}
+.type-2-img image{width: 100%;height: 100%}
+.type-2-img{height: 312rpx;min-height: 312rpx;width: 100%}

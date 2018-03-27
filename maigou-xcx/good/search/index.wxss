@@ -1,0 +1,16 @@
+/* good/search/index.wxss */
+.search-head .left-icon{width: 100%;height: 100%;}
+.search-icon{position: absolute;left: 40rpx;top: 50%;transform: translateY(-50%);-webkit-transform: translateY(-50%);width: 35rpx;height: 35rpx;}
+.search-close{position: absolute;right: 40rpx;top: 50%;transform: translateY(-50%);-webkit-transform: translateY(-50%);width: 35rpx;height: 35rpx;}
+.left-icon{transform: rotate(-180deg);-webkit-transform: rotate(-180%)}
+.search-text{background: rgb(242,242,242);padding: 10rpx 70rpx 10rpx 75rpx;margin: 0 20rpx;border-radius: 38rpx;}
+.left-img{width: 54rpx;height: 54rpx;}
+
+.re-list{padding: 18rpx 36rpx;background: rgb(242,242,242);border-radius: 6rpx;margin-right: 25rpx;margin-bottom: 25rpx;}
+.search-wrap{border-bottom: 25rpx solid rgb(242,242,242);}
+.history-search-btn image{display: inline-block;width: 35rpx;height: 35rpx;}
+.history-search-btn{border: 1rpx solid rgb(153,153,153);padding: 25rpx 0;width: 600rpx;margin: 0 auto;margin-top: 60rpx;}
+
+
+
+

@@ -1,0 +1,49 @@
+/* shopcart/confirm/index.wxss */
+@import "../../template/wxss/common.wxss";
+@import "../../template/wxss/module.wxss";
+
+.select-address-null{padding: 65rpx 27rpx;}
+.right-icon{width: 40rpx;height: 40rpx;display: block;}
+.bottom-icon{height: 5rpx;}
+.bottom-icon image{width: 100%;height: 100%;display: block}
+
+.check{width: 40rpx;height: 40rpx;border: 1rpx solid rgb(220,220,220)}
+
+.buy_wrap{position: fixed;width: 100%;bottom: 0;left: 0; z-index: 11;line-height: 50rpx;}
+.buy-btn{width: 200rpx;}
+
+.checked{width: 70%;height: 70%;display: block;position: absolute;top: 50%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,-50%);
+left: 50%;}
+
+.address-content{padding: 0 45rpx;line-height: 40rpx;}
+.address-icon{width: 30rpx;height: 40rpx;position: absolute;top: 35rpx;left: 27rpx;}
+.address-right-icon{width: 40rpx;height: 40rpx;position: absolute;right: 27rpx;top: 50%;transform: translateY(-50%);-webkit-transform: translateY(-50%);}
+
+
+/* 优惠券列表--弹出层 */
+.tan-coupon-list{border: 1rpx solid;}
+
+.tan-coupon-left{width: 230rpx;min-width: 250rpx;padding-top: 40rpx;padding-bottom: 24rpx;}
+.tan-coupon-left image{position: absolute;width: 15rpx;height: 100%;right: 0;bottom: 0;}
+.coupon-type{padding:5rpx 10rpx; }
+.coupon-name{line-height: 40rpx;padding-right: 50rpx;}
+.coupon-btn-wrap{position: absolute;bottom: 20rpx;left: 0;width: 95%;}
+.coupon-tip{width: 100%;height: 100%;}
+.coupon-btn{border: 1rpx solid;padding: 8rpx 15rpx;}
+
+
+.usd-icon{position: absolute;top: 0;right:0;width: 120rpx;height: 50rpx;}
+.rad-check{width: 40rpx;height: 40rpx;border: 1rpx solid rgb(220,220,220);}
+
+.rad-checked{width: 100%;height: 100%;}
+.checked-border-242{border: 1rpx solid rgb(242,48,49)}
+.bill_btn{position: absolute;width: 100%;left: 0;bottom: 0;}
+.bill-confirm{width: 100%;line-height: 100rpx;}
+
+.bill-txt{width: 100;background: rgb(242,242,242);line-height: 40rpx;padding: 20rpx;}
+
+
+
+
+
+

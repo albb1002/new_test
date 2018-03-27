@@ -1,0 +1,334 @@
+<!--shopcart/confirm/index.wxml-->
+<import src="../../template/wxml/common.wxml" />
+
+<view class='pd-30-27 t-center bg-255 bder-bottom font-34'>
+    确认订单
+</view>
+
+<!-- 没有地址的情况 -->
+<view>
+  <view class='flex-between flex-align-center bg-255 pd-30-27 select-address-null'>
+      <view class='color-101 font-30'>选择收货人</view>
+      <view>
+          <image src='../../images/right.png' class='right-icon'></image>
+      </view>
+  </view>
+  <view class='bottom-icon'>
+    <image src='../../images/confirm-icon1.png'></image>
+  </view>
+</view>
+<!-- 没有地址的情况--end -->
+
+<!-- 有地址的情况 -->
+<view>
+   <view class='pd-30-27 relative font-30 bg-255'>
+       <view class='address-content'>
+          <view class='mg-b-5'>收件人:陈某某 <text class='mg-l-20'>18215321531</text></view>
+          <view class='color-101 t-esis-2'>
+              福建省厦门市思明区如舰员二期大发送到发的烦死哒发的阿斯蒂芬阿斯蒂芬撒地方啥啊打发斯蒂芬阿斯蒂芬
+          </view>
+       </view>
+       <image src='../../images/address-iocn.png' class='address-icon'></image>
+       <image src='../../images/right.png' class='address-right-icon'></image>
+   </view>
+   <view class='bottom-icon'>
+    <image src='../../images/confirm-icon1.png'></image>
+  </view>
+</view>
+<!-- 有地址的情况--end -->
+
+<!-- 门店地址 -->
+<view>
+   <view class='pd-30-27 relative font-30 bg-255'>
+       <view class='address-content'>
+          <view class='mg-b-5'>收件人:陈某某 <text class='mg-l-20'>18215321531</text></view>
+          <view class='color-101 t-esis-2'>
+              <view>
+               某某分店 <text class='mg-l-20'>0509-21231531</text>
+               <view class='t-esis'>福建省厦门市思明区如舰员二期大发送到发的烦死哒发的阿斯蒂芬阿斯蒂芬撒地方啥啊打发斯蒂芬阿斯蒂芬</view>
+              </view>
+          </view>
+       </view>
+       <image src='../../images/address-iocn.png' class='address-icon'></image>
+       <image src='../../images/right.png' class='address-right-icon'></image>
+   </view>
+   <view class='bottom-icon'>
+    <image src='../../images/confirm-icon1.png'></image>
+  </view>
+</view>
+<!-- 门店地址--end -->
+
+<!-- 订单的商品信息 -->
+<view class='bg-255 font-28 mg-top-25 mg-b-25' wx:for="{{confirm_info}}" wx:key="">
+    <view class='flex-align-center flex-between pd-30-27 font-30 bder-bottom'>
+        <view>{{item.manager_name}}</view>
+    </view>
+    <!--实体商品-->
+    <view class='pd-0-27' wx:key="" wx:if="{{item.st_sp_len>0}}" wx:for-item="list">
+      <template is="flex-good-list" />
+    </view>
+    <!--虚拟商品-->
+    <view class='pd-0-27' wx:if="{{item.xn_sp_len>0}}" >
+      <block  wx:for="{{item.shopcart_item_list_2}}" wx:key="" wx:for-item="list">
+        <template is="flex-good-list" data="{{...list}}"/>
+      </block>
+    </view>
+    <view class='flex-align-center flex-between pd-30-27 font-30 bder-bottom'>
+        <view>配送方式</view>
+        <view class='flex-align-center flex-between' bindtap='click_deliver'>
+            <view class='color-101 font-26'>快递 ￥6.00</view>
+            <view>
+              <image src='../../images/right.png' class='right-icon'></image>
+            </view>
+        </view>
+    </view>
+</view>
+<!-- 订单的商品信息--end -->
+
+<!-- 优惠券和小计 -->
+<view class='flex-align-center flex-between pd-30-27 font-30 bder-bottom bg-255 mg-top-25'>
+    <view>
+        优惠券
+    </view>
+    <view class='flex-align-center flex-between' bindtap='click_coupon'>
+        <view class='color-153 font-26'>无可用</view>
+        <view>
+          <image src='../../images/right.png' class='right-icon'></image>
+        </view>
+    </view>
+</view>
+<view class='flex-align-center flex-between pd-30-27 font-30 bder-bottom bg-255'>
+    <view>
+    </view>
+    <view>
+      共1件商品，小计<view class='display-inline color-242'>￥222</view>
+    </view>
+</view>
+
+<!-- 积分和余额 -->
+<view class='flex-align-center flex-between pd-30-27 font-30 bder-bottom bg-255 mg-top-25'>
+    <view>
+        积分 共10积分 可抵用￥0.1
+    </view>
+    <view>
+        <view class='check'></view>
+    </view>
+</view>
+<view class='flex-align-center flex-between pd-30-27 font-30 bder-bottom bg-255'>
+    <view>
+        余额 可用余额100.0
+    </view>
+    <view>
+        <view class='check relative'>
+            <image src='../../images/check1.png' class='checked'></image>
+        </view>
+    </view>
+</view>
+
+<!-- 发票信息 -->
+<view class='flex-align-center flex-between pd-30-27 font-30 bder-bottom bg-255 mg-top-25'>
+    <view>
+        发票信息
+    </view>
+    <view class='flex-align-center flex-between' bindtap='click_bill'>
+        <view class='color-153 font-26'>不开发票</view>
+        <view>
+          <image src='../../images/right.png' class='right-icon'></image>
+        </view>
+    </view>
+</view>
+<view class='flex-align-center flex-between pd-30-27 font-30 bder-bottom bg-255'>
+    <view>
+        给卖家留言
+    </view>
+    <view class='flex-item-grow pd-l-15'>
+      <input placeholder='对本地交易的说明（选填）' class='color-153 font-24=6'></input>
+    </view>
+</view>
+
+
+<!-- 购买 -->
+<view class='buy_wrap bg-255'>
+    <view class='flex-align-center t-center'>
+        <view class='flex-item-grow font-30'>
+            实付金额:<view class='color-242 display-inline'>￥4.00</view>
+        </view>
+        <view class='buy-btn btn-bg-rgb242'>
+          立即下单
+        </view>
+    </view>
+</view>
+<view style='height:120rpx;'></view>
+
+
+<!-- 配送方式--弹出层内容 -->
+<view class='tan_wrap bg-255' wx:if="{{show_deliver}}" style="{{deliver_style}}">
+    <view class='relative pd-30-27 font-32 t-center bder-bottom'>
+      配送方式
+      <image src='../../images/close.png' class='close' bindtap='mask_hide'></image>
+    </view>
+    <view>
+      <view class='flex-align-center flex-between font-30 pd-30-27 bder-bottom'>
+          <view>
+              快递 ￥6.00
+          </view>
+          <view class='check relative'>
+              <image src='../../images/check1.png' class='checked'></image>
+          </view>
+      </view>
+      <view class='flex-align-center flex-between font-30 pd-30-27 bder-bottom'>
+          <view>
+              门店自提
+          </view>
+          <view class='check relative'>
+             <image src='../../images/check1.png' class='checked'></image>
+          </view>
+      </view>
+      
+    </view>
+</view>
+
+<!-- 选择优惠券 -->
+<view class='tan_wrap bg-255' wx:if="{{show_coupon}}" style="{{coupon_style}}">
+    <view class='relative pd-30-27 font-32 t-center bder-bottom'>
+      选择优惠券
+      <image src='../../images/close.png' class='close' bindtap='mask_hide'></image>
+    </view>
+    <view class='pd-30-27 tan-wrap-max-height'>
+        <!-- 优惠券循环列表 -->
+        <view class='flex tan-coupon-list relative mg-b-25 color-242'>
+            <view class='tan-coupon-left relative t-center'>
+                <view class='font-30 display-inline'>￥</view>
+                <view class='font-80 display-inline'>10</view>
+                <view class='font-24 pd-t-25'>满199使用</view>
+                <image src='../../images/good-detail-icon7.png'></image>
+            </view>
+            <view class='color-0 pd-t-20 pd-r-20 pd-l-20 relative'>
+                <view class='font-28 relative'>
+                    <view class='t-esis-2 coupon-name'>
+                      <view class='bg-color-242 display-inline-block font-24 br-1 coupon-type' >代金券</view>
+                      上爬发的否撒地方撒地方案发的撒地方送达烦死哒送达上爬发的否撒地方撒地方案发的撒地方送达烦死哒送达上爬发的否撒地方撒地方案发的撒地方送达烦死哒送达
+                    </view>
+                </view>
+                <view class='coupon-btn-wrap font-20'>
+                    <view class='coupon-tip relative flex-align-center flex-between'>
+                        <view class='pd-l-20'>2016.11.02-2016.11.03</view>
+                    </view>
+                </view>
+            </view>
+            <image src='../../images/coupon-used.png' class='usd-icon'></image>
+        </view>
+        <!-- 优惠券--end -->
+         <!-- 优惠券循环列表 -->
+        <view class='flex tan-coupon-list relative mg-b-25 color-242'>
+            <view class='tan-coupon-left relative t-center'>
+                <view class='font-30 display-inline'>￥</view>
+                <view class='font-80 display-inline'>10</view>
+                <view class='font-24 pd-t-25'>满199使用</view>
+                <image src='../../images/good-detail-icon7.png'></image>
+            </view>
+            <view class='color-0 pd-t-20 pd-r-20 pd-l-20 relative'>
+                <view class='font-28 relative'>
+                    <view class='t-esis-2 coupon-name'>
+                      <view class='bg-color-242 display-inline-block font-24 br-1 coupon-type' >代金券</view>
+                      上爬发的否撒地方撒地方案发的撒地方送达烦死哒送达上爬发的否撒地方撒地方案发的撒地方送达烦死哒送达上爬发的否撒地方撒地方案发的撒地方送达烦死哒送达
+                    </view>
+                </view>
+                <view class='coupon-btn-wrap font-20'>
+                    <view class='coupon-tip relative flex-align-center flex-between'>
+                        <view class='pd-l-20'>2016.11.02-2016.11.03</view>
+                    </view>
+                </view>
+            </view>
+            <image src='../../images/coupon-used.png' class='usd-icon'></image>
+        </view>
+        <!-- 优惠券--end -->
+         <!-- 优惠券循环列表 -->
+        <view class='flex tan-coupon-list relative mg-b-25 color-242'>
+            <view class='tan-coupon-left relative t-center'>
+                <view class='font-30 display-inline'>￥</view>
+                <view class='font-80 display-inline'>10</view>
+                <view class='font-24 pd-t-25'>满199使用</view>
+                <image src='../../images/good-detail-icon7.png'></image>
+            </view>
+            <view class='color-0 pd-t-20 pd-r-20 pd-l-20 relative'>
+                <view class='font-28 relative'>
+                    <view class='t-esis-2 coupon-name'>
+                      <view class='bg-color-242 display-inline-block font-24 br-1 coupon-type' >代金券</view>
+                      上爬发的否撒地方撒地方案发的撒地方送达烦死哒送达上爬发的否撒地方撒地方案发的撒地方送达烦死哒送达上爬发的否撒地方撒地方案发的撒地方送达烦死哒送达
+                    </view>
+                </view>
+                <view class='coupon-btn-wrap font-20'>
+                    <view class='coupon-tip relative flex-align-center flex-between'>
+                        <view class='pd-l-20'>2016.11.02-2016.11.03</view>
+                    </view>
+                </view>
+            </view>
+            <image src='../../images/coupon-used.png' class='usd-icon'></image>
+        </view>
+        <!-- 优惠券--end -->
+    </view>
+</view>
+<!-- 优惠券--end -->
+
+<!-- 发票信息 -->
+<view class='tan_wrap bg-255 font-30' wx:if="{{show_bill}}" style="{{bill_style}}">
+    <view class='relative pd-30-27 font-32 t-center bder-bottom'>
+      发票信息
+      <image src='../../images/close.png' class='close' bindtap='mask_hide'></image>
+    </view>
+    <view class='pd-30-27 tan-wrap-max-height'>
+        <view>
+            发票抬头
+        </view> 
+        <view class='flex-align-center pd-30-0'>
+            <view class='bill-list flex-align-center'>
+                <view class='rad-check relative br-50 {{bill_person_or_unit==1?"checked-border-242":""}}' bindtap='chose_person_or_bill' data-type='1'>
+                    <image src='../../images/rad-checked.png' class='rad-checked' wx:if="{{bill_person_or_unit==1}}"></image>
+                </view>
+                <view class='pd-l-10'>个人</view>
+            </view>
+            <view  class='bill-list flex-align-center pd-l-30'>
+                <view class='rad-check relative br-50 {{bill_person_or_unit==2?"checked-border-242":""}}' bindtap='chose_person_or_bill' data-type='2'>
+                    <image src='../../images/rad-checked.png' class='rad-checked' wx:if="{{bill_person_or_unit==2}}"></image>
+                </view>
+                <view class='pd-l-10'>单位</view>
+            </view>
+        </view>  
+
+        <!-- 填写单位发票信息 -->
+        <view wx:if="{{bill_person_or_unit==2}}">
+            <view>
+                <input type='text' placeholder='请填写单位名称' class='bill-txt br-1'></input>
+            </view>
+            <view class='flex-align-center mg-tb-30'>
+                <view>纳税识别码：</view>
+                <view class='flex-item-grow'>
+                    <input type='text' placeholder='请填写单位名称' class='bill-txt br-1'></input>
+                </view>
+            </view>
+        </view>
+        <!-- 填写单位发票信息--end -->
+
+        <!-- 填写个人发票信息 -->
+        <view wx:if="{{bill_person_or_unit==1}}" class='mg-b-30'>
+            <input type='text' placeholder='请填写您的姓名' class='bill-txt br-1'></input>
+        </view>
+        <!-- 填写个人发票信息 -->
+
+        <view>
+            发票内容
+        </view>
+        <view class='flex-align-center mg-top-30'>
+            <view class='rad-check relative br-50 checked-border-242'>
+                <image src='../../images/rad-checked.png' class='rad-checked '></image>
+            </view>
+            <view class='pd-l-10'>明细</view>
+        </view>
+    </view>
+    <view class='bill_btn'>
+        <view class='bill-confirm btn-color255-bg t-center'>确定</view>
+    </view>
+</view>
+
+<template is="mask" wx:if="{{is_show_mask===true}}" data="{{...mask_data}}" />

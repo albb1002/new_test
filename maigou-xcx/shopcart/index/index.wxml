@@ -1,0 +1,288 @@
+<!--shopcart/index/index.wxml-->
+<!-- 导入猜你喜欢模块 -->
+<import src="../../template/wxml/guess_you_enjoy.wxml"/>
+<!-- 导入公共模块 -->
+<import src="../../template/wxml/common.wxml"/>
+
+
+<view class='pd-30-27 font-30 t-center bg-255 bder-bottom relative'>
+    购物车
+    <view class='index-edit font-26 color-101' bindtap='tab_edi' wx:if="{{is_buy==true&&is_null==false}}">编辑</view>
+    <view class='index-edit font-26 color-101' bindtap='tab_edi' wx:if="{{is_buy==false&&is_null==false}}">完成</view>
+</view>
+<!-- 购物车商品不为空 -->
+<view wx:if="{{is_null==false}}">
+  <!--循环列表-->
+  <!--实体商品--自营-->
+  <view class='list bg-255 font-30 mg-b-25 bder-bottom' wx:for="{{shopcart_info}}" wx:if="{{item.has_st_sp==1&&item.is_self==1}}" wx:key="">
+      <view class='relative pd-30-27 bder-bottom title'>
+          <view class='check br-50 {{item.tal_st_checked==1?"checked":""}}'>
+              <image src='../../images/rad-checked.png' wx:if="{{item.tal_st_checked==1}}"></image>
+          </view>
+          <veiw wx:if="{{item.manager_name!=''&&item.manager_name!=null}}">
+              {{item.manager_name}}
+          </veiw>
+          <veiw wx:if="{{item.manager_name==''||item.manager_name==null}}">
+              脉购
+          </veiw>
+      </view>
+      <!-- 商品列表 -->
+      <view class='pd-30-27 flex bder-bottom' wx:for="{{item.shopcart_item_list_1}}" wx:for-item="list" wx:key="">
+          <view class='relative good-left'>
+              <view class='check good-check br-50 {{list.is_select==1?"checked":""}}' data-indx="{{item.index}}" data-type="1" data-sed="{{list.is_select}}" data-id="{{list.shopcart_id}}" catchtap='click_item_checked'>
+                  <image src='../../images/rad-checked.png' wx:if="{{list.is_select==1}}"></image>
+              </view>
+              <view class='good-left-img'>
+                  <image src='{{list.good_img}}'></image>
+              </view>
+          </view>
+          <view class='good-right flex-item-grow'>
+              <view class='font-28 t-esis-2 good-name'>
+                  {{list.good_name}}
+              </view>
+
+              <view class='font-24 color-153 relative mg-top-15 br-1 good-spec relative' bindtap='chose_spec' wx:if="{{list.spec_ids!=null&&list.spec_ids!=''}}">
+                  {{list.spec_name}}
+                  <image src='../../images/right.png'></image>
+              </view>
+              <view class='color-242 font-34 mg-top-25'>
+                ￥{{list.price}}
+              </view>
+              <!-- 加减数量--暂不用 -->
+              <view class='flex-align-center t-center mg-top-25' style="display:none">
+                  <view class='num-btn'>-</view>
+                  <view class='num-txt'>
+                      <input type='number' value='1' class='width-min-100'></input>
+                  </view>
+                  <view class='num-btn'>
+                    +
+                  </view>
+              </view>
+              <!-- 加减数量--咱不用end -->
+          </view>
+      </view>
+      <!-- 商品列表--end -->
+  </view>
+  <!--循环列表--end-->
+
+  <!--循环列表-->
+  <!--虚拟商品-->
+  <view class='list bg-255 font-30 mg-b-25 bder-bottom' wx:for="{{shopcart_info}}" wx:if="{{item.has_xn_sp==1&&item.is_self==1}}" wx:key="">
+      <view class='relative pd-30-27 bder-bottom title'>
+          <view class='check br-50 {{item.tal_xn_checked==1?"checked":""}}' data-indx="{{item.index}}" data-type="2" data-select="{{item.tal_xn_checked}}" catchtap='click_list_title'>
+              <image src='../../images/rad-checked.png' wx:if="{{item.tal_xn_checked==1}}"></image>
+          </view>
+          <veiw wx:if="{{item.manager_name!=''&&item.manager_name!=null}}">
+              {{item.manager_name}}
+          </veiw>
+          <veiw wx:if="{{item.manager_name==''||item.manager_name==null}}">
+              脉购
+          </veiw>
+      </view>
+      <!-- 商品列表 -->
+      <view class='pd-30-27 flex bder-bottom' wx:for="{{item.shopcart_item_list_2}}" wx:for-item="list" wx:key="">
+          <view class='relative good-left'>
+              <view class='check good-check br-50 {{list.is_select==1?"checked":""}}' data-indx="{{item.index}}" data-type="2" data-sed="{{list.is_select}}" data-id="{{list.shopcart_id}}" catchtap='click_item_checked'>
+                  <image src='../../images/rad-checked.png' wx:if="{{list.is_select==1}}"></image>
+              </view>
+              <view class='good-left-img'>
+                  <image src='{{list.good_img}}'></image>
+              </view>
+          </view>
+          <view class='good-right flex-item-grow'>
+              <view class='font-28 t-esis-2 good-name'>
+                  {{list.good_name}}
+              </view>
+
+              <view class='font-24 color-153 relative mg-top-15 br-1 good-spec relative' data-item="{{list}}" data-indx="{{item.index}}" data-type="2" bindtap='chose_spec' wx:if="{{list.spec_ids!=null&&list.spec_ids!=''}}">
+                  {{list.spec_name}}
+                  <image src='../../images/right.png'></image>
+              </view>
+              <view class='color-242 font-34 mg-top-25'>
+                ￥{{list.price}}
+              </view>
+              <!-- 加减数量-- -->
+              <view class='flex-align-center t-center mg-top-25'>
+                  <view class='num-btn'>-</view>
+                  <view class='num-txt'>
+                      <input type='number' value='{{list.count}}' class='width-min-100'></input>
+                  </view>
+                  <!--增加--tap-->
+                  <view class='num-btn' catchtap='add_shopcart_num' data-list="{{list}}" data-indx="{{item.index}}" data-type="2">
+                    +
+                  </view>
+              </view>
+              <!-- 加减数量-- -->
+          </view>
+      </view>
+      <!-- 商品列表--end -->
+  </view>
+  <!--循环列表--end-->
+  
+  <!--循环列表-->
+  <!--实体商品--供应商-->
+  <view class='list bg-255 font-30 mg-b-25 bder-bottom' wx:for="{{shopcart_info}}" wx:if="{{item.has_st_sp==1&&item.is_self==0}}" wx:key="">
+      <view class='relative pd-30-27 bder-bottom title'>
+          <view class='check br-50 {{item.tal_st_checked==1?"checked":""}}' data-indx="{{item.index}}" data-type="3" data-select="{{item.tal_st_checked}}" catchtap='click_list_title'>
+              <image src='../../images/rad-checked.png' wx:if="{{item.tal_st_checked==1}}"></image>
+          </view>
+          <veiw wx:if="{{item.manager_name!=''&&item.manager_name!=null}}">
+              {{item.manager_name}}
+          </veiw>
+          <veiw wx:if="{{item.manager_name==''||item.manager_name==null}}">
+              脉购
+          </veiw>
+      </view>
+      <!-- 商品列表 -->
+      <view class='pd-30-27 flex bder-bottom' wx:for="{{item.shopcart_item_list_1}}" wx:for-item="list" wx:key="">
+          <view class='relative good-left'>
+             <view class='check good-check br-50 {{list.is_select==1?"checked":""}}' data-indx="{{item.index}}" data-type="3" data-sed="{{list.is_select}}" data-id="{{list.shopcart_id}}" catchtap='click_item_checked'>
+                  <image src='../../images/rad-checked.png' wx:if="{{list.is_select==1}}"></image>
+              </view>
+              <view class='good-left-img'>
+                  <image src='{{list.good_img}}'></image>
+              </view>
+          </view>
+          <view class='good-right flex-item-grow'>
+              <view class='font-28 t-esis-2 good-name'>
+                  {{list.good_name}}
+              </view>
+
+              <view class='font-24 color-153 relative mg-top-15 br-1 good-spec relative' bindtap='chose_spec' wx:if="{{list.spec_ids!=null&&list.spec_ids!=''}}">
+                  {{list.spec_name}}
+                  <image src='../../images/right.png'></image>
+              </view>
+              <view class='color-242 font-34 mg-top-25'>
+                ￥{{list.price}}
+              </view>
+              <!-- 加减数量--暂不用 -->
+              <view class='flex-align-center t-center mg-top-25' style="display:none">
+                  <view class='num-btn'>-</view>
+                  <view class='num-txt'>
+                      <input type='number' value='1' class='width-min-100'></input>
+                  </view>
+                  <view class='num-btn'>
+                    +
+                  </view>
+              </view>
+              <!-- 加减数量--咱不用end -->
+          </view>
+      </view>
+      <!-- 商品列表--end -->
+  </view>
+  <!--循环列表--end-->
+
+
+  <!-- 底部 购买-->
+  <view style='height:100rpx;'></view>
+  <view class='play-wrap bg-255' wx:if="{{is_buy==true}}">
+    <view class='flex-align-center '>
+      <view class='relative color-153 font-30 play-line100 play-check' catchtap='checked_all'>
+        <view class='check good-check br-50 {{is_checked_all==1?"checked":""}}'>
+            <image src='../../images/rad-checked.png' wx:if="{{is_checked_all==1}}"></image>
+        </view>
+        全选
+      </view>
+      <view class='font-32 play-line100 flex-item-grow t-right pd-r-25'>
+          总价:<view class='color-242 display-inline'>￥{{total_price}}</view>
+        </view>
+        <view class='go-play bg-color-242 font-32 play-line100 t-center'>
+          去结算(1)
+        </view>
+    </view>
+  </view>
+
+  <!-- 底部 删除加入购物车-->
+  <view class='play-wrap bg-255' wx:if="{{is_buy==false}}">
+    <view class='flex-align-center '>
+      <view class='relative color-153 font-30 play-line100 play-check'>
+        <view class='check good-check br-50 checked'>
+            <image src='../../images/rad-checked.png'></image>
+        </view>
+        全选
+      </view>
+      <view class='font-28 play-line100 flex-item-grow t-right pd-r-25'>
+          <view class='yi-coupon display-inline-block br-1 mg-r-27' bindtap='mask_show' data-chose-btn-type="1">移至收藏</view>
+          <view class="del-btn display-inline-block br-1" bindtap='mask_show' data-chose-btn-type="2">删除</view>
+        </view>
+    </view>
+  </view>
+</view>
+<!-- 购物车商品不为空end -->
+
+<!-- 购物车商品为空 -->
+<view wx:if="{{is_null==true}}" >
+    <view class='bg-255 t-center good-null-wrap'>
+      <image src='../../images/good-null-icon.png' class='good-null-img'></image>
+      <view class="color-153 font-30 pd-30-0">购物车是空的</view>
+    </view>
+    <template is="guess_you_enjoy" />
+</view>
+<!-- 购物车商品为空end -->
+
+
+<template is="tip" data="{{...tip}}" wx:if="{{tip.show===true}}"/>
+<template is="mask"  wx:if="{{is_show_mask}}" data="{{...mask_data}}" />
+
+
+<!-- 重新选择规格--弹出层内容 -->
+<view class='tan_wrap bg-255' wx:if="{{show_spec}}" style="{{spec_style}}">
+   <view class='tan-buy-wrap relative'>
+    <view class='relative pd-30-27 color-101 font-28 tan-buy-info'>
+        <view class='tan-buy-good-img bg-255 br-2'>
+            <image src='{{has_spec_good_info.good_img}}'></image>            
+        </view>
+        <view class='color-242 font-30'>
+            ￥{{has_spec_good_info.price}}
+        </view>
+        <view class='pd-t-10'>
+            库存{{has_spec_good_info.stock}}件
+        </view>
+        <view class='pd-t-10'>
+            已选:{{has_spec_good_info.spec_name}}
+        </view>
+        <image src='../../images/close.png' class='close-img' bindtap='mask_hide'></image>
+    </view>
+    <!-- 选择规格 -->
+    <view class='spec-wrap'>
+        <view class='pd-30-27 color-101 mg-top-20 pd-b-20 bder-bottom'  wx:for="{{spec_info.spec_class_list}}" wx:key="" wx:for-index="itemIndex">
+          <view class='font-30 mg-b-25'>{{item.spec_class_name}}{{itemIndex}}</view>
+          <view class='flex-wrap font-28'>
+              <view class='mg-r-20 br-1 item {{list.is_check==1?"item-atv":""}}' data-spec-id="{{list.spec_id}}" data-indx="{{itemIndex}}" data-pid="{{item.spec_class_id}}" wx:for="{{spec_info.spec_list}}" wx:for-item="list" wx:key="" wx:if="{{item.spec_class_id==list.spec_class_id}}" bindtap='click_spec_list'>{{list.spec_name}}{{list.spec_id}}</view>
+          </view>
+        </view>
+        
+        <!-- 购买数量 -->
+        <view class='pd-30-27 color-101 mg-top-20 pd-b-20 bder-bottom'>
+          <view class='flex-between font-28'>
+              <view>购买数量</view>
+              <view class='flex-align-center center'>
+                  <view><!--input-avt-->
+                      <view class='input-btn ' catchtap='tan_reduce_num'>-</view>
+                  </view>
+                  <view>
+                     <input type='number' class='input-number' value='{{has_spec_good_info.count}}' bindblur="tan_blur_num"></input>
+                  </view>
+                  <view>
+                      <view class='input-btn' catchtap='tan_add_num'>+</view>
+                  </view>
+              </view>
+          </view>
+        </view>
+        <!-- 购买数量--end -->
+    <view style='height:100rpx;'></view>
+        
+    </view>
+    <!-- 选择规格--end -->
+    
+    <!-- 确定按钮--absolute定位 -->
+    <view class='flex-align-center buy-btn t-center font-32' >
+      <view class='good-detail-buy width-min-100' bindtap='click_confirm_change_spec'>确定</view>
+    </view>
+    <!-- 确定按钮--absolute定位--end -->
+
+  </view>
+</view>
+
+
+

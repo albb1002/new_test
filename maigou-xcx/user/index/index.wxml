@@ -1,0 +1,194 @@
+<view class='pd-30-27 font-30 relative wrap color-255 over-hidden'>
+    <view class="t-right">
+        帮助
+    </view>
+    <!--头像-->
+    <view class='flex-align-center head-img'>
+       <image src="../../images/demo-touxiang.png"></image>
+       <view>
+           <view class='wx-name t-esis font-34'>微信名字125213212332</view>
+           <view class='mg-top-3 br-1 font-24 color-101 t-esis member-name'>会员11111111111111111</view>
+       </view>
+    </view>
+    <!--头像--end-->
+    <!--会员信息-->
+    <view class='member-info color-y over-hidden'>
+        <view class='mi-tip-wrap'>
+          <view class='mi-tip-con'>
+            <view class='relative mi-info1 '>
+              <image class='mi-icon' src='../../images/vip-1.png'></image>
+              <text class="font-30">会员名称adsfsadf</text>
+            </view>
+            <view class='mi-info2 font-16 br-2 member-tip t-center'>
+              点此查看特权>
+            </view>
+          </view>
+          <image src='../../images/vip.png' class='vip-img'></image>
+        </view>
+    </view>
+    <!--会员信息--end-->
+</view>
+
+<!--优惠券--积分--余额-->
+<view class='flex-align-center t-center bg-255 color-51 bder-bottom'>
+  <view class='flex-item-grow pd-30-0'>
+     <view>
+        <text class='font-40'>100</text>
+        <text class="font-20">元</text>
+     </view>
+     <view class='font-24 mg-top-20'>余额|充值</view>
+  </view>
+   <view class='flex-item-grow pd-30-0'>
+     <view>
+        <text class='font-40'>100</text>
+        <text class="font-20">个</text>
+     </view>
+     <view class='font-24 mg-top-20'>优惠券</view>
+  </view>
+   <view class='flex-item-grow pd-30-0'>
+     <view>
+        <text class='font-40'>100</text>
+        <text class="font-20">分</text>
+     </view>
+     <view class='font-24 mg-top-20'>积分</view>
+  </view>
+</view>
+<!--优惠券--积分--余额--end-->
+
+<!--订单状态-->
+<view class='bg-255 flex-align-center t-center'>
+  <view class='flex-item-grow pd-30-0'>
+     <view class='relative order-icon'>
+         <image src='../../images/center-order1.png'></image>
+         <view class='count bg-color-242 font-20 br-50'>11</view>
+     </view>
+     <view class='mg-top-20 font-24'>待付款</view>
+  </view>
+  <view class='flex-item-grow pd-30-0'>
+     <view class='relative order-icon'>
+         <image src='../../images/center-order2.png'></image>
+          <view class='count bg-color-242 font-20 br-50 '>22</view>
+     </view>
+     <view class='mg-top-20 font-24'>待发货</view>
+  </view>
+  <view class='flex-item-grow pd-30-0'>
+     <view class='relative order-icon'>
+         <image src='../../images/center-order3.png'></image>
+          <view class='count bg-color-242 font-20 br-50'>33</view>
+     </view>
+     <view class='mg-top-20 font-24'>待收货</view>
+  </view>
+  <view class='flex-item-grow pd-30-0'>
+     <view class='relative order-icon'>
+         <image src='../../images/center-order4.png'></image>
+     </view>
+     <view class='mg-top-20 font-24'>售后</view>
+  </view>
+  <view class='flex-item-grow mg-30-0 bder-left'>
+     <view class='relative order-icon'>
+         <image src='../../images/center-order5.png'></image>
+     </view>
+     <view class='mg-top-20 font-24'>我的订单</view>
+  </view>
+</view>
+<!--订单状态--end-->
+
+<view class='pd-l-27 bg-255 '>
+  <view class='pd-30-0 font-30 flex-between flex-align-center mg-top-20 bder-bottom list'>
+    <view class='flex-align-center'>
+      <image src="../../images/center1.png" class='icon'></image>
+      领券中心
+    </view>
+    <view class='pd-r-27'>
+      <image src='../../images/right.png' class='right'></image>
+    </view>
+  </view>
+</view>
+<view class='pd-l-27 bg-255 '>
+  <view class='pd-30-0 font-30 flex-between flex-align-center list'>
+    <view class='flex-align-center'>
+      <image src="../../images/center2.png" class='icon'></image>
+      我的预约
+    </view>
+    <view class='pd-r-27'>
+      <image src='../../images/right.png' class='right'></image>
+    </view>
+  </view>
+</view>
+<view class='pd-l-27 bg-255 '>
+  <view class='pd-30-0 font-30 flex-between flex-align-center mg-top-20 bder-bottom list'>
+    <view class='flex-align-center'>
+      <image src="../../images/center3.png" class='icon'></image>
+      我的拼团
+    </view>
+    <view class='pd-r-27'>
+      <image src='../../images/right.png' class='right'></image>
+    </view>
+  </view>
+</view>
+<view class='pd-l-27 bg-255 '>
+  <view class='pd-30-0 font-30 flex-between flex-align-center bder-bottom list'>
+    <view class='flex-align-center'>
+    <image src="../../images/center4.png" class='icon'></image>
+      我的秒杀
+    </view>
+    <view class='pd-r-27'>
+      <image src='../../images/right.png' class='right'></image>
+    </view>
+  </view>
+</view>
+<view class='pd-l-27 bg-255 '>
+  <view class='pd-30-0 font-30 flex-between flex-align-center list'>
+    <view class='flex-align-center'>
+      <image src="../../images/center5.png" class='icon'></image>
+      积分商城
+    </view>
+    <view class='pd-r-27'>
+      <image src='../../images/right.png' class='right'></image>
+    </view>
+  </view>
+</view>
+<view class='pd-l-27 bg-255 '>
+  <view class='pd-30-0 font-30 flex-between flex-align-center mg-top-20 bder-bottom list'>
+    <view class='flex-align-center'>
+      <image src="../../images/center6.png" class='icon'></image>
+      我的收藏
+    </view>
+    <view class='pd-r-27'>
+      <image src='../../images/right.png' class='right'></image>
+    </view>
+  </view>
+</view>
+<view class='pd-l-27 bg-255 '>
+  <view class='pd-30-0 font-30 flex-between flex-align-center bder-bottom list'>
+    <view class='flex-align-center'>
+      <image src="../../images/center7.png" class='icon'></image>
+      地址管理
+    </view>
+    <view class='pd-r-27'>
+      <image src='../../images/right.png' class='right'></image>
+    </view>
+  </view>
+</view>
+<view class='pd-l-27 bg-255 '>
+  <view class='pd-30-0 font-30 flex-between flex-align-center bder-bottom list'>
+    <view class='flex-align-center'>
+      <image src="../../images/center8.png" class='icon'></image>
+      个人信息
+    </view>
+    <view class='pd-r-27'>
+      <image src='../../images/right.png' class='right'></image>
+    </view>
+  </view>
+</view>
+<view class='pd-l-27 bg-255 '>
+  <view class='pd-30-0 font-30 flex-between flex-align-center list'>
+    <view class='flex-align-center'>
+      <image src="../../images/center9.png" class='icon'></image>
+      联系客服
+    </view>
+    <view class='pd-r-27'>
+      <image src='../../images/right.png' class='right'></image>
+    </view>
+  </view>
+</view>

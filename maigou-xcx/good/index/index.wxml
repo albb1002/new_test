@@ -1,0 +1,126 @@
+
+<import src="../../template/wxml/common.wxml" />
+<!-- 头部搜索 -->
+<view class='{{head_position_style==1?"head-wrap":""}}'>
+  <view class='pd-20-27 flex-align-center bg-255 bder-bottom ' id="search_head">
+      <view class='head-left-icon mg-r-27 color-153' bindtap='show_aside'>
+            <image src='../../images/good-icon1.png'></image>
+            <view class='head-left-icon-txt font-20' >分类</view>
+      </view>
+      <navigator url="../search/index" class='head-search-txt relative font-26 flex-item-grow bg-242 color-153 br-3'>
+          <image src='../../images/good-icon4.png'></image>
+          <view  wx:if="{{search_keyword==''}}">输入您想寻找的商品</view>
+          <view  wx:if="{{search_keyword!=''}}">{{search_keyword}}</view>
+          <image wx:if="{{search_keyword!=''}}" src='../../images/close.png' class='search-close-img' catchtap='def_search'></image>
+      </navigator>
+  </view>
+</view>
+<!-- 头部搜索--end -->
+<view style='height:100rpx;' wx:if="{{head_position_style==1}}"></view>
+<!-- 排序方式 -->
+<view class='pd-30-0 flex-align-center t-center font-30 bg-255 bder-bottom'>
+    <view class='flex-item-grow flex-align-center'>
+        <view class='flex-item-grow {{sort_style==1?"color-242":""}}' bindtap='click_flat_sort'>
+           综合
+        </view>
+        <view class='flex-item-grow {{sort_style==2?"color-242":""}}' bindtap='click_sale_sort'>
+           销量
+        </view>
+        <view class='flex-item-grow price-nav {{sort_style==3?"color-242":""}}' bindtap='click_price_sort'>
+           价格
+           <image src='../../images/right.png' class='px-price {{price_sort==1?"":"px-price-atv"}}'></image>
+        </view>
+    </view>
+    <view class='good-tab-icon t-left' bindtap='nav_tab'>
+       <image src="../../images/good-icon3.png" wx:if="{{list_type==1}}"></image>
+       <image src="../../images/good-icon2.png" wx:if="{{list_type==2}}"></image>
+    </view>
+</view>
+<!-- 排序方式--end -->
+
+<!-- 单列排序方式 -->
+<view wx:if="{{list_type===1}}">
+  <view class='pd-30-27 bg-255 bder-bottom flex' wx:for="{{good_list_info}}" wx:key="{{id}}">
+      <view class='good-list-img'>
+        <image src="{{item.img}}"></image>
+      </view>
+      <view class='flex-item-grow relative pd-0-27'>
+          <view class='font-30 t-esis-2 good-info-lh'>
+            {{item.good_name}}
+          </view>
+          <view class='good-info'>
+              <view class='color-242 font-40 flex-align-center'>
+                  <view class='display-inline font-24'>￥</view>{{item.retail_price}}
+                  <view class='coupon-tip font-20 mg-l-10' wx:if="{{item.has_coupon==1}}">领券</view>
+              </view>
+              <view class='color-242 font-24 mg-top-15 flex-align-center'>
+                  <view class='coupon-tip font-20' wx:if="{{item.is_self==1}}">自营</view>
+                  <view class='coupon-tip font-20' wx:if="{{item.is_self==0}}">供应商</view>
+                  <view class='color-101 display-inline mg-l-10'>销量{{item.sales}}</view>
+              </view>
+          </view>
+      </view>
+  </view>
+</view>
+<!-- 单列排序方式--end -->
+
+
+<!-- 两列排序方式 -->
+<view class='flex-wrap' wx:if="{{list_type===2}}">
+    <view class='list-type-2 flex-item-grow bg-255' wx:for="{{good_list_info}}" wx:key="{{id}}">
+        <navigator class='pd-30-27' url='../detail/index?good_id={{item.id}}'>
+            <view class="type-2-img">
+              <image src='{{item.img}}'></image>
+            </view>
+          
+            <view class="t-esis pd-t-20 pd-b-20 font-28">
+                {{item.good_name}} 
+            </view>
+
+            <view class='color-242 font-40 flex-align-center'>
+                  <view class='display-inline font-24'>￥</view>{{item.retail_price}}
+                  <view class='coupon-tip font-20 mg-l-10' wx:if="{{item.has_coupon==1}}">领券</view>
+            </view>
+            <view class='color-242 font-24 mg-top-15 flex-align-center'>
+                <view class='coupon-tip font-20' wx:if="{{item.is_self==1}}">自营</view>
+                <view class='coupon-tip font-20' wx:if="{{item.is_self==0}}">供应商</view>
+                <view class='color-101 display-inline mg-l-10'>销量{{item.sales}}</view>
+            </view>
+        </navigator>
+    </view>
+</view>
+
+<view class='t-center pd-30-0 font-28'>
+    <view class='loading color-153' wx:if="{{good_list_isloading==0}}">加载中 . . .</view>
+    <view class='color-153' wx:if="{{good_list_isloading==1}}">没有更多数据了</view>
+</view>
+
+
+<!-- 分类导航栏 -->
+<view class='aside-nav bg-255 font-28' style='{{aside_style}}'>
+  <view class='flex-between pd-30-27 bder-bottom'>
+      <view>全部分类</view>
+      <view><image src='../../images/check1.png' class='checked'></image></view>
+  </view>
+  <view wx:for="{{aside_nav_info}}" wx:key="{{item.id}}">
+      <!-- 一级分类 -->
+      <view  class='flex-between  bder-bottom'>
+         <view class='flex-item-grow pd-30-27' data-sec-nav="{{item.child_class_list}}"  data-name="{{item.good_class_name}}" data-id="{{item.id}}" data-type="1" bindtap='click_sec_nav'>{{item.good_class_name}}</view>
+         <view wx:if="{{item.child_class_list.length>=1}}" data-sec='{{"sec"+index}}' class="slide-up pd-30-27 t-right" bindtap="click_aside_nav"><image src='../../images/right.png' class='check-list2 {{sec_nav=="sec"+index?"check-atv":""}}'></image></view>
+      </view>
+      <!-- 一级分类end -->
+      <!-- 二级分类 -->
+      <view  wx:if="{{item.child_class_list.length>=1&&sec_nav=='sec'+index}}">
+        <view class='flex-between pd-30-27 bder-bottom two-list' wx:for="{{item.child_class_list}}" wx:for-item="sec" wx:key="sec-id" bindtap='click_sec_nav' data-name="{{sec.good_class_name}}" data-id="{{sec.id}}" data-type="2">
+          <view class='font-24 color-153'>{{sec.good_class_name}}</view>
+        </view>
+      </view>
+      <!-- 二级分类--end -->
+  </view>
+ 
+</view>
+
+<template is="mask" wx:if="{{is_show_mask}}" data="{{...mask_data}}" />
+
+
+

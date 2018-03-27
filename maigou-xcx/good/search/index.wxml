@@ -1,0 +1,50 @@
+<!--good/search/index.wxml-->
+
+<!--头部-->
+<view class='search-wrap' id="wrap">
+  <view class='pd-20-27 flex-align-center bg-255 bder-bottom search-head' >
+      <view class='left-img' bindtap='back'>
+          <image src='../../images/right.png' class='left-icon'></image>
+      </view>
+      <view class='flex-item-grow relative flex-item-grow'>
+          <image src='../../images/good-icon4.png' class='search-icon'></image>
+          <input type='text' value="{{keyword1}}" placeholder='请输入搜索关键字' class='search-text font-26' bindinput="get_keyword"></input>
+          <image src='../../images/close-gray-icon.png' wx:if="{{keyword!=''}}" class='search-close' catchtap='del_keyword'></image>
+      </view>
+      <view class='font-30 color-101' bindtap='search'>
+          搜索
+      </view>
+  </view>
+
+  <view class='pd-0-27 bg-255'>
+      <view class='font-30 mg-b-30 pd-t-30'>
+          热搜
+      </view>
+      <view class='flex-wrap'>
+          <view class='re-list font-26' wx:for="{{search_keyword_info}}" wx:key="1" wx:if="{{index<=10}}" data-keyword="{{item.keyword}}" bindtap="hold_search">{{item.keyword}}</view>
+      </view>
+  </view>
+</view>
+<!--头部end-->
+
+<!--历史记录-js计算底部高度-->
+<view class='bg-255 relative' style='{{other_height}}'>
+    <view class='pd-30-27 bder-bottom font-30'>历史搜索</view>
+    <view class='pd-30-27 bder-bottom font-28 color-101'>包包</view>
+    <view class='pd-30-27 bder-bottom font-28 color-101'>包包</view>
+    <view class='pd-30-27 bder-bottom font-28 color-101'>包包</view>
+    <view class='pd-30-27 bder-bottom font-28 color-101'>包包</view>
+
+    <view class='history-search-btn t-center font-30 color-101 br-1'>
+       <view class='flex-align-center' style='justify-content:center'>
+          <view class='mg-r-10'><image src='../../images/search-icon2.png'></image></view>
+          <view>
+              清空历史记录
+          </view>
+       </view>
+    </view>
+</view>
+
+
+
+

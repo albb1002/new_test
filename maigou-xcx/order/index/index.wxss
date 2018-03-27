@@ -1,0 +1,10 @@
+/* order/index/index.wxss */
+@import "../../template/wxss/common.wxss";
+.nav{line-height: 80rpx;}
+.item{padding: 0 15rpx;display: inline-block}
+.active{border-bottom: 5rpx solid;color: rgb(242,48,49)}
+
+
+
+
+

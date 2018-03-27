@@ -1,0 +1,145 @@
+<!--order/detail/index.wxml-->
+<!-- 公共模块--商品列表 -->
+<import src="../../template/wxml/common.wxml" />
+
+<view class='bg-255 t-center pd-30-27 font-34 bder-bottom' style='display:none'>
+    订单详情
+</view>
+
+<!-- 订单状态 -->
+<view class='pd-30-27 bg-255 bder-bottom mg-b-25 font-28'>
+    <view class='mg-b-25'>
+        <view class='display-inline color-101 pd-r-10'>订单状态:</view><view class='display-inline color-y1'>待付款</view>
+    </view>
+    <view class='mg-b-25'>
+       <view class='display-inline color-101 pd-r-10'>订单编号:</view>215215321532153215
+    </view>
+    <view class='mg-b-25'>
+       <view class='display-inline color-101 pd-r-10'>下单时间:</view>2015-02-12 14:11
+    </view>
+    <view class='t-center'>
+        <view class='display-inline-block mg-r-27 btn-bg-rgb230 width-min-40 br-1'>取消订单</view>
+        <view class='display-inline-block btn-bg-rgb242 width-min-40 br-1'>去支付</view>
+    </view>
+</view>
+
+<!-- 待发货 -->
+<view class='pd-30-27 bg-255 bder-bottom mg-b-25 font-28'>
+    <view class='mg-b-25'>
+        <view class='display-inline color-101 pd-r-10'>订单状态:</view><view class='display-inline color-y1'>待发货</view>
+    </view>
+    <view class='mg-b-25'>
+       <view class='display-inline color-101 pd-r-10'>订单编号:</view>215215321532153215
+    </view>
+    <view class='mg-b-25'>
+       <view class='display-inline color-101 pd-r-10'>下单时间:</view>2015-02-12 14:11
+    </view>
+    <view class='t-center'>
+        <view class='display-inline-block mg-r-27 btn-bg-rgb230 width-min-40 br-1'>催卖家发货</view>
+        <view class='display-inline-block btn-bg-rgby width-min-40 br-1'>再次购买</view>
+    </view>
+</view>
+
+<!-- 待收货 -->
+<view class='pd-30-27 bg-255 bder-bottom mg-b-25 font-28'>
+    <view class='mg-b-25'>
+        <view class='display-inline color-101 pd-r-10'>订单状态:</view><view class='display-inline color-y1'>待收货</view>
+    </view>
+    <view class='mg-b-25'>
+       <view class='display-inline color-101 pd-r-10'>订单编号:</view>215215321532153215
+    </view>
+    <view class='mg-b-25'>
+       <view class='display-inline color-101 pd-r-10'>下单时间:</view>2015-02-12 14:11
+    </view>
+    <view class='t-center flex-between'>
+        <view class='display-inline-block mg-r-27 btn-bg-rgb230 flex-item-grow br-1'>查看物流</view>
+        <view class='display-inline-block mg-r-27 btn-bg-rgb242 flex-item-grow br-1'>确认收货</view>
+        <view class='display-inline-block btn-bg-rgby flex-item-grow br-1'>再次购买</view>
+    </view>
+</view>
+
+<!--已完成-->
+<view class='pd-30-27 bg-255 bder-bottom mg-b-25 font-28'>
+    <view class='mg-b-25'>
+        <view class='display-inline color-101 pd-r-10'>订单状态:</view><view class='display-inline color-y1'>已完成</view>
+    </view>
+    <view class='mg-b-25'>
+       <view class='display-inline color-101 pd-r-10'>订单编号:</view>215215321532153215
+    </view>
+    <view class='mg-b-25'>
+       <view class='display-inline color-101 pd-r-10'>下单时间:</view>2015-02-12 14:11
+    </view>
+    <view class='t-center flex-between'>
+        <view class='display-inline-block btn-bg-rgby flex-item-grow br-1'>已完成</view>
+    </view>
+</view>
+<!--已完成-->
+
+<!-- 地址信息 -->
+<view class='pd-30-27 bg-255 font-28 mg-b-25'>
+    <view class='mg-b-25'>
+        <view class='pd-r-10 display-inline-block color-101 add-len'>商品金额:</view>
+        <view class='display-inline-block'><view class='display-inline-block color-242'>￥241</view>(微信支付)</view>
+    </view>
+    <view class='mg-b-25'>
+        <view class='pd-r-10 display-inline-block color-101 add-len'>收货地址:</view>
+        <view class='display-inline-block'>福建省厦门市思明区观日路</view>
+    </view>
+    <view class='mg-b-25'>
+        <view class='pd-r-10 display-inline-block color-101 add-len'>收货人:</view>
+        <view class='display-inline-block'>张三 185485464856</view>
+    </view>
+    <view>
+        <view class='pd-r-10 display-inline-block color-101 add-len'>配送方式:</view>
+        <view class='display-inline-block'>快递配送</view>
+    </view>
+</view>
+
+<!-- 发票信息 -->
+<view class='pd-30-27 bg-255 font-28 mg-b-25'>
+    <view>
+        <view class='pd-r-10 display-inline-block color-101 add-len '>发票信息:</view>
+        <view class='display-inline-block font-28'>厦门掌沃软件科技有限公司 明细</view>
+    </view>
+</view>
+
+<!-- 购买的商品信息 -->
+<view class='pd-0-27 bg-255 font-28 mg-b-25'>
+    <view class='pd-30-0 bder-bottom'>
+        商家名称
+    </view>
+
+   <!--商品循环列表-->
+   <template is="flex-good-list" />
+</view>
+
+<!--购买的价格详情-->
+<view class='pd-0-27 bg-255 font-28 mg-b-25'>
+    <view class='pd-30-0 flex-between'>
+        <view>商家总价</view>
+        <view class='color-242'>￥100.00</view>
+    </view>
+    <view class='pd-b-30 flex-between bder-bottom'>
+        <view>运费(快递)</view>
+        <view class='color-242'>￥100.00</view>
+    </view>
+    <view class='pd-30-0 flex-between'>
+        <view>优惠券</view>
+        <view class='color-242'>-￥5</view>
+    </view>
+     <view class='pd-b-30 flex-between'>
+        <view>积分</view>
+        <view class='color-242'>-￥5</view>
+    </view>
+     <view class='pd-b-30 flex-between'>
+        <view>余额</view>
+        <view class='color-242'>-￥5</view>
+    </view>
+    <view class='pd-b-30 flex-between bder-bottom'>
+        <view>会员折扣</view>
+        <view class='color-242'>-￥5</view>
+    </view>
+</view>
+
+
+

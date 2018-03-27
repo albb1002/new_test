@@ -1,0 +1,4 @@
+/* order/detail/index.wxss */
+@import "../../template/wxss/common.wxss";
+.add-len{width: 120rpx;}
+

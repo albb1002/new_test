@@ -1,0 +1,53 @@
+{
+  "pages":[
+    "shopcart/index/index",
+    "good/detail/index",
+    "shopcart/confirm/index",    
+    "good/index/index",
+    "good/search/index",
+    
+    "user/index/index",
+    "order/detail/index",
+    "order/index/index",
+    "test/index",
+    "index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f23031",
+    "navigationBarTitleText": "脉购",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar":{
+    "list":[
+      {
+      "pagePath":"index/index",
+      "text":"首页",
+      "iconPath":"images/foo-index.png",
+      "selectedIconPath":"images/foo-index1.png"
+      },
+      {
+        "pagePath": "good/index/index",
+        "text": "商品",
+        "iconPath": "images/foo-good.png",
+        "selectedIconPath": "images/foo-good1.png"
+      },
+      {
+        "pagePath": "shopcart/index/index",
+        "text": "购物车",
+        "iconPath": "images/foo-shopcart.png",
+        "selectedIconPath": "images/foo-shopcart1.png"
+      },
+      { 
+        "pagePath": "user/index/index",
+        "text": "个人中心",
+        "iconPath": "images/foo-center.png",
+        "selectedIconPath": "images/foo-center1.png"
+      }
+    ],
+    "backgroundColor":"#fff",
+    "color":"rgb(0,0,0)",
+    "selectedColor":"#f23031"
+  }
+  
+}

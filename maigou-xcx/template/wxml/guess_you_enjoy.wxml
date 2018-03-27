@@ -1,0 +1,25 @@
+<!-- 猜你喜欢 -->
+<template name="guess_you_enjoy">
+    <view class='bg-255 pd-30-27 font-30 mg-top-20 bder-bottom'>
+        猜你喜欢
+    </view>
+    <view class='flex-wrap'>
+        <view class='list-type-2 flex-item-grow bg-255 '  wx:for="{{arr}}" wx:key="">
+            <view class='pd-30-27'>
+                <view class="type-2-img">
+                  <image src='{{item.img}}'></image>
+                </view>
+              
+                <view class="t-esis pd-t-20 pd-b-20 font-28">
+                    {{item.good_name}} 
+                </view>
+                <view class='font-40 flex-align-center  color-242'>
+                      <view class='flex-item-grow'>
+                          <view class='display-inline font-24'>￥</view>{{item.retail_price}}
+                      </view>
+                      <view class='coupon-tip font-20 mg-l-10 color-101 t-right'>销量:{{item.sales}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

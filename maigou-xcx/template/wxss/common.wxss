@@ -1,0 +1,21 @@
+/* 遮罩层 */
+.mask{position: fixed;width: 100%;left: 0;top: 0;background: rgba(0,0,0,0.5);height: 100%;
+transition: all 0.5s ease-out;-webkit-transition: all 0.5s ease-out;}
+
+/* 弹出的提示框 */
+.module-tan-wrap{position: fixed;width: 70%;left: 50%;top: 35%;transform: translate(-50%,-50%);-webkit-transform: translate(-50%,50%);z-index: 5;
+transition: all 0.5s;-webkit-transition: all 0.5s;}
+.module-tan-tip-text{min-height: 150rpx;padding-right: 25rpx;line-height: 40rpx;}
+.module-tan-wrap image{width: 40rpx;height: 40rpx;padding: 15rpx;position: absolute;right: 0;top: 0;}
+
+/*商品列表--我的订单*/
+.order-detail-list{padding: 20rpx 27rpx;}
+.order-detail-list .img{width: 160rpx;height: 160rpx;max-width: 160rpx;max-height: 160rpx;min-width: 160rpx;min-height: 160rpx;margin-right: 20rpx;}
+.order-detail-list image{width: 100%;height: 100%}
+.order-detail-list .good-name{line-height: 35rpx;}
+.order-detail-list .line-50{line-height: 50rpx;}
+
+/*订单详情 -商品列表*/
+.good-flex-wrap .img{width: 190rpx;min-width: 190rpx;max-width: 190rpx;height: 190rpx;min-height: 190rpx;max-height: 190rpx;}
+.good-flex-wrap .img image{width: 100%;height: 100%;}
+.good-flex-wrap .line-40{line-height: 40rpx;}
