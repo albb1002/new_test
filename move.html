@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		 <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<style>
+		body{margin: 0;padding: 0;position: relative;}
+			.wrap{width: 100%;overflow: hidden;}
+			.list{width: 140%;line-height: 100px;border-bottom: 1px solid red;cursor: pointer;
+			position: relative;}
+			.addList{transition: all 0.5s ease;-webkit-transition: all 0.5s ease;}
+			.list:after{content: "";display: block;clear: both;}
+			.con{float: left;background: black;color: white;}
+			.hid{position: relative;overflow: hidden;background: sandybrown;}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="list" id="list1" ontouchstart="down(event,'list1')">
+				<div class="con">1111</div>
+				<div class="hid">dd</div>
+			</div>
+			<div class="list" id="list2" ontouchstart="down(event,'list2')"><div class="con">1111</div>
+				<div class="hid">dd</div></div>
+			<div class="list" id="list3" ontouchstart="down(event,'list3')">
+				<div class="con">2222222222</div>
+				<div class="hid">dd</div>
+			</div>
+			<div class="list" id="list4" ontouchstart="down(event,'list4')">
+				<div class="con">444444444444</div>
+				<div class="hid">dd</div>
+			</div>
+			<div class="list" id="list5" ontouchstart="down(event,'list5')">
+				<div class="con">55555555555555</div>
+				<div class="hid">dd</div>
+			</div>
+			<div class="list" id="list6" ontouchstart="down(event,'list6')">
+				<div class="con">234234234</div>
+				<div class="hid">dd</div>
+			</div>
+			<div class="list" id="list7" ontouchstart="down(event,'list7')">
+				<div class="con">234234</div>
+				<div class="hid">dd</div>
+			</div>
+			<div class="list" id="list8" ontouchstart="down(event,'list8')">
+				<div class="con">4234234</div>
+				<div class="hid">dd</div>
+			</div>
+			<div class="list" id="list9" ontouchstart="down(event,'list9')">
+				<div class="con">24234</div>
+				<div class="hid">dd</div>
+			</div>
+		</div>
+		<script>
+		window.onload = function(){
+			var dom = document.documentElement.clientWidth;
+			var con = document.getElementsByClassName("con");
+			for(var i=0 ; i<con.length ; i++){
+				con[i].setAttribute("style","width:"+dom+"px");
+			}
+			
+		}
+			var _t = false;//控制器
+			var x=0;
+			var y=0;//记录初始的x--y
+			var mx = 0;
+			var my = 0;//移动的坐标
+			
+			var s = -1;//0为上下滚动  1为左右滑动
+			var id = "";
+			var hid_width_left = 0;//滑出节点的width--左滑动
+			var hid_width_right = 0;//右滑动
+			
+			var has_slide = false;//判断是否有节点滑出--默认false
+			
+			function down(e,d){
+				if(has_slide==true){
+					if(id!=d){
+						var domid = document.getElementById(id);
+						domid.setAttribute("class","list addList");
+						var str = "transform:translateX("+hid_width_right+"px);";
+							str+= "-webkit-transform:translateX("+hid_width_right+"px);";
+							str+= "-moz-transform:translateX("+hid_width_right+"px);";
+						domid.setAttribute("style",str);
+						
+						setTimeout(function(){
+							var domid = document.getElementById(id);
+							domid.setAttribute("class","list");
+							domid.setAttribute("style","");
+							document.getElementsByTagName("body")[0].setAttribute("style","")
+							has_slide=false;
+						},500)//删除样式
+				
+						
+					}
+					
+					return false;
+				}
+				_t=true;
+				x = e.touches[0].clientX;
+				y = e.touches[0].clientY;
+				id=d;
+				hid_width_left = -(document.getElementById(id).getElementsByClassName("hid")[0].clientWidth);
+				console.log(e.touches[0]);		
+				e.path[1].addEventListener("touchmove",move,false);
+				e.path[1].addEventListener("touchend",up,false);
+			}
+			function move(e){
+				if(_t==true){
+					mx = e.touches[0].clientX;
+					my = e.touches[0].clientY;//记录移动的x--y
+					var chax = -(x-mx);
+					
+					if(s==-1){
+						var abschax = Math.abs(chax);
+						var abschay = Math.abs(y-my);
+						
+						if(abschay>15){
+							s=0;	
+						}
+						if(abschax>15){
+							s=1;
+							document.getElementsByTagName("body")[0].setAttribute("style","position: relative;width: 100%;overflow: hidden;")
+							console.log(e);
+						}
+					}
+					if(s==1){
+						if(chax<=hid_width_left){
+							chax=hid_width_left;
+						}
+						if(chax>hid_width_right){
+							chax=hid_width_right;
+						}
+						var domid = document.getElementById(id);
+						var str = "transform:translateX("+chax+"px);";
+							str+= "-webkit-transform:translateX("+chax+"px);";
+							str+= "-moz-transform:translateX("+chax+"px);";
+						
+						domid.setAttribute("style",str)
+					}
+
+				}
+			}
+			function up(e){
+				_t=false;
+
+				if(s==1){
+					
+					var chax = -(x-mx);
+					
+					if(chax<(hid_width_left/2)){
+						var domid = document.getElementById(id);
+						domid.setAttribute("class","list addList");
+						var str = "transform:translateX("+hid_width_left+"px);";
+							str+= "-webkit-transform:translateX("+hid_width_left+"px);";
+							str+= "-moz-transform:translateX("+hid_width_left+"px);";
+						domid.setAttribute("style",str)
+						has_slide=true;
+					}else{
+						var domid = document.getElementById(id);
+						domid.setAttribute("class","list addList");
+						var str = "transform:translateX("+hid_width_right+"px);";
+							str+= "-webkit-transform:translateX("+hid_width_right+"px);";
+							str+= "-moz-transform:translateX("+hid_width_right+"px);";
+						domid.setAttribute("style",str);
+						document.getElementsByTagName("body")[0].setAttribute("style","")
+					}
+					
+				}
+				setTimeout(function(){
+					var domid = document.getElementById(id);
+					domid.setAttribute("class","list");
+					if(has_slide==false){
+						domid.setAttribute("style","");
+					}
+				},500)//删除样式
+				
+				s=-1//初始化---下次滑动再次启动
+				
+
+			}
+		</script>
+		
+		
+		<!--改为pc端-->
+		<!--<div class="wrap">
+			<div class="list" id="list1" ontouchstart="down(event)">1111111111</div>
+			<div class="list" id="list2" ontouchstart="down(event)">1111111111</div>
+			<div class="list" id="list3" ontouchstart="down(event)">1111111111</div>
+			<div class="list" id="list4" ontouchstart="down(event)">1111111111</div>
+			<div class="list" id="list5" ontouchstart="down(event)">1111111111</div>
+			<div class="list" id="list6" ontouchstart="down(event)">1111111111</div>
+			<div class="list" id="list7" ontouchstart="down(event)">1111111111</div>
+		</div>
+		<script>
+			var _t = false;//控制器
+			var x=0;
+			var y=0;//记录初始的x--y
+			
+			var s = -1;//0为上下滚动  1为左右滑动
+			var id = "";
+
+			function down(e){
+				_t=true;
+				x = e.clientX;
+				y = e.clientY;
+				id=e.path[0].id;
+				console.log(e,id);		
+				e.path[1].addEventListener("touchmove",move,false);
+				e.path[1].addEventListener("touchup",up,false);
+			}
+			function move(e){
+				if(_t==true){
+					var mx = e.clientX;
+					var my = e.clientY;//记录移动的x--y
+					var chax = -(x-mx);
+					
+					if(s==-1){
+						var abschax = Math.abs(chax);
+						var abschay = Math.abs(y-my);
+						
+						if(abschay>15){
+							s=0;	
+						}
+						if(abschax>15){
+							s=1;
+						}
+					}
+					if(s==1){
+						var domid = document.getElementById(id);
+						domid.setAttribute("style","left:"+chax+"px")
+					}
+					console.log(abschax,abschay);
+				}
+			}
+			function up(e){
+				_t=false;
+				console.log(22)
+			}
+		</script>-->
+		
+	</body>
+</html>
