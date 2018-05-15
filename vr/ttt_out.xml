@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- 全景图标签-->
+<panorama id="">
+    <!--控件  fovmode:视场模式;pannorth:显示正北;-->
+    <view fovmode="0" pannorth="0">
+        <!--显示参数
+        pan:平移;
+        fov:视场;
+        tilt:俯仰;
+        -->
+        <start pan="0" fov="70" tilt="0" />
+        <!--最小视角-->
+        <min pan="-180" fov="5" tilt="-48.9271" />
+        <!--最大视角-->
+        <max pan="180" fov="120" tilt="48.9271" />
+    </view>
+    <!--用户数据 在在这里我把翻译写到内容中了-->
+    <userdata title="标题"
+    datetime="日期"
+    description="描述"
+    copyright="版权"
+    tags="标签"
+    author="作者"
+    source="来源"
+    comment="评论"
+    info="信息"
+    longitude="经度"
+    latitude="维度" />
+    <!--热点-->
+    <hotspots width="180" height="20" wordwrap="1">
+        <!--热点标签 相关参数挺简单的  这里不介绍了，自己翻译吧-->
+        <label width="180"
+        backgroundalpha="1"
+        enabled="1"
+        height="20"
+        backgroundcolor="0xffffff"
+        bordercolor="0x000000"
+        border="1"
+        textcolor="0x000000"
+        background="1"
+        borderalpha="1"
+        borderradius="1"
+        wordwrap="1"
+        textalpha="1" />
+        <!--柱式-->
+        <polystyle
+        mode="1"
+        backgroundalpha="0.2509803921568627"
+        backgroundcolor="0x0000ff"
+        bordercolor="0x0000ff"
+        borderalpha="100" />
+    </hotspots>
+    <!--多媒体  我们没有添加，所以其内容就是空-->
+    <media/>
+    <!--图片资源
+    prev*url:预览图;
+    tile*url:真正预览的图片;
+    tilesize:图片大小;
+    tilescale:图片缩放级别-->
+    <input
+    prev5url="images/26172418_2981_preview_o_preview_5.jpg"
+    prev4url="images/26172418_2981_preview_o_preview_4.jpg"
+    prev3url="images/26172418_2981_preview_o_preview_3.jpg"
+    prev2url="images/26172418_2981_preview_o_preview_2.jpg"
+    prev1url="images/26172418_2981_preview_o_preview_1.jpg"
+    prev0url="images/26172418_2981_preview_o_preview_0.jpg"
+    tile5url="images/26172418_2981_preview_o_5.jpg"
+    tile4url="images/26172418_2981_preview_o_4.jpg"
+    tile3url="images/26172418_2981_preview_o_3.jpg"
+    tile2url="images/26172418_2981_preview_o_2.jpg"
+    tile1url="images/26172418_2981_preview_o_1.jpg"
+    tile0url="images/26172418_2981_preview_o_0.jpg"
+    tilesize="374"
+    tilescale="1.026738">
+        <!--预览图背景颜色-->
+        <preview color="0x808080" />
+    </input>
+
+    <!--控制台
+    0是假1是真（1就是开关中的开启,0就是关闭）
+    simulatemass:模拟质量(在这里只是指惯性);
+    lockedmouse:锁定鼠标;
+    lockedkeyboard:锁定键盘;
+    dblclickfullscreen:双击全屏;
+    invertwheel:翻转鼠标滑轮;
+    lockedwheel:锁定鼠标滑轮;
+    invertcontrol:;锁定控制台
+    speedwheel:鼠标滑轮放大缩小(需要将invertcontrol设置为0);
+    sensitivity:敏感度(需要将invertcontrol设置为0)
+    -->
+    <control
+    simulatemass="1"
+    lockedmouse="0"
+    lockedkeyboard="1"
+    dblclickfullscreen="1"
+    invertwheel="1"
+    lockedwheel="0"
+    invertcontrol="0"
+    speedwheel="10"
+    sensitivity="8"
+    />
+</panorama>
+
+作者：庸碌无为
+链接：https://www.jianshu.com/p/a1b8707e3e08
+來源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

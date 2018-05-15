@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<title>panorama demo</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="target-densitydpi=device-dpi,width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <style>
+			body {
+				background-color: #000000;
+				margin: 0px;
+				overflow: hidden;
+			}
+            @-ms-viewport { width: device-width; }
+            @media only screen and (min-device-width: 800px) { html { overflow:hidden; } }
+			#info {
+				position: absolute;
+				top: 0px; width: 100%;
+				color: #ffffff;
+				padding: 5px;
+				font-family:Monospace;
+				font-size:13px;
+				font-weight: bold;
+				text-align:center;
+			}
+			a {
+				color: #ffffff;
+			}
+			.head_title{position: fixed;top: 10px;left: 10px;color: white;font-size: 14px;}
+			.cut_img{position: fixed;bottom: 40px;width: 100%;overflow: scroll;z-index: 2;}
+			.cut_img::-webkit-scrollbar{width: 0;height: 0;}
+			.cut_img_wrap{padding: 0 20px 0 0;height: 40px;width: 2000px;}
+			.cut_img img{width: 50px;height: 50px;display: block;margin: 0;float: left;padding-right: 10px;}
+		</style>
+	</head>
+	<body>
+		<!--头部信息-->
+		<div class="head_title">123456</div>
+		<!--底部图片切换-->
+		<div class="cut_img">
+			<div class="cut_img_wrap" id="cut_img_wrap">
+				
+			</div>
+		</div>
+		<div id="container"></div>
+		<script src="js/three.min.js"></script>
+		<script>
+
+			var camera, scene, renderer;
+
+			var fov = 70,
+			texture_placeholder,
+			isUserInteracting = false,
+			onMouseDownMouseX = 0, onMouseDownMouseY = 0,
+			lon = 0, onMouseDownLon = 0,
+			lat = 0, onMouseDownLat = 0,
+			phi = 0, theta = 0,
+			is_phone = false;
+			
+			
+			
+			get_img();
+			
+			function init(img,t) {
+				console.log(img)
+				is_phone = detectmob();//tue为移动端设备
+				var container, mesh;
+				if(t==1){
+					console.log("初始数据")
+					window.container = null;
+					window.mesh = null;
+					window.scene = null;
+					window.camera = null;
+					window.renderer = null;
+					window.fov = 70;
+					window.texture_placeholder = null;
+					window.isUserInteracting = false;
+					window.onMouseDownMouseX = 0;
+					window.onMouseDownMouseY = 0;
+					window.lon = 0;
+					window.lat = 0;
+					window.phi = 0;
+					window.onMouseDownLon = 0;
+					window.onMouseDownLat = 0;
+					window.theta = 0;
+				}
+				container = document.getElementById( 'container' );
+				container.innerHTML="";
+				camera = new THREE.PerspectiveCamera( fov, window.innerWidth / window.innerHeight, 1, 1100 );
+				camera.target = new THREE.Vector3( 0, 0, 0 );
+
+				scene = new THREE.Scene();
+
+				var geometry = new THREE.SphereGeometry( 500, 60, 40 );
+				geometry.applyMatrix( new THREE.Matrix4().makeScale( -1, 1, 1 ) );
+
+				var material = new THREE.MeshBasicMaterial( {
+					map: THREE.ImageUtils.loadTexture( img )
+				} );
+
+				mesh = new THREE.Mesh( geometry, material );
+				
+				scene.add( mesh );
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container.appendChild( renderer.domElement );
+				
+				if(is_phone==true){
+					container.addEventListener( 'touchstart', onDocumentMouseDown, false );
+					container.addEventListener( 'touchmove', onDocumentMouseMove, false );
+					container.addEventListener( 'touchend', onDocumentMouseUp, false );
+				}else{
+					container.addEventListener( 'mousedown', onDocumentMouseDown, false );
+					container.addEventListener( 'mousemove', onDocumentMouseMove, false );
+					container.addEventListener( 'mouseup', onDocumentMouseUp, false );
+					container.addEventListener( 'mousewheel', onDocumentMouseWheel, false );
+					container.addEventListener( 'DOMMouseScroll', onDocumentMouseWheel, false);
+				}
+				//
+				window.addEventListener( 'resize', onWindowResize, false );
+				animate();
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			function onDocumentMouseDown( event ) {
+				console.log(event);
+				event.preventDefault();
+
+				isUserInteracting = true;
+				if(is_phone==false){//pc
+					onPointerDownPointerX = event.clientX;
+					onPointerDownPointerY = event.clientY;
+				}else{
+					onPointerDownPointerX = event.touches[0].clientX;
+					onPointerDownPointerY = event.touches[0].clientY;
+				}
+				
+				onPointerDownLon = lon;
+				onPointerDownLat = lat;
+
+			}
+			function onDocumentMouseMove( event ) {
+				if ( isUserInteracting ) {
+					
+					if(is_phone==false){//pc
+						lon = ( onPointerDownPointerX - event.clientX ) * 0.1 + onPointerDownLon;
+						lat = ( event.clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+					}else{
+						lon = ( onPointerDownPointerX - event.touches[0].clientX ) * 0.1 + onPointerDownLon;
+						lat = ( event.touches[0].clientY - onPointerDownPointerY ) * 0.1 + onPointerDownLat;
+					}
+
+				}
+			}
+
+			function onDocumentMouseUp( event ) {
+
+				isUserInteracting = false;
+
+			}
+
+			function onDocumentMouseWheel( event ) {
+
+				// WebKit
+
+				if ( event.wheelDeltaY ) {
+
+					fov -= event.wheelDeltaY * 0.05;
+
+				// Opera / Explorer 9
+
+				} else if ( event.wheelDelta ) {
+
+					fov -= event.wheelDelta * 0.05;
+
+				// Firefox
+
+				} else if ( event.detail ) {
+
+					fov += event.detail * 1.0;
+
+				}
+
+				camera.projectionMatrix.makePerspective( fov, window.innerWidth / window.innerHeight, 1, 1100 );
+				render();
+
+			}
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+				render();
+
+			}
+
+			function render() {
+
+				lat = Math.max( - 85, Math.min( 85, lat ) );
+				phi = THREE.Math.degToRad( 90 - lat );
+				theta = THREE.Math.degToRad( lon );
+
+				camera.target.x = 500 * Math.sin( phi ) * Math.cos( theta );
+				camera.target.y = 500 * Math.cos( phi );
+				camera.target.z = 500 * Math.sin( phi ) * Math.sin( theta );
+
+				camera.lookAt( camera.target );
+
+				renderer.render( scene, camera );
+
+			}
+			//设备检测  
+            function detectmob() {  
+                if( navigator.userAgent.match(/Android/i)  
+                || navigator.userAgent.match(/webOS/i)  
+                || navigator.userAgent.match(/iPhone/i)  
+                || navigator.userAgent.match(/iPad/i)  
+                || navigator.userAgent.match(/iPod/i)  
+                || navigator.userAgent.match(/BlackBerry/i)  
+                || navigator.userAgent.match(/Windows Phone/i)  
+                ){  
+                    return true;  
+                }  
+                else {  
+                    return false;  
+                }  
+            }
+            //获取图片资源
+            function get_img(){
+            	var arr = ["img/we.jpg","img/timg1.jpg","img/timg2.jpg","img/timg3.jpg","img/timg1.jpg","img/timg2.jpg","img/timg3.jpg",];
+            	var id = document.getElementById("cut_img_wrap");
+            	id.setAttribute("style","width:"+arr.length*60+"px");
+            	var str = "";
+            	for(var i=0 ; i<arr.length ; i++){
+            		str += "<img src='"+arr[i]+"'/>";
+            	}
+            	id.innerHTML = str;
+            	
+            	init(arr[0]);
+            	click_img();
+            }
+			function click_img(){
+				var img_list = document.getElementById("cut_img_wrap").getElementsByTagName("img");
+				for(var i=0 ; i<img_list.length ; i++){
+					img_list[i].onclick = function(i){
+						return function(){
+							var str = img_list[i].getAttribute("src");
+							init(str,1);
+						}
+					}(i)
+				}
+			}
+		</script>
+	</body>
+</html>
