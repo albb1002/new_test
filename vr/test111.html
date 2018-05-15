@@ -25,16 +25,20 @@
 			a {
 				color: #ffffff;
 			}
-			.head_title{position: fixed;top: 10px;left: 10px;color: white;font-size: 14px;}
-			.cut_img{position: fixed;bottom: 40px;width: 100%;overflow: scroll;z-index: 2;}
+			.head_title{position: fixed;top: 10px;left: 10px;color: white;font-size: 14px;width: 100%;text-align: center;}
+			.cut_img{position: fixed;bottom: 0;width: 100%;overflow: scroll;z-index: 2;}
 			.cut_img::-webkit-scrollbar{width: 0;height: 0;}
-			.cut_img_wrap{padding: 0 20px 0 0;height: 40px;width: 2000px;}
-			.cut_img img{width: 50px;height: 50px;display: block;margin: 0;float: left;padding-right: 10px;}
-		</style>
+			.cut_img_wrap{padding: 0.5rem 0 0.5rem 1rem;width: 2000px;background: rgba(0,0,0,0.5);}
+			.cut_img_wrap:after{content: "";display: block;clear: both;}
+			.cut_img img{width: 100%;height: 100%;display: block;margin: 0;float: left;}
+			.cut_img .cut_list{width: 3rem;height: 3rem;display: block;margin: 0;float: left;margin-right: 1rem;padding: 0.1rem;background: white;position: relative;}
+        	.cut_img .cut_name{position: absolute;width: 100%;bottom: 0rem;color: white;font-size: 0.55rem;text-align: center;overflow: hidden;text-overflow:clip;text-wrap: nowrap;}
+        	.cut_img .cut_active{background: rgb(255,220,133);}
+        </style>
 	</head>
 	<body>
 		<!--头部信息-->
-		<div class="head_title">123456</div>
+		<div class="head_title">当前图片的位置介绍</div>
 		<!--底部图片切换-->
 		<div class="cut_img">
 			<div class="cut_img_wrap" id="cut_img_wrap">
@@ -42,6 +46,7 @@
 			</div>
 		</div>
 		<div id="container"></div>
+		<script type="text/javascript" src="js/font-initial.js" ></script>
 		<script src="js/three.min.js"></script>
 		<script>
 
@@ -54,7 +59,10 @@
 			lon = 0, onMouseDownLon = 0,
 			lat = 0, onMouseDownLat = 0,
 			phi = 0, theta = 0,
-			is_phone = false;
+			onPointerDownLon=0,onPointerDownLat=0,
+			is_phone = false,//是否是手机号码
+			rotate_time_out,
+			is_rotate = true;//是否旋转
 			
 			
 			
@@ -118,7 +126,8 @@
 				}
 				//
 				window.addEventListener( 'resize', onWindowResize, false );
-				animate();
+				window.addEventListener("load",animate,false);
+
 			}
 
 			function onWindowResize() {
@@ -133,7 +142,10 @@
 			function onDocumentMouseDown( event ) {
 				console.log(event);
 				event.preventDefault();
-
+				try{
+					clearTimeout(rotate_time_out);
+				}catch(e){}
+				is_rotate = false;
 				isUserInteracting = true;
 				if(is_phone==false){//pc
 					onPointerDownPointerX = event.clientX;
@@ -164,6 +176,9 @@
 			function onDocumentMouseUp( event ) {
 
 				isUserInteracting = false;
+				rotate_time_out = setTimeout(function(){
+					is_rotate = true
+				},2000)
 
 			}
 
@@ -195,12 +210,16 @@
 			}
 
 			function animate() {
-
 				requestAnimationFrame( animate );
 				render();
-
+				anm1();
 			}
-
+			//自动旋转
+			function anm1(){
+				if(is_rotate){
+					lon = lon+0.05;
+				}
+			}
 			function render() {
 
 				lat = Math.max( - 85, Math.min( 85, lat ) );
@@ -232,26 +251,101 @@
                     return false;  
                 }  
             }
-            //获取图片资源
+            //获取图片资源-
             function get_img(){
-            	var arr = ["img/we.jpg","img/timg1.jpg","img/timg2.jpg","img/timg3.jpg","img/timg1.jpg","img/timg2.jpg","img/timg3.jpg",];
+            	var arr = [
+            		{
+            			name:"1280*640",
+            			img:"img/timg2.jpg",
+            		},
+            		{
+            			name:"1280*640",
+            			img:"img/timg3.jpg",
+            		},
+            		{
+            			name:"4000*2000",
+            			img:"img/timg5.jpg",
+            		},
+            		{
+            			name:"2100*700",
+            			img:"img/timg6.jpg",
+            		},
+            		{
+            			name:"3000*1500",
+            			img:"img/timg7.jpg",
+            		},
+            		{
+            			name:"测试",
+            			img:"img/timg2.jpg",
+            		},
+            		{
+            			name:"测试",
+            			img:"img/timg3.jpg",
+            		},
+            		{
+            			name:"测试",
+            			img:"img/timg5.jpg",
+            		},
+            		{
+            			name:"测试",
+            			img:"img/timg6.jpg",
+            		},
+            		{
+            			name:"测试",
+            			img:"img/timg7.jpg",
+            		},
+            		{
+            			name:"测试",
+            			img:"img/timg2.jpg",
+            		},
+            		{
+            			name:"测试",
+            			img:"img/timg3.jpg",
+            		},
+            		{
+            			name:"测试",
+            			img:"img/timg5.jpg",
+            		},
+            		{
+            			name:"测试",
+            			img:"img/timg6.jpg",
+            		},
+            		{
+            			name:"测试",
+            			img:"img/timg7.jpg",
+            		},
+            	]
+//          	var arr = ["img/we.jpg","img/timg1.jpg","img/timg2.jpg","img/timg3.jpg","img/timg1.jpg","img/timg2.jpg","img/timg3.jpg",];
             	var id = document.getElementById("cut_img_wrap");
-            	id.setAttribute("style","width:"+arr.length*60+"px");
+            	id.setAttribute("style","width:"+arr.length*4.2+"rem");
             	var str = "";
             	for(var i=0 ; i<arr.length ; i++){
-            		str += "<img src='"+arr[i]+"'/>";
+            		if(i==0){
+            			str+="<div class='cut_list cut_active'><div class='cut_name'>"+arr[i].name+"</div>";
+            		}else{
+            			str+="<div class='cut_list'><div class='cut_name'>"+arr[i].name+"</div>";
+            		}
+
+            		str += "<img src='"+arr[i].img+"'/>";
+            		str+="</div>";
             	}
             	id.innerHTML = str;
             	
-            	init(arr[0]);
+            	init(arr[0].img);
             	click_img();
             }
 			function click_img(){
-				var img_list = document.getElementById("cut_img_wrap").getElementsByTagName("img");
+				var img_list = document.getElementsByClassName("cut_list");
 				for(var i=0 ; i<img_list.length ; i++){
 					img_list[i].onclick = function(i){
 						return function(){
-							var str = img_list[i].getAttribute("src");
+							var cut_list = document.getElementsByClassName("cut_list");
+							for(var j=0 ; j<cut_list.length ; j++){
+								
+								cut_list[j].setAttribute("class","cut_list");
+							}
+							cut_list[i].setAttribute("class","cut_list cut_active");
+							var str = img_list[i].getElementsByTagName("img")[0].getAttribute("src");
 							init(str,1);
 						}
 					}(i)
