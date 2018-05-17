@@ -293,7 +293,7 @@
             			str+="<div class='cut_list'><div class='cut_name'>"+arr[i].name+"</div>";
             		}
 
-            		str += "<img src='"+arr[i].img+"'/>";
+            		str += "<img src='11"+arr[i].img+"' data-url='"+arr[i].img+"'/>";
             		str+="</div>";
             	}
             	id.innerHTML = str;
@@ -326,7 +326,8 @@
 								cut_list[j].setAttribute("class","cut_list");
 							}
 							cut_list[i].setAttribute("class","cut_list cut_active");
-							var str = img_list[i].getElementsByTagName("img")[0].getAttribute("src");
+							var str = img_list[i].getElementsByTagName("img")[0].getAttribute("data-url");
+							console.log(str,"data-url")
 							init(str,1);
 						}
 					}(i)
