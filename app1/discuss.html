@@ -206,7 +206,8 @@
 				if(dis_type==1){
 					dis_index = e.getAttribute("data-dis_index");
 				}
-				document.getElementsByTagName("body")[0].setAttribute("style","position: absolute;width: 100%;overflow: hidden;")
+				var height = get_win_height();
+				document.getElementsByTagName("body")[0].setAttribute("style","position: absolute;width: 100%;overflow: hidden;height:"+height+"px;")
 				show_mask();
 				show_txtarea();
 			}
