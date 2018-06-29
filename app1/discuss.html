@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <title>文章详情</title>
+	    <link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<div class="back bg-255 t-center mg-b-10">
+			文章详情
+			<div class="ret font-24" onclick="window.history.back()">返回</div>
+		</div>
+		<div class="discuss">
+			
+			<div class="t-center pd bg-255">
+				文章标题
+			</div>
+			<div class="article-con pd bg-255" id="article">
+				文章内容安抚是的发的发多少发多少否舒服的是否是的发送到发送到送达否
+				文章内容安抚是的发的发多少发多少否舒服的是否是的发送到发送到送达否
+				<img src="img/pic_08.png" />
+				文章内容安抚是的发的发多少发多少否舒服的是否是的发送到发送到送达否
+				
+				文章内容安抚是的发的发多少发多少否舒服的是否是的发送到发送到送达否
+				<img src="img/pic_08.png" />
+				文章内容安抚是的发的发多少发多少否舒服的是否是的发送到发送到送达否
+				
+				文章内容安抚是的发的发多少发多少否舒服的是否是的发送到发送到送达否
+				<img src="img/pic_08.png" />
+				文章内容安抚是的发的发多少发多少否舒服的是否是的发送到发送到送达否
+				
+				文章内容安抚是的发的发多少发多少否舒服的是否是的发送到发送到送达否
+				<img src="img/pic_08.png" />
+				
+				<div class="other-con-mask" id="other_con_mask"></div>
+				<div class="other-con cursor br-10" id="other_con" onclick="show_article_normal()">点击阅读全文</div>
+			</div>
+			
+			<!--用户评论部分-->
+			<div id="dis_content">
+				<div class="discuss-con pd bder-top bg-255">
+					评论
+				</div>
+				<!--评论循环列表-->
+				<div class="pd pl-first bg-255" data-dis_index="0">
+					<div class="flex">
+						<div class="pl-head-icon">
+							<img src="img/pic_08.png" class="br-50"/>
+						</div>
+						<div class="pd-l-10 flex-item-grow">
+							<div class="flex-between">
+								<div class="t-esis pd-r-10">用户昵称用用户昵称用户昵称用户昵称用户昵称用户昵称用户昵称用户昵称用户昵称用户昵称用户昵称用户昵称用户昵称户昵称</div>
+								<!--评论和点赞-->
+								<div class="flex-align-center flex-between pl-icon">
+									<div class="flex-align-center pd-r-10 cursor">
+										<img src="img/discuss.png"/>
+										<div class="pd-l-5" data-dis_index="0" data-dis_type="1" onclick="read_discuss(this)">评论</div>
+									</div>
+									<div class="flex-align-center cursor" onclick="laud(this)">									
+										<img src="img/zan.png" data-is_laud="0"/>
+										<!--已结点赞的图标---<img src="img/zan1.png"/>-->
+										<div class="pd-l-5 count">22</div>
+									</div>
+								</div>
+								<!--评论和点赞--end-->
+							</div>
+							<div>2018.01.01 12:00</div>
+							<!--评论内容-->
+							<div>
+								评论内容，---文章内容安抚是的发的发多少发多少否舒服的是否是的发送到发送到送达否
+							</div>
+						</div>
+					</div>
+					<!--其他用户的评论-->
+					<div class="flex pl-other">
+						<div class="pl-head-icon">
+							<img src="img/pic_08.png" class="br-50"/>
+						</div>
+						<div class="pd-l-10">
+							<div class="">
+								用户昵称
+							</div>
+							<div>2018.01.01 12:00</div>
+							<div>
+								评论内容，---文章内容安抚是的发的发多少发多少否舒服的是否是的发送到发送到送达否
+							</div>
+						</div>
+					</div>
+					<!--其他用户的评论--end-->
+				</div>
+				<div class="pd pl-first bg-255" data-dis_index="1">
+					<div class="flex">
+						<div class="pl-head-icon">
+							<img src="img/pic_08.png" class="br-50"/>
+						</div>
+						<div class="pd-l-10">
+							<div class="flex-between">
+								<div class="t-esis pd-r-10">用户昵称</div>
+								<!--评论和点赞-->
+								<div class="flex-align-center flex-between pl-icon">
+									<div class="flex-align-center pd-r-10 cursor">
+										<img src="img/discuss.png"/>
+										<div class="pd-l-5" data-dis_index="1" data-dis_type="1" onclick="read_discuss(this)">评论</div>
+									</div>
+									<div class="flex-align-center cursor" onclick="laud(this)">									
+										<img src="img/zan.png" data-is_laud="0"/>
+										<!--已结点赞的图标---<img src="img/zan1.png"/>-->
+										<div class="pd-l-5 count">22</div>
+									</div>
+								</div>
+								<!--评论和点赞--end-->
+							</div>
+							<div>2018.01.01 12:00</div>
+							<!--评论内容-->
+							<div>
+								评论内容，---文章内容安抚是的发的发多少发多少否舒服的是否是的发送到发送到送达否
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--评论循环列表-->
+			</div>
+			<!--用户评论部分-->
+			
+			<!--底部-->
+			<div class="dis_footer bder-top bg-255">
+				<div class="dis-f-wrap flex-align-center pd">
+					<div class="flex-item-grow laud-btn cursor" data-dis_type="0" onclick="read_discuss(this)">
+						写评论
+					</div>
+					<div class="flex-align-center flex-between pl-icon pd-l-10">
+						<div class="flex-align-center pd-r-10 cursor">
+							<img src="img/discuss.png"/>
+							<div class="pd-l-5">其他按钮</div>
+						</div>
+						<div class="flex-align-center cursor">									
+							<img src="img/share.png" data-is_laud="0"/>
+							<div class="pd-l-5 count">分享</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div style="height: 4rem; "></div>
+			<!--底部--end-->
+			
+			<!--遮罩层-->
+			<div id="mask"></div>
+			
+			<!--弹出评论宽-->
+			<div class="dis-text-wrap bder-top" id="txtarea">
+				<div class="flex-align-center t-center bder-bottom bg-245">
+					<div class="pd color-242 cursor" onclick="close_discuss()">关闭</div>
+					<div class="pd flex-item-grow">评论</div>
+					<div class="pd color-132 cursor" onclick="send_discuss()">发送</div>
+				</div>
+				<div class="pd">
+					<textarea placeholder="写评论" id="textarea_id"></textarea>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/font-initial.js" ></script>
+		<script>
+			var dis_type = "";//评论的类型0为用户的新评论1为在别人的评论上评论--关闭评论时初始化
+			var dis_index = "";//当前评论的是第几条数据---在别人的评论上评论时有效-关闭评论时初始化
+			var show_article_height = 55;//文字显示的高度--占浏览器高度的百分比--文字的内容高度小于当前的百分比---不显示（查看剩余部分）的按钮
+			set_article_height(show_article_height);
+			
+			//点赞--数量+1，图标变色
+			function laud(e){
+				var is_laud = e.getElementsByTagName("img")[0].getAttribute("data-is_laud");
+				if(is_laud==0){
+					e.getElementsByTagName("img")[0].setAttribute("src","img/zan1.png");
+					e.getElementsByTagName("img")[0].setAttribute("data-is_laud","1");
+					e.getElementsByClassName("count")[0].innerHTML = Number(e.getElementsByClassName("count")[0].innerHTML)+1;
+				}
+			}
+			//显示遮罩层
+			function show_mask(){
+				var mask_id = document.getElementById("mask");
+				mask_id.setAttribute("style","height: 100%;opacity: 1;");
+			}
+			//隐藏遮罩层 
+			function hide_mask(){
+				var mask_id = document.getElementById("mask");
+				mask_id.setAttribute("style","opacity: 0;");
+				setTimeout(function(){
+					mask_id.setAttribute("style","opacity: 0;");
+				},500)
+			}
+			//显示评论输入框
+			function show_txtarea(){
+				var txtarea = document.getElementById("txtarea");
+				txtarea.setAttribute("style","bottom: 0;");
+				txtarea.getElementsByTagName("textarea")[0].focus();
+			}
+			//隐藏评论输入宽
+			function hide_txtarea(){
+				var txtarea = document.getElementById("txtarea");
+				txtarea.setAttribute("style","bottom: -11rem;");
+			}
+			//点击评论
+			function read_discuss(e){
+				dis_type = e.getAttribute("data-dis_type");
+				if(dis_type==1){
+					dis_index = e.getAttribute("data-dis_index");
+				}
+				show_mask();
+				show_txtarea();
+			}
+			//关闭评论
+			function close_discuss(){
+				hide_mask();
+				hide_txtarea();
+				dis_type = "";
+				dis_index = "";
+			}
+
+			//发送评论
+			function send_discuss(){
+				var dis_content = document.getElementById("dis_content");
+				var textarea_val = document.getElementById("textarea_id").value;//文本信息
+				if(textarea_val==""){
+					return false;
+				}
+				//新评论--直接添加节点
+				if(dis_type==0){
+					var dom_info = add_node(textarea_val);
+					dis_content.appendChild(dom_info);//添加节点
+				}
+				//评论别人的评论--在pl-first[dis_index] class下添加节点
+				if(dis_type==1){
+					var pl_class = document.getElementsByClassName("pl-first")[dis_index];//当前评论的列表项
+					var dom_info = add_node1(textarea_val);
+					pl_class.appendChild(dom_info);
+				}
+				close_discuss();//隐藏文本框
+				document.getElementById("textarea_id").value="";//文本框数据初始化
+				
+			}
+			
+			//新评论--节点信息
+			function add_node(val){
+				var str = "",t="";
+				t=get_time();//时间
+				var pl_first_len = document.getElementsByClassName("pl-first").length;
+				var dom = document.createElement("div");
+				dom.setAttribute("class","pd pl-first bg-255");
+				dom.setAttribute("data-dis_index",pl_first_len);
+				//str+='<div class="pd pl-first bg-255" data-dis_index='+pl_first_len+'"';
+				str+= '<div class="flex">';
+				str+= '<div class="pl-head-icon">';
+				str+= '<img src="img/pic_08.png" class="br-50"/>';
+				str+= '</div>';//flex--end
+				str+= '<div class="pd-l-10 flex-item-grow">';
+				str+='<div class="flex-between">';
+				str+='<div class="t-esis pd-r-10">'+'用户昵称'+'</div>';//用户昵称
+				str+='<div class="flex-align-center flex-between pl-icon">';
+				str+='<div class="flex-align-center pd-r-10 cursor">';
+				str+='<img src="img/discuss.png"/>';
+				str+='<div class="pd-l-5" data-dis_index="'+pl_first_len+'" data-dis_type="1" onclick="read_discuss(this)">评论</div>';
+				str+='</div>';
+				str+='<div class="flex-align-center cursor" onclick="laud(this)">';
+				str+='<img src="img/zan.png" data-is_laud="0"/>';
+				str+='<div class="pd-l-5 count">'+0+'</div>';//点赞的数量
+				str+='</div></div></div>';
+				str+='<div>'+t+'</div>';//评论的时间
+				str+='<div>';
+				str+=''+val+'';//评论内容
+				str+='</div>';
+				str+='</div></div>';		
+				dom.innerHTML=str;
+				return dom;
+			}
+
+			//在别人的评论上评论
+			function add_node1(val){
+				var str="",t="";
+				t=get_time();//时间
+				
+				var dom = document.createElement("div");
+				dom.setAttribute("class","flex pl-other");
+
+				str+='<div class="pl-head-icon">';
+				str+='<img src="img/pic_08.png" class="br-50"/>';
+				str+='</div>';
+				str+='<div class="pd-l-10">';
+				str+='<div>';
+				str+='用户昵称';//用户昵称
+				str+='</div>';
+				str+='<div>'+t+'</div>';//时间
+				str+='<div>';
+				str+=''+val+'';
+				str+='</div></div>';
+				dom.innerHTML=str;
+				return dom;
+			}
+			//返回当前时间
+			function get_time(){
+				var t="";
+				var time = new Date();
+				var y = time.getFullYear();
+				var m = time.getMonth()+1;
+				var d = time.getDay();
+				var h = time.getHours();
+				var min = time.getSeconds();
+				t=y+"."+m+"."+d+" "+h+":"+min;
+				return t;
+			}
+			
+			//返回浏览器的高度
+			function get_win_height(){
+				var h = document.documentElement.clientHeight;
+				return h;
+			}
+			
+			//设置文章的初始高度
+			function set_article_height(bl){
+				var article_height = get_win_height()*(bl/100);
+				var article_id = document.getElementById("article");
+				
+				var article_ch = article_id.clientHeight;
+				
+				if(article_ch<article_height){
+					var other_con_mask = document.getElementById("other_con_mask");
+					var other_con = document.getElementById("other_con");
+					other_con_mask.setAttribute("style","display: none");
+					other_con.setAttribute("style","display:none");
+					
+				}else{
+					article_id.setAttribute("style","height: "+article_height+"px;");
+				}
+				console.log(article_ch,article_height); 
+			}
+			//点击查看全部
+			function show_article_normal(){
+				var other_con_mask = document.getElementById("other_con_mask");
+				var other_con = document.getElementById("other_con");
+				other_con_mask.setAttribute("style","display: none");
+				other_con.setAttribute("style","display:none");
+				document.getElementById("article").setAttribute("style","")
+			}
+		</script>
+	</body>
+</html>
