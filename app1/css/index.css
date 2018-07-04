@@ -96,7 +96,7 @@ h4{font-weight: bold;}
 
 #mask{position: fixed;width: 100%;background: rgba(0,0,0,0.4);left: 0;top: 0;opacity: 0;transition: all ease 0.5s;-webkit-transition: all ease 0.5s;-moz-transition: all ease 0.5s;-ms-transition: all ease 0.5s;}
 
-.dis-text-wrap{position: fixed;width: 100%;left: 0;bottom: -11rem;background: white;transition: all ease 0.5s;-webkit-transition: all ease 0.5s;-moz-transition: all ease 0.5s;-ms-transition: all ease 0.5s;}
+.dis-text-wrap{position: fixed;width: 100%;left: 0;top: -11rem;background: white;transition: all ease 0.5s;-webkit-transition: all ease 0.5s;-moz-transition: all ease 0.5s;-ms-transition: all ease 0.5s;}
 textarea{border: none;width: 100%;height: 6rem;}
 
 .article-con{position: relative;overflow: hidden;line-height: 1.5rem;}
@@ -175,4 +175,11 @@ textarea{border: none;width: 100%;height: 6rem;}
 .reg_sel{width: 99%;border: none;color: rgb(153,153,153);text-indent: 10px;font-size: 0.8rem;padding: 1rem 0;line-height: 0.8rem;border: 1px solid rgb(230,230,230);background: url(../img/bottom_icon.png) no-repeat center right;
 background-size: 1rem; background-position-x: 98%;background-color: white;}
 
-
+/*头部搜索--新增*/
+.index-search{transition: all ease 0.5s;-webkit-transition: all ease 0.5s;position: fixed;width: 100%;top: 0;left: 0;z-index: 999;box-shadow: 0px 2px 5px rgb(220,220,220);-webkit-box-shadow: 0px 2px 7px rgb(230,230,230);}
+.index-search div{overflow: initial;}
+.index-search input[type="text"],input[type="search"]{border: 1px solid rgb(230,230,230);width: 100%;padding: 8px 0;font-size: 0.75rem;text-indent: 10px;}
+.index-search .is_btn{text-align: center;color: white;background: rgb(58,170,255);min-width: 50px;font-size: 0.75rem;padding: 5px 0;margin-left: 10px;}
+.mask-index-search{padding: 20px 0;height: 1.3rem;background: rgb(245,245,245);}
+.is_ani{top: -2rem;}
+.index-search-icon{position: absolute;right:0.8rem;top: 50%;transform: translateY(-50);-webkit-transform: translateY(-50%);width: 1rem;padding: 0.5rem;}
