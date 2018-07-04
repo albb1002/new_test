@@ -207,7 +207,7 @@
 					dis_index = e.getAttribute("data-dis_index");
 				}
 				var height = get_win_height();
-				document.getElementsByTagName("html")[0].setAttribute("style","position: relative;width: 100%;height:"+height+"px;overflow: hidden;")
+				//document.getElementsByTagName("body")[0].setAttribute("style","position: fixed;width: 100%;height:"+height+"px;overflow: hidden;")
 				show_mask();
 				show_txtarea();
 			}
@@ -217,7 +217,7 @@
 				hide_txtarea();
 				dis_type = "";
 				dis_index = "";
-				document.getElementsByTagName("body")[0].setAttribute("style","")
+				//document.getElementsByTagName("body")[0].setAttribute("style","")
 			}
 
 			//发送评论
