@@ -207,6 +207,9 @@
 					dis_index = e.getAttribute("data-dis_index");
 				}
 				var height = get_win_height();
+				var body_h = document.getElementsByTagName("body")[0].clientHeight;
+				console.log(body_h+"adf");
+				document.getElementsByTagName("body")[0].setAttribute("style","height:"+body_h+"px")
 				//document.getElementsByTagName("body")[0].setAttribute("style","position: fixed;width: 100%;height:"+height+"px;overflow: hidden;")
 				show_mask();
 				show_txtarea();
