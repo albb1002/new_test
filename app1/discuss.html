@@ -167,6 +167,9 @@
 			var show_article_height = 55;//文字显示的高度--占浏览器高度的百分比--文字的内容高度小于当前的百分比---不显示（查看剩余部分）的按钮
 			set_article_height(show_article_height);
 			
+			document.getElementById("txtarea").addEventListener("touchmove",function(e){
+				e.preventDefault();
+			},false)
 			//点赞--数量+1，图标变色
 			function laud(e){
 				var is_laud = e.getElementsByTagName("img")[0].getAttribute("data-is_laud");
@@ -191,9 +194,11 @@
 			}
 			//显示评论输入框
 			function show_txtarea(){
+				var height = get_win_height();
 				var txtarea = document.getElementById("txtarea");
-				txtarea.setAttribute("style","top: 0;");
+				txtarea.setAttribute("style","top: 0;height:"+height+"px;");
 				txtarea.getElementsByTagName("textarea")[0].focus();
+				document.getElementById("textarea_id").setAttribute("style","height: "+height*0.8+"px;")
 			}
 			//隐藏评论输入宽
 			function hide_txtarea(){
